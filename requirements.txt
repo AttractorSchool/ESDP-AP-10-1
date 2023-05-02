@@ -1,0 +1,6 @@
+psycopg2-binary==2.9.5
+Pillow==9.4.0
+django-bootstrap5==22.2
+Django==4.1.7
+django_debug_toolbar==3.8.1
+djangorestframework==3.14.0
