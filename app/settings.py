@@ -37,13 +37,13 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # "debug_toolbar",
-    # 'django_bootstrap5',
-    # "webapp",
+    "debug_toolbar",
+    'django_bootstrap5',
+    "webapp",
     # "accounts",
-    # 'rest_framework',
+    'rest_framework',
     # 'rest_framework.authtoken',
-    # 'api'
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -83,18 +83,18 @@ WSGI_APPLICATION = "app.wsgi.application"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "titany",
-        "USER": "postgres",
-        "PASSWORD": "1234",
-        "HOST": "localhost",
-        "PORT": "",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'tytany',
+        'USER': 'postgres',
+        'PASSWORD': 'alikhan2005',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
 
-# STATIC_URL = "static/"
+STATIC_URL = "static/"
 # STATICFILES_DIRS = [
 #     BASE_DIR / "static"
 # ]
@@ -154,9 +154,9 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-INTERNAL_IPS = [
-    "127.0.0.1",
-]
+# INTERNAL_IPS = [
+#     "127.0.0.1",
+# ]
 
 BOOTSTRAP5 = {
 
