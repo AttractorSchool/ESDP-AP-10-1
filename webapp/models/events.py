@@ -4,6 +4,11 @@ from django.contrib.auth import get_user_model
 
 
 class Events(models.Model):
+    name = models.CharField(
+        max_length=200,
+        null=False,
+        verbose_name="Наименование"
+    )
     cities = models.ForeignKey(
         to='webapp.Cities',
         related_name='сities',
@@ -23,8 +28,9 @@ class Events(models.Model):
     )
     user = models.ManyToManyField(
         to=get_user_model(),
-        related_name='Организатор',
-        blank=True
+        related_name='user',
+        blank=True,
+        verbose_name='Организатор'
     )
     number_of_seats = models.IntegerField(
         verbose_name="Количество мест"
@@ -41,13 +47,15 @@ class Events(models.Model):
     )
     user_booked = models.ManyToManyField(
         to=get_user_model(),
-        related_name='забронировали_место',
-        blank=True
+        related_name='user_booked',
+        blank=True,
+        verbose_name='забронировали_место'
     )
     user_paid = models.ManyToManyField(
         to=get_user_model(),
-        related_name='оплатили',
-        blank=True
+        related_name='user_paid',
+        blank=True,
+        verbose_name='оплатили'
     )
     description = models.TextField(
         max_length=3000,
@@ -86,14 +94,10 @@ class Events(models.Model):
         default="user_pic/default_user_pic.jpeg"
     )
 
-    def update(self, using=None, keep_parents=False):
-        self.update_at = timezone.now()
-        self.save()
-
     def delete(self, using=None, keep_parents=False):
         self.is_deleted = True
         self.deleted_at = timezone.now()
         self.save()
 
     def __str__(self):
-        return f"{self.place} - {self.description}"
+        return f"{self.name} - {self.start_register_at}"
