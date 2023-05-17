@@ -1,8 +1,6 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import get_object_or_404
 from rest_framework import status
 from rest_framework.response import Response
-from rest_framework.utils import json
 from rest_framework.views import APIView
 
 from api.serializers import EventsSerializer
@@ -19,8 +17,3 @@ class EventsSimpleView(APIView):
         else:
             serializer = EventsSerializer(objects, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
-
-
-
-
-
