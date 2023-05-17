@@ -11,10 +11,11 @@ class Image(models.Model):
     )
     user = models.ForeignKey(
         to=get_user_model(),
-        related_name='user',
+        related_name='user_image',
         blank=False,
         null=False,
         verbose_name='Организатор',
+        on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(
         auto_now_add=True,

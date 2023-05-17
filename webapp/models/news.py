@@ -11,13 +11,14 @@ class News(models.Model):
     )
     user = models.ForeignKey(
         to=get_user_model(),
-        related_name='user',
+        related_name='user_for_news',
         blank=True,
-        verbose_name='Организатор'
+        verbose_name='Организатор',
+        on_delete=models.CASCADE
     )
     cities = models.ForeignKey(
         to='webapp.Cities',
-        related_name='сities',
+        related_name='сities_for_news',
         on_delete=models.CASCADE,
         verbose_name="Город"
     )
@@ -28,7 +29,7 @@ class News(models.Model):
     )
     photo = models.ManyToManyField(
         to="webapp.Image",
-        related_name="photo",
+        related_name="photo_for_news",
         verbose_name="Фото"
     )
     created_at = models.DateTimeField(
