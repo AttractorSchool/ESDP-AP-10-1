@@ -24,4 +24,3 @@ class Image(models.Model):
 
     def __str__(self):
         return f"Фотография {self.user} - {self.created_at}"
-
