@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from webapp.models import Events, Cities, TypeEvents
+from webapp.models import Events, Cities, TypeEvents, News
 
 
 class TypeEventsSerializer(serializers.ModelSerializer):
@@ -27,4 +27,23 @@ class EventsSerializer(serializers.ModelSerializer):
                   "events_at", "user_booked", "user_paid", "description",
                   "start_register_at", "end_register_at", "name",
                   "is_deleted", "place", "price", "create_at", "update_at", "photo")
+        read_only = ("id", "create_at", "update_at", "is_deleted")
+
+
+class NewsSerializer(serializers.ModelSerializer):
+    cities = CitiesSerializer(read_only=True)
+
+    class Meta:
+        model = News
+        fields = (
+            "id",
+            "name",
+            "user",
+            "cities",
+            "description",
+            "photo",
+            "created_at",
+            "updated_at",
+            "is_deleted"
+        )
         read_only = ("id", "create_at", "update_at", "is_deleted")

@@ -64,39 +64,6 @@
   }
 },
 {
-  "model": "webapp.news",
-  "pk": 1,
-  "fields": {
-    "name": "Открытие нового офиса в г. Астана",
-    "user": 1,
-    "cities": 1,
-    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam, voluptatum tempore praesentium doloribus vero incidunt architecto cupiditate, laborum vitae fuga consectetur neque repellat, porro atque facilis quam? Error dolor vitae deleniti voluptatum! Autem ex rem alias dolore, eaque totam voluptatem ipsam laborum corrupti, ad numquam dolores eveniet, id distinctio consectetur quos perspiciatis expedita omnis natus sed facere? Officiis ipsa reiciendis nobis ea itaque voluptatibus nulla consectetur quae illum mollitia officia, recusandae vero? Similique veritatis cum facere incidunt nihil dolorem autem illum, ex repellat? Tempora vero consequuntur quas, perferendis sapiente corrupti beatae temporibus, facere in molestias eaque quaerat incidunt eligendi omnis labore, nulla assumenda! Reiciendis atque culpa cupiditate, ullam iusto at error aliquid autem mollitia necessitatibus unde dignissimos",
-    "created_at": "2023-05-17T12:46:39.487Z",
-    "updated_at": "2023-05-17T12:46:39.487Z",
-    "is_deleted": false,
-    "photo": [
-      3
-    ]
-  }
-},
-{
-  "model": "webapp.news",
-  "pk": 2,
-  "fields": {
-    "name": "Анонс мероприятий на лето 2023",
-    "user": 1,
-    "cities": 1,
-    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam,",
-    "created_at": "2023-05-17T12:49:13.558Z",
-    "updated_at": "2023-05-17T12:49:13.558Z",
-    "is_deleted": false,
-    "photo": [
-      3,
-      4
-    ]
-  }
-},
-{
   "model": "webapp.image",
   "pk": 1,
   "fields": {
@@ -130,6 +97,64 @@
     "image": "user_pic/camera.jpg",
     "user": 1,
     "created_at": "2023-05-17T12:49:09.346Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 5,
+  "fields": {
+    "image": "user_pic/NY.jpg",
+    "user": 1,
+    "created_at": "2023-05-18T02:48:47.418Z"
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 1,
+  "fields": {
+    "name": "Открытие нового офиса в г. Астана",
+    "user": 1,
+    "cities": 1,
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam, voluptatum tempore praesentium doloribus vero incidunt architecto cupiditate, laborum vitae fuga consectetur neque repellat, porro atque facilis quam? Error dolor vitae deleniti voluptatum! Autem ex rem alias dolore, eaque totam voluptatem ipsam laborum corrupti, ad numquam dolores eveniet, id distinctio consectetur quos perspiciatis expedita omnis natus sed facere? Officiis ipsa reiciendis nobis ea itaque voluptatibus nulla consectetur quae illum mollitia officia, recusandae vero? Similique veritatis cum facere incidunt nihil dolorem autem illum, ex repellat? Tempora vero consequuntur quas, perferendis sapiente corrupti beatae temporibus, facere in molestias eaque quaerat incidunt eligendi omnis labore, nulla assumenda! Reiciendis atque culpa cupiditate, ullam iusto at error aliquid autem mollitia necessitatibus unde dignissimos",
+    "created_at": "2023-05-17T12:46:39.487Z",
+    "updated_at": "2023-05-17T12:46:39.487Z",
+    "is_deleted": false,
+    "photo": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 2,
+  "fields": {
+    "name": "Анонс мероприятий на лето 2023",
+    "user": 1,
+    "cities": 1,
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam,",
+    "created_at": "2023-05-17T12:49:13.558Z",
+    "updated_at": "2023-05-17T12:49:13.558Z",
+    "is_deleted": false,
+    "photo": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 3,
+  "fields": {
+    "name": "Investment Opportunities in Kazakhstan",
+    "user": 1,
+    "cities": 1,
+    "description": "Kazakhstan is offering a number of lucrative investment opportunities under its plan to privatize 106 companies under the Sovereign Wealth Fund of Kazakhstan. Samruk Kazyna invited investors both local and foreign to buy shares in the 106 companies that are part of the second phase of the privatization scheme. This is a continuation of what was started in the 1990s when the country was trying to introduce a free market economy.\r\n\r\nThe government had tried to run these companies on its own as it created an open market economy but it has since run into hurdles like lack of enough funding to fully capitalize the enterprises as well as the technical know-how. This has prompted Samruk Kazyna to invite investors to buy shares and help in the management and capitalization of the enterprises.\r\n\r\nThe estimated total value of the companies it put at slightly over 100 billion dollars, up from 93 billion which was the estimate in July. Right now there are 600 companies under the Sovereign wealth Fund of Kazakhstan. And of these, some of the opportunities are in the following areas.\r\n\r\nOil\r\nKazMunayGas oil and Gas company is one of the companies that is up for sale. It has 2 oil refineries and manages a number of subsidiary companies which include helicopter services, shipping, and tankers as well as catering service. The oil industry in Kazakhstan has a lot of potential which is why companies like Chevron are already investing in it.\r\n\r\nTransportation\r\nAlso on sale is the operator of the railway company. The government has been funding Kazakhstan Temir Zholy but is now ready to sell it off along with close to 100 percent f its assets to an investor who is ready to operate it in accordance to the agreements with Samruk Kazyna. There are about 15 thousand kilometers of rail to be managed. With a current revenue at close to 4 billion dollars. Some expansion work has already been carried out along with production of coaches and engines. Even more, revenue can be collected if the high-speed line receives funding from an investor.",
+    "created_at": "2023-05-18T02:49:09.171Z",
+    "updated_at": "2023-05-18T02:49:09.171Z",
+    "is_deleted": false,
+    "photo": [
+      1
+    ]
   }
 },
 {
