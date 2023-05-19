@@ -1,0 +1,574 @@
+[
+{
+  "model": "webapp.cities",
+  "pk": 1,
+  "fields": {
+    "citi_name": "Алматы"
+  }
+},
+{
+  "model": "webapp.cities",
+  "pk": 2,
+  "fields": {
+    "citi_name": "Астана"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 1,
+  "fields": {
+    "events_name": "Гольф"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 2,
+  "fields": {
+    "events_name": "Скачки"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 3,
+  "fields": {
+    "events_name": "бизнес тренинг"
+  }
+},
+{
+  "model": "webapp.events",
+  "pk": 1,
+  "fields": {
+    "name": "Скачки",
+    "cities": 1,
+    "type_events": 2,
+    "events_at": "2023-05-11T15:00:00Z",
+    "number_of_seats": 10,
+    "start_register_at": "2023-05-05T13:05:43Z",
+    "end_register_at": "2023-05-10T13:05:45Z",
+    "description": "Конные скачки различаются по формату, и во многих странах сложились свои особые традиции. Вариации включают ограничение забегов для определённых пород, бег с препятствиями, бег на разные расстояния, бег по разным дорожкам и бег в разных походках.\r\n\r\nВ то время как часть скачек проводится ради спортивного интереса, значительная часть скачек связана с азартными играми, или другими экономическими факторами[2]. В 2008 году мировой рынок конных скачек составил сумму около 115 миллиардов долларов США[3].\r\n\r\nВ связи с тем, что конные скачки являются соревнованием именно лошадей, а не всадников, конные скачки не включаются в программу конного спорта на Олимпийских играх, хотя пресса нередко выдвигала предложения признать скачки олимпийским видом спорта[4].\r\n\r\nСамой результативной лошадью, когда-либо участвовавшей в конных скачках, считается венгерская верховая кобыла Кинчем (род. 1874 г.), одержавшая в 70-х годах XIX века недосягаемое для других количество побед в количестве 54 и не проигравшая ни одного заезда[5].",
+    "place": "центральный ипподром алматы2",
+    "price": "300000.00",
+    "is_deleted": false,
+    "create_at": "2023-05-16T13:12:10.348Z",
+    "update_at": "2023-05-16T14:23:28.323Z",
+    "photo": "user_pic/d_L7zAb1o-U.jpg",
+    "user": [
+      1
+    ],
+    "user_booked": [
+      1
+    ],
+    "user_paid": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 1,
+  "fields": {
+    "image": "user_pic/almaty.jpg",
+    "user": 1,
+    "created_at": "2023-05-17T12:46:28.978Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 2,
+  "fields": {
+    "image": "user_pic/almaty_Vw4Ws5q.jpg",
+    "user": 1,
+    "created_at": "2023-05-17T12:46:28.985Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 3,
+  "fields": {
+    "image": "user_pic/almaty_10OK2SB.jpg",
+    "user": 1,
+    "created_at": "2023-05-17T12:46:28.985Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 4,
+  "fields": {
+    "image": "user_pic/camera.jpg",
+    "user": 1,
+    "created_at": "2023-05-17T12:49:09.346Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 5,
+  "fields": {
+    "image": "user_pic/NY.jpg",
+    "user": 1,
+    "created_at": "2023-05-18T02:48:47.418Z"
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 1,
+  "fields": {
+    "name": "Открытие нового офиса в г. Астана",
+    "user": 1,
+    "cities": 1,
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam, voluptatum tempore praesentium doloribus vero incidunt architecto cupiditate, laborum vitae fuga consectetur neque repellat, porro atque facilis quam? Error dolor vitae deleniti voluptatum! Autem ex rem alias dolore, eaque totam voluptatem ipsam laborum corrupti, ad numquam dolores eveniet, id distinctio consectetur quos perspiciatis expedita omnis natus sed facere? Officiis ipsa reiciendis nobis ea itaque voluptatibus nulla consectetur quae illum mollitia officia, recusandae vero? Similique veritatis cum facere incidunt nihil dolorem autem illum, ex repellat? Tempora vero consequuntur quas, perferendis sapiente corrupti beatae temporibus, facere in molestias eaque quaerat incidunt eligendi omnis labore, nulla assumenda! Reiciendis atque culpa cupiditate, ullam iusto at error aliquid autem mollitia necessitatibus unde dignissimos",
+    "created_at": "2023-05-17T12:46:39.487Z",
+    "updated_at": "2023-05-17T12:46:39.487Z",
+    "is_deleted": false,
+    "photo": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 2,
+  "fields": {
+    "name": "Анонс мероприятий на лето 2023",
+    "user": 1,
+    "cities": 1,
+    "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam,",
+    "created_at": "2023-05-17T12:49:13.558Z",
+    "updated_at": "2023-05-17T12:49:13.558Z",
+    "is_deleted": false,
+    "photo": [
+      3,
+      4
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 3,
+  "fields": {
+    "name": "Investment Opportunities in Kazakhstan",
+    "user": 1,
+    "cities": 1,
+    "description": "Kazakhstan is offering a number of lucrative investment opportunities under its plan to privatize 106 companies under the Sovereign Wealth Fund of Kazakhstan. Samruk Kazyna invited investors both local and foreign to buy shares in the 106 companies that are part of the second phase of the privatization scheme. This is a continuation of what was started in the 1990s when the country was trying to introduce a free market economy.\r\n\r\nThe government had tried to run these companies on its own as it created an open market economy but it has since run into hurdles like lack of enough funding to fully capitalize the enterprises as well as the technical know-how. This has prompted Samruk Kazyna to invite investors to buy shares and help in the management and capitalization of the enterprises.\r\n\r\nThe estimated total value of the companies it put at slightly over 100 billion dollars, up from 93 billion which was the estimate in July. Right now there are 600 companies under the Sovereign wealth Fund of Kazakhstan. And of these, some of the opportunities are in the following areas.\r\n\r\nOil\r\nKazMunayGas oil and Gas company is one of the companies that is up for sale. It has 2 oil refineries and manages a number of subsidiary companies which include helicopter services, shipping, and tankers as well as catering service. The oil industry in Kazakhstan has a lot of potential which is why companies like Chevron are already investing in it.\r\n\r\nTransportation\r\nAlso on sale is the operator of the railway company. The government has been funding Kazakhstan Temir Zholy but is now ready to sell it off along with close to 100 percent f its assets to an investor who is ready to operate it in accordance to the agreements with Samruk Kazyna. There are about 15 thousand kilometers of rail to be managed. With a current revenue at close to 4 billion dollars. Some expansion work has already been carried out along with production of coaches and engines. Even more, revenue can be collected if the high-speed line receives funding from an investor.",
+    "created_at": "2023-05-18T02:49:09.171Z",
+    "updated_at": "2023-05-18T02:49:09.171Z",
+    "is_deleted": false,
+    "photo": [
+      1
+    ]
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add user",
+    "content_type": 4,
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change user",
+    "content_type": 4,
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete user",
+    "content_type": 4,
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view user",
+    "content_type": 4,
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 5,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 5,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 5,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 5,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 6,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 6,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 6,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 6,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add events",
+    "content_type": 7,
+    "codename": "add_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change events",
+    "content_type": 7,
+    "codename": "change_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete events",
+    "content_type": 7,
+    "codename": "delete_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view events",
+    "content_type": 7,
+    "codename": "view_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add cities",
+    "content_type": 8,
+    "codename": "add_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change cities",
+    "content_type": 8,
+    "codename": "change_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete cities",
+    "content_type": 8,
+    "codename": "delete_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view cities",
+    "content_type": 8,
+    "codename": "view_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add type events",
+    "content_type": 9,
+    "codename": "add_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change type events",
+    "content_type": 9,
+    "codename": "change_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete type events",
+    "content_type": 9,
+    "codename": "delete_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view type events",
+    "content_type": 9,
+    "codename": "view_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add image",
+    "content_type": 10,
+    "codename": "add_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change image",
+    "content_type": 10,
+    "codename": "change_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete image",
+    "content_type": 10,
+    "codename": "delete_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view image",
+    "content_type": 10,
+    "codename": "view_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Новость",
+    "content_type": 11,
+    "codename": "add_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Новость",
+    "content_type": 11,
+    "codename": "change_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Новость",
+    "content_type": 11,
+    "codename": "delete_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Новость",
+    "content_type": 11,
+    "codename": "view_news"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$Pfa7l6jMiWap1icfBDBPxR$yU/U/qVYV511unLn8+k8MQylNLEk8CwfpqhDpm9AZjQ=",
+    "last_login": "2023-05-17T12:35:36.107Z",
+    "is_superuser": true,
+    "username": "bob",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-05-16T12:40:21.652Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
