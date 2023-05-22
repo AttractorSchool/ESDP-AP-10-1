@@ -11,9 +11,9 @@ class EventsSimpleView(APIView):
 
     def get(self, request, *args, **kwargs):
         try:
-            objects = Events.objects.all()
+            events = Events.objects.all()
         except ObjectDoesNotExist:
             Response({"error": "введите существующий pk"})
         else:
-            serializer = EventsSerializer(objects, many=True)
+            serializer = EventsSerializer(events, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)

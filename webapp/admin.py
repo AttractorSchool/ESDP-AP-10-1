@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from webapp.models import Events, Cities, TypeEvents, News, Image
+from webapp.models import Events, Cities, TypeEvents, News, Image, UserBooked
 
 
 # Register your models here.
@@ -40,9 +40,17 @@ class ImageAdmin(admin.ModelAdmin):
     readonly_fields = ("id", "created_at")
 
 
+class UserBookedAdmin(admin.ModelAdmin):
+    list_display = ("id", "resident", "event", "booking_date", "date_of_payment", "cancellation_date")
+    list_filter = ("id", "resident", "event", "booking_date", "date_of_payment", "cancellation_date")
+    search_fields = ("resident", "event", "booking_date", "date_of_payment", "cancellation_date")
+    filter = ("resident", "event", "booking_date", "date_of_payment", "cancellation_date")
+    readonly_fields = ("id",)
+
+
 admin.site.register(Events, EventsAdmin)
 admin.site.register(Cities, CitiesAdmin)
 admin.site.register(TypeEvents, TypeEventsAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(Image, ImageAdmin)
-
+admin.site.register(UserBooked, UserBookedAdmin)

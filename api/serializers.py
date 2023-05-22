@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from webapp.models import Events, Cities, TypeEvents, News
+from webapp.models import Events, Cities, TypeEvents, News, UserBooked
 
 
 class TypeEventsSerializer(serializers.ModelSerializer):
@@ -23,10 +23,10 @@ class EventsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Events
-        fields = ("id", "user", "cities", "type_events", "number_of_seats",
-                  "events_at", "user_booked", "user_paid", "description",
-                  "start_register_at", "end_register_at", "name",
-                  "is_deleted", "place", "price", "create_at", "update_at", "photo")
+        fields = ("id", "name", "cities", "type_events", "events_at",
+                  "sponsor", "number_of_seats", "start_register_at", "end_register_at",
+                  "resident_booked", "description", "place", "price",
+                  "is_deleted", "create_at", "update_at", "photo")
         read_only = ("id", "create_at", "update_at", "is_deleted")
 
 
@@ -36,14 +36,16 @@ class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
         fields = (
-            "id",
-            "name",
-            "user",
-            "cities",
-            "description",
-            "photo",
-            "created_at",
-            "updated_at",
-            "is_deleted"
+            "id", "name", "user", "cities", "description",
+            "photo", "created_at", "updated_at", "is_deleted"
         )
         read_only = ("id", "create_at", "update_at", "is_deleted")
+
+
+class UserBookedSerializer(serializers.ModelSerializer):
+    event = EventsSerializer()
+
+    class Meta:
+        model = UserBooked
+        fields = ("id", "resident", "event", "booking_date", "date_of_payment", "cancellation_date",)
+        read_only = ("id",)
