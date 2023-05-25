@@ -84,11 +84,11 @@ class Events(models.Model):
         null=False,
         default=False
     )
-    create_at = models.DateTimeField(
+    created_at = models.DateTimeField(
         auto_now_add=True,
         verbose_name="Дата добавления"
     )
-    update_at = models.DateTimeField(
+    updated_at = models.DateTimeField(
         auto_now=True,
         verbose_name="Дата обнавления"
     )
@@ -139,3 +139,4 @@ class UserBooked(models.Model):
 
     def __str__(self):
         return f"resident id-{self.resident} booking in events id-{self.event}"
+
