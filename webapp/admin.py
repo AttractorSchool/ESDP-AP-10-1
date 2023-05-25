@@ -5,11 +5,11 @@ from webapp.models import Events, Cities, TypeEvents, News, Image, UserBooked
 
 # Register your models here.
 class EventsAdmin(admin.ModelAdmin):
-    list_display = ("id", "description", "create_at")
-    list_filter = ("id", "description", "create_at")
+    list_display = ("id", "description", "created_at")
+    list_filter = ("id", "description", "created_at")
     search_fields = ("description", "place")
-    filter = ("description", "place", "create_at")
-    readonly_fields = ("id", "create_at")
+    filter = ("description", "place", "created_at")
+    readonly_fields = ("id", "created_at")
 
 
 class CitiesAdmin(admin.ModelAdmin):
