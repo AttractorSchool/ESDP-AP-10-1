@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth import get_user_model
 
+
 class Account(AbstractUser):
     first_name = models.CharField(
         max_length=30,
@@ -40,13 +41,17 @@ class Account(AbstractUser):
         to='webapp.Cities',
         related_name='сities_for_account',
         on_delete=models.CASCADE,
-        verbose_name="Город"
+        verbose_name="Город",
+        null=True,
+        blank=True
     )
     status = models.ForeignKey(
         to='accounts.Status',
         related_name='status_for_account',
         on_delete=models.CASCADE,
-        verbose_name="Статус"
+        verbose_name="Статус",
+        null=True,
+        blank=True
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -60,7 +65,9 @@ class Account(AbstractUser):
         to='accounts.FamilyStatus',
         related_name='family_status_for_account',
         on_delete=models.CASCADE,
-        verbose_name="Семейный статус"
+        verbose_name="Семейный статус",
+        null=True,
+        blank=True
     )
     first_visit_app = models.BooleanField(
         verbose_name="Первое посещение приложения",
@@ -88,7 +95,9 @@ class Account(AbstractUser):
         to='accounts.Role',
         related_name='role_for_account',
         on_delete=models.CASCADE,
-        verbose_name="Роль"
+        verbose_name="Роль",
+        null=True,
+        blank=True
     )
     email = models.EmailField(
         verbose_name="Электронная почта",
@@ -101,11 +110,11 @@ class Account(AbstractUser):
         max_length=30
     )
 
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-    def __str__(self):
-        return self.username
+    # USERNAME_FIELD = "email"
+    # REQUIRED_FIELDS = ['username',]
+    #
+    # def __str__(self):
+    #     return self.username
 
     class Meta:
         verbose_name = "Профиль"
