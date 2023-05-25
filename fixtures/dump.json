@@ -1,760 +1,1193 @@
 [
-  {
-    "model": "auth.permission",
-    "pk": 1,
-    "fields": {
-      "name": "Can add log entry",
-      "content_type": 1,
-      "codename": "add_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 2,
-    "fields": {
-      "name": "Can change log entry",
-      "content_type": 1,
-      "codename": "change_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 3,
-    "fields": {
-      "name": "Can delete log entry",
-      "content_type": 1,
-      "codename": "delete_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 4,
-    "fields": {
-      "name": "Can view log entry",
-      "content_type": 1,
-      "codename": "view_logentry"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 5,
-    "fields": {
-      "name": "Can add permission",
-      "content_type": 2,
-      "codename": "add_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 6,
-    "fields": {
-      "name": "Can change permission",
-      "content_type": 2,
-      "codename": "change_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 7,
-    "fields": {
-      "name": "Can delete permission",
-      "content_type": 2,
-      "codename": "delete_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 8,
-    "fields": {
-      "name": "Can view permission",
-      "content_type": 2,
-      "codename": "view_permission"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 9,
-    "fields": {
-      "name": "Can add group",
-      "content_type": 3,
-      "codename": "add_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 10,
-    "fields": {
-      "name": "Can change group",
-      "content_type": 3,
-      "codename": "change_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 11,
-    "fields": {
-      "name": "Can delete group",
-      "content_type": 3,
-      "codename": "delete_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 12,
-    "fields": {
-      "name": "Can view group",
-      "content_type": 3,
-      "codename": "view_group"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 13,
-    "fields": {
-      "name": "Can add user",
-      "content_type": 4,
-      "codename": "add_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 14,
-    "fields": {
-      "name": "Can change user",
-      "content_type": 4,
-      "codename": "change_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 15,
-    "fields": {
-      "name": "Can delete user",
-      "content_type": 4,
-      "codename": "delete_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 16,
-    "fields": {
-      "name": "Can view user",
-      "content_type": 4,
-      "codename": "view_user"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 17,
-    "fields": {
-      "name": "Can add content type",
-      "content_type": 5,
-      "codename": "add_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 18,
-    "fields": {
-      "name": "Can change content type",
-      "content_type": 5,
-      "codename": "change_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 19,
-    "fields": {
-      "name": "Can delete content type",
-      "content_type": 5,
-      "codename": "delete_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 20,
-    "fields": {
-      "name": "Can view content type",
-      "content_type": 5,
-      "codename": "view_contenttype"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 21,
-    "fields": {
-      "name": "Can add session",
-      "content_type": 6,
-      "codename": "add_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 22,
-    "fields": {
-      "name": "Can change session",
-      "content_type": 6,
-      "codename": "change_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 23,
-    "fields": {
-      "name": "Can delete session",
-      "content_type": 6,
-      "codename": "delete_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 24,
-    "fields": {
-      "name": "Can view session",
-      "content_type": 6,
-      "codename": "view_session"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 25,
-    "fields": {
-      "name": "Can add events",
-      "content_type": 7,
-      "codename": "add_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 26,
-    "fields": {
-      "name": "Can change events",
-      "content_type": 7,
-      "codename": "change_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 27,
-    "fields": {
-      "name": "Can delete events",
-      "content_type": 7,
-      "codename": "delete_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 28,
-    "fields": {
-      "name": "Can view events",
-      "content_type": 7,
-      "codename": "view_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 29,
-    "fields": {
-      "name": "Can add cities",
-      "content_type": 8,
-      "codename": "add_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 30,
-    "fields": {
-      "name": "Can change cities",
-      "content_type": 8,
-      "codename": "change_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 31,
-    "fields": {
-      "name": "Can delete cities",
-      "content_type": 8,
-      "codename": "delete_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 32,
-    "fields": {
-      "name": "Can view cities",
-      "content_type": 8,
-      "codename": "view_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 33,
-    "fields": {
-      "name": "Can add type events",
-      "content_type": 9,
-      "codename": "add_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 34,
-    "fields": {
-      "name": "Can change type events",
-      "content_type": 9,
-      "codename": "change_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 35,
-    "fields": {
-      "name": "Can delete type events",
-      "content_type": 9,
-      "codename": "delete_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 36,
-    "fields": {
-      "name": "Can view type events",
-      "content_type": 9,
-      "codename": "view_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 37,
-    "fields": {
-      "name": "Can add image",
-      "content_type": 10,
-      "codename": "add_image"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 38,
-    "fields": {
-      "name": "Can change image",
-      "content_type": 10,
-      "codename": "change_image"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 39,
-    "fields": {
-      "name": "Can delete image",
-      "content_type": 10,
-      "codename": "delete_image"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 40,
-    "fields": {
-      "name": "Can view image",
-      "content_type": 10,
-      "codename": "view_image"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 41,
-    "fields": {
-      "name": "Can add Новость",
-      "content_type": 11,
-      "codename": "add_news"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 42,
-    "fields": {
-      "name": "Can change Новость",
-      "content_type": 11,
-      "codename": "change_news"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 43,
-    "fields": {
-      "name": "Can delete Новость",
-      "content_type": 11,
-      "codename": "delete_news"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 44,
-    "fields": {
-      "name": "Can view Новость",
-      "content_type": 11,
-      "codename": "view_news"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 45,
-    "fields": {
-      "name": "Can add cities",
-      "content_type": 7,
-      "codename": "add_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 46,
-    "fields": {
-      "name": "Can change cities",
-      "content_type": 7,
-      "codename": "change_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 47,
-    "fields": {
-      "name": "Can delete cities",
-      "content_type": 7,
-      "codename": "delete_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 48,
-    "fields": {
-      "name": "Can view cities",
-      "content_type": 7,
-      "codename": "view_cities"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 49,
-    "fields": {
-      "name": "Can add type events",
-      "content_type": 8,
-      "codename": "add_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 50,
-    "fields": {
-      "name": "Can change type events",
-      "content_type": 8,
-      "codename": "change_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 51,
-    "fields": {
-      "name": "Can delete type events",
-      "content_type": 8,
-      "codename": "delete_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 52,
-    "fields": {
-      "name": "Can view type events",
-      "content_type": 8,
-      "codename": "view_typeevents"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 53,
-    "fields": {
-      "name": "Can add events",
-      "content_type": 9,
-      "codename": "add_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 54,
-    "fields": {
-      "name": "Can change events",
-      "content_type": 9,
-      "codename": "change_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 55,
-    "fields": {
-      "name": "Can delete events",
-      "content_type": 9,
-      "codename": "delete_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 56,
-    "fields": {
-      "name": "Can view events",
-      "content_type": 9,
-      "codename": "view_events"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 57,
-    "fields": {
-      "name": "Can add user booked",
-      "content_type": 12,
-      "codename": "add_userbooked"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 58,
-    "fields": {
-      "name": "Can change user booked",
-      "content_type": 12,
-      "codename": "change_userbooked"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 59,
-    "fields": {
-      "name": "Can delete user booked",
-      "content_type": 12,
-      "codename": "delete_userbooked"
-    }
-  },
-  {
-    "model": "auth.permission",
-    "pk": 60,
-    "fields": {
-      "name": "Can view user booked",
-      "content_type": 12,
-      "codename": "view_userbooked"
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 1,
-    "fields": {
-      "password": "pbkdf2_sha256$390000$Pfa7l6jMiWap1icfBDBPxR$yU/U/qVYV511unLn8+k8MQylNLEk8CwfpqhDpm9AZjQ=",
-      "last_login": "2023-05-17T12:35:36.107Z",
-      "is_superuser": true,
-      "username": "bob",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2023-05-16T12:40:21.652Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "auth.user",
-    "pk": 2,
-    "fields": {
-      "password": "pbkdf2_sha256$390000$TxQd2e038nzl6RxPRnKX5n$5gEWrCmcO4GwQe3TQ+YH5bVE7wxmljJFEAd1PIJbRlE=",
-      "last_login": "2023-05-22T12:45:07.051Z",
-      "is_superuser": true,
-      "username": "admin",
-      "first_name": "",
-      "last_name": "",
-      "email": "",
-      "is_staff": true,
-      "is_active": true,
-      "date_joined": "2023-05-22T12:44:46.717Z",
-      "groups": [],
-      "user_permissions": []
-    }
-  },
-  {
-    "model": "webapp.cities",
-    "pk": 1,
-    "fields": {
-      "citi_name": "Алматы"
-    }
-  },
-  {
-    "model": "webapp.cities",
-    "pk": 2,
-    "fields": {
-      "citi_name": "Астана"
-    }
-  },
-  {
-    "model": "webapp.typeevents",
-    "pk": 1,
-    "fields": {
-      "events_name": "Гольф"
-    }
-  },
-  {
-    "model": "webapp.typeevents",
-    "pk": 2,
-    "fields": {
-      "events_name": "Скачки"
-    }
-  },
-  {
-    "model": "webapp.typeevents",
-    "pk": 3,
-    "fields": {
-      "events_name": "бизнес тренинг"
-    }
-  },
-  {
-    "model": "webapp.events",
-    "pk": 1,
-    "fields": {
-      "name": "Скачки",
-      "cities": 1,
-      "type_events": 2,
-      "events_at": "2023-05-11T15:00:00Z",
-      "sponsor": 1,
-      "number_of_seats": 10,
-      "start_register_at": "2023-05-05T13:05:43Z",
-      "end_register_at": "2023-05-10T13:05:45Z",
-      "description": "Конные скачки различаются по формату, и во многих странах сложились свои особые традиции. Вариации включают ограничение забегов для определённых пород, бег с препятствиями, бег на разные расстояния, бег по разным дорожкам и бег в разных походках.\r\n\r\nВ то время как часть скачек проводится ради спортивного интереса, значительная часть скачек связана с азартными играми, или другими экономическими факторами[2]. В 2008 году мировой рынок конных скачек составил сумму около 115 миллиардов долларов США[3].\r\n\r\nВ связи с тем, что конные скачки являются соревнованием именно лошадей, а не всадников, конные скачки не включаются в программу конного спорта на Олимпийских играх, хотя пресса нередко выдвигала предложения признать скачки олимпийским видом спорта[4].\r\n\r\nСамой результативной лошадью, когда-либо участвовавшей в конных скачках, считается венгерская верховая кобыла Кинчем (род. 1874 г.), одержавшая в 70-х годах XIX века недосягаемое для других количество побед в количестве 54 и не проигравшая ни одного заезда[5].",
-      "place": "центральный ипподром алматы2",
-      "price": "300000.00",
-      "is_deleted": false,
-      "create_at": "2023-05-16T13:12:10.348Z",
-      "update_at": "2023-05-22T12:47:55.696Z",
-      "photo": "user_pic/d_L7zAb1o-U.jpg"
-    }
-  },
-  {
-    "model": "webapp.events",
-    "pk": 2,
-    "fields": {
-      "name": "footbol",
-      "cities": 1,
-      "type_events": 2,
-      "events_at": "2023-05-22T12:45:57Z",
-      "sponsor": 2,
-      "number_of_seats": 26,
-      "start_register_at": "2023-05-25T12:46:21Z",
-      "end_register_at": "2023-05-23T12:46:49Z",
-      "description": "Play footbol with your friends",
-      "place": "Almaty arena",
-      "price": "100000.00",
-      "is_deleted": false,
-      "create_at": "2023-05-22T12:47:34.770Z",
-      "update_at": "2023-05-22T12:47:34.770Z",
-      "photo": "user_pic/Градиент_2560x1600.jpg"
-    }
-  },
-  {
-    "model": "webapp.userbooked",
-    "pk": 1,
-    "fields": {
-      "resident": 2,
-      "event": 1,
-      "booking_date": "2023-05-22T12:48:12Z",
-      "date_of_payment": null,
-      "cancellation_date": null
-    }
-  },
-  {
-    "model": "webapp.image",
-    "pk": 1,
-    "fields": {
-      "image": "user_pic/almaty.jpg",
-      "user": 1,
-      "created_at": "2023-05-17T12:46:28.978Z"
-    }
-  },
-  {
-    "model": "webapp.image",
-    "pk": 2,
-    "fields": {
-      "image": "user_pic/almaty_Vw4Ws5q.jpg",
-      "user": 1,
-      "created_at": "2023-05-17T12:46:28.985Z"
-    }
-  },
-  {
-    "model": "webapp.image",
-    "pk": 3,
-    "fields": {
-      "image": "user_pic/almaty_10OK2SB.jpg",
-      "user": 1,
-      "created_at": "2023-05-17T12:46:28.985Z"
-    }
-  },
-  {
-    "model": "webapp.image",
-    "pk": 4,
-    "fields": {
-      "image": "user_pic/camera.jpg",
-      "user": 1,
-      "created_at": "2023-05-17T12:49:09.346Z"
-    }
-  },
-  {
-    "model": "webapp.image",
-    "pk": 5,
-    "fields": {
-      "image": "user_pic/NY.jpg",
-      "user": 1,
-      "created_at": "2023-05-18T02:48:47.418Z"
-    }
-  },
-  {
-    "model": "webapp.news",
-    "pk": 1,
-    "fields": {
-      "name": "Открытие нового офиса в г. Астана",
-      "user": 1,
-      "cities": 1,
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam, voluptatum tempore praesentium doloribus vero incidunt architecto cupiditate, laborum vitae fuga consectetur neque repellat, porro atque facilis quam? Error dolor vitae deleniti voluptatum! Autem ex rem alias dolore, eaque totam voluptatem ipsam laborum corrupti, ad numquam dolores eveniet, id distinctio consectetur quos perspiciatis expedita omnis natus sed facere? Officiis ipsa reiciendis nobis ea itaque voluptatibus nulla consectetur quae illum mollitia officia, recusandae vero? Similique veritatis cum facere incidunt nihil dolorem autem illum, ex repellat? Tempora vero consequuntur quas, perferendis sapiente corrupti beatae temporibus, facere in molestias eaque quaerat incidunt eligendi omnis labore, nulla assumenda! Reiciendis atque culpa cupiditate, ullam iusto at error aliquid autem mollitia necessitatibus unde dignissimos",
-      "created_at": "2023-05-17T12:46:39.487Z",
-      "updated_at": "2023-05-17T12:46:39.487Z",
-      "is_deleted": false,
-      "photo": [
-        3
-      ]
-    }
-  },
-  {
-    "model": "webapp.news",
-    "pk": 2,
-    "fields": {
-      "name": "Анонс мероприятий на лето 2023",
-      "user": 1,
-      "cities": 1,
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Pariatur deleniti quas molestiae, quis distinctio, animi sunt eaque aperiam alias magnam libero laudantium suscipit quisquam dicta enim, sed eius cupiditate quibusdam mollitia veritatis quae culpa nam fuga. Hic adipisci libero minima inventore esse tempore perspiciatis voluptas odio fuga. Beatae, vel. Labore sint quis quam enim odio, fugiat dolorum autem doloribus nihil vitae sapiente, deleniti, consequatur voluptas similique quod ducimus perferendis optio cumque! Quis veritatis ab, dignissimos ullam perferendis labore minus et non sapiente dolore nisi ducimus totam distinctio neque placeat unde repellendus itaque animi delectus impedit omnis architecto, nihil quo. Error beatae soluta quidem cum similique asperiores, non nulla ipsa exercitationem expedita maiores at vero ipsam voluptatibus delectus. Rerum in laborum quam perferendis nesciunt esse recusandae molestiae adipisci labore ipsam distinctio fugit, alias veniam voluptate est blanditiis, delectus soluta sequi consequatur unde at ducimus iste sapiente laudantium. Nesciunt inventore dicta obcaecati illo quisquam consequuntur! Ut at eligendi, officiis, qui id nemo sint odio sapiente quaerat, ipsam voluptatum minima sit aperiam ullam non. Quaerat odio, magni a error nobis aspernatur modi, sed accusamus ipsa praesentium natus rem voluptates totam veniam quas tenetur consequuntur voluptas quasi laborum fugit, provident deserunt nesciunt quos aperiam! Necessitatibus repudiandae corrupti eos, asperiores, illum vitae officiis natus amet hic recusandae quis, totam eaque labore. Quidem quo laudantium illo animi ad sunt voluptatum aperiam totam accusamus non suscipit omnis dolor odio consequatur perferendis, molestiae blanditiis iste itaque consectetur. Adipisci cumque omnis aspernatur ab dicta eveniet! Debitis magni reprehenderit illum sapiente atque voluptatum possimus accusamus harum quas hic, consequatur enim fugit pariatur dolor adipisci error aliquam vitae voluptate. Quaerat voluptatibus soluta praesentium, illum fugiat ipsam tempore mollitia, facilis vero repellat dolor. Iusto laudantium commodi culpa aperiam,",
-      "created_at": "2023-05-17T12:49:13.558Z",
-      "updated_at": "2023-05-17T12:49:13.558Z",
-      "is_deleted": false,
-      "photo": [
-        3,
-        4
-      ]
-    }
-  },
-  {
-    "model": "webapp.news",
-    "pk": 3,
-    "fields": {
-      "name": "Investment Opportunities in Kazakhstan",
-      "user": 1,
-      "cities": 1,
-      "description": "Kazakhstan is offering a number of lucrative investment opportunities under its plan to privatize 106 companies under the Sovereign Wealth Fund of Kazakhstan. Samruk Kazyna invited investors both local and foreign to buy shares in the 106 companies that are part of the second phase of the privatization scheme. This is a continuation of what was started in the 1990s when the country was trying to introduce a free market economy.\r\n\r\nThe government had tried to run these companies on its own as it created an open market economy but it has since run into hurdles like lack of enough funding to fully capitalize the enterprises as well as the technical know-how. This has prompted Samruk Kazyna to invite investors to buy shares and help in the management and capitalization of the enterprises.\r\n\r\nThe estimated total value of the companies it put at slightly over 100 billion dollars, up from 93 billion which was the estimate in July. Right now there are 600 companies under the Sovereign wealth Fund of Kazakhstan. And of these, some of the opportunities are in the following areas.\r\n\r\nOil\r\nKazMunayGas oil and Gas company is one of the companies that is up for sale. It has 2 oil refineries and manages a number of subsidiary companies which include helicopter services, shipping, and tankers as well as catering service. The oil industry in Kazakhstan has a lot of potential which is why companies like Chevron are already investing in it.\r\n\r\nTransportation\r\nAlso on sale is the operator of the railway company. The government has been funding Kazakhstan Temir Zholy but is now ready to sell it off along with close to 100 percent f its assets to an investor who is ready to operate it in accordance to the agreements with Samruk Kazyna. There are about 15 thousand kilometers of rail to be managed. With a current revenue at close to 4 billion dollars. Some expansion work has already been carried out along with production of coaches and engines. Even more, revenue can be collected if the high-speed line receives funding from an investor.",
-      "created_at": "2023-05-18T02:49:09.171Z",
-      "updated_at": "2023-05-18T02:49:09.171Z",
-      "is_deleted": false,
-      "photo": [
-        1
-      ]
-    }
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2023-05-25T08:41:52.852Z",
+    "user": 20,
+    "content_type": 6,
+    "object_id": "1",
+    "object_repr": "Almaty",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
   }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2023-05-25T08:41:57.650Z",
+    "user": 20,
+    "content_type": 6,
+    "object_id": "2",
+    "object_repr": "Astana",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2023-05-25T08:46:41.756Z",
+    "user": 20,
+    "content_type": 9,
+    "object_id": "1",
+    "object_repr": "вебинар",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2023-05-25T08:46:50.431Z",
+    "user": 20,
+    "content_type": 9,
+    "object_id": "2",
+    "object_repr": "бизнес-завтрак",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2023-05-25T08:47:08.863Z",
+    "user": 20,
+    "content_type": 9,
+    "object_id": "3",
+    "object_repr": "конференция",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2023-05-25T08:47:27.677Z",
+    "user": 20,
+    "content_type": 9,
+    "object_id": "4",
+    "object_repr": "форум",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2023-05-25T08:49:23.530Z",
+    "user": 20,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "Event SAP Discovery Day Almaty 2023 - started 2023-05-30 08:47:45+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2023-05-25T08:52:08.061Z",
+    "user": 20,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "Event Премия HR-бренд Центральная Азия - started 2023-06-10 09:50:47+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2023-05-25T08:53:54.489Z",
+    "user": 20,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "Event Азиатско-Европейский Форум - started 2023-06-16 08:52:44+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2023-05-25T08:55:06.017Z",
+    "user": 20,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "Фотография root - 2023-05-25 08:55:06.015055+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2023-05-25T08:55:09.741Z",
+    "user": 20,
+    "content_type": 11,
+    "object_id": "1",
+    "object_repr": "SAP Discovery Day Almaty 2023 - 1 июня 2023 года в отеле Ритц-Карлтон, Алматы, Казахстан, состоится крупнейшее IT-событие для бизнеса в Казахстане — SAP Discovery Day Almaty 2023. Мероприятие соберет ",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2023-05-25T08:56:01.363Z",
+    "user": 20,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "Фотография root - 2023-05-25 08:56:01.361507+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2023-05-25T08:56:21.617Z",
+    "user": 20,
+    "content_type": 11,
+    "object_id": "2",
+    "object_repr": "100% увеличение международной столичной выставки пищепрома в Казахстане - В Астане вот уже в 23-й раз распахнёт свои двери Казахстанская международная выставка по пищевой промышленности InterFood Asta",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2023-05-25T08:57:47.717Z",
+    "user": 20,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "Фотография root - 2023-05-25 08:57:47.714865+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2023-05-25T08:57:50.581Z",
+    "user": 20,
+    "content_type": 11,
+    "object_id": "3",
+    "object_repr": "инновационные и социально-значимые проекты на форуме Business WIRE Forum - В рамках Программы Shell LiveWIRE завершился форум для казахстанских предпринимателей Business WIRE Forum\r\nЕБРР и Шелл Казахс",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2023-05-25T09:01:15.077Z",
+    "user": 20,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "Фотография root - 2023-05-25 09:01:15.075206+00:00",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2023-05-25T09:01:32.848Z",
+    "user": 20,
+    "content_type": 12,
+    "object_id": "21",
+    "object_repr": "user",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 1,
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": 1,
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 2,
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": 1,
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 3,
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": 1,
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 4,
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": 1,
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 5,
+  "fields": {
+    "name": "Can add permission",
+    "content_type": 2,
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 6,
+  "fields": {
+    "name": "Can change permission",
+    "content_type": 2,
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 7,
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": 2,
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 8,
+  "fields": {
+    "name": "Can view permission",
+    "content_type": 2,
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 9,
+  "fields": {
+    "name": "Can add group",
+    "content_type": 3,
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 10,
+  "fields": {
+    "name": "Can change group",
+    "content_type": 3,
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 11,
+  "fields": {
+    "name": "Can delete group",
+    "content_type": 3,
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 12,
+  "fields": {
+    "name": "Can view group",
+    "content_type": 3,
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 13,
+  "fields": {
+    "name": "Can add content type",
+    "content_type": 4,
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 14,
+  "fields": {
+    "name": "Can change content type",
+    "content_type": 4,
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 15,
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": 4,
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 16,
+  "fields": {
+    "name": "Can view content type",
+    "content_type": 4,
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 17,
+  "fields": {
+    "name": "Can add session",
+    "content_type": 5,
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 18,
+  "fields": {
+    "name": "Can change session",
+    "content_type": 5,
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 19,
+  "fields": {
+    "name": "Can delete session",
+    "content_type": 5,
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 20,
+  "fields": {
+    "name": "Can view session",
+    "content_type": 5,
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 21,
+  "fields": {
+    "name": "Can add cities",
+    "content_type": 6,
+    "codename": "add_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 22,
+  "fields": {
+    "name": "Can change cities",
+    "content_type": 6,
+    "codename": "change_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 23,
+  "fields": {
+    "name": "Can delete cities",
+    "content_type": 6,
+    "codename": "delete_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 24,
+  "fields": {
+    "name": "Can view cities",
+    "content_type": 6,
+    "codename": "view_cities"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 25,
+  "fields": {
+    "name": "Can add events",
+    "content_type": 7,
+    "codename": "add_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 26,
+  "fields": {
+    "name": "Can change events",
+    "content_type": 7,
+    "codename": "change_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 27,
+  "fields": {
+    "name": "Can delete events",
+    "content_type": 7,
+    "codename": "delete_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 28,
+  "fields": {
+    "name": "Can view events",
+    "content_type": 7,
+    "codename": "view_events"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 29,
+  "fields": {
+    "name": "Can add image",
+    "content_type": 8,
+    "codename": "add_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 30,
+  "fields": {
+    "name": "Can change image",
+    "content_type": 8,
+    "codename": "change_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 31,
+  "fields": {
+    "name": "Can delete image",
+    "content_type": 8,
+    "codename": "delete_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 32,
+  "fields": {
+    "name": "Can view image",
+    "content_type": 8,
+    "codename": "view_image"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 33,
+  "fields": {
+    "name": "Can add type events",
+    "content_type": 9,
+    "codename": "add_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 34,
+  "fields": {
+    "name": "Can change type events",
+    "content_type": 9,
+    "codename": "change_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 35,
+  "fields": {
+    "name": "Can delete type events",
+    "content_type": 9,
+    "codename": "delete_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 36,
+  "fields": {
+    "name": "Can view type events",
+    "content_type": 9,
+    "codename": "view_typeevents"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 37,
+  "fields": {
+    "name": "Can add user booked",
+    "content_type": 10,
+    "codename": "add_userbooked"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 38,
+  "fields": {
+    "name": "Can change user booked",
+    "content_type": 10,
+    "codename": "change_userbooked"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 39,
+  "fields": {
+    "name": "Can delete user booked",
+    "content_type": 10,
+    "codename": "delete_userbooked"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 40,
+  "fields": {
+    "name": "Can view user booked",
+    "content_type": 10,
+    "codename": "view_userbooked"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 41,
+  "fields": {
+    "name": "Can add Новость",
+    "content_type": 11,
+    "codename": "add_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 42,
+  "fields": {
+    "name": "Can change Новость",
+    "content_type": 11,
+    "codename": "change_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 43,
+  "fields": {
+    "name": "Can delete Новость",
+    "content_type": 11,
+    "codename": "delete_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 44,
+  "fields": {
+    "name": "Can view Новость",
+    "content_type": 11,
+    "codename": "view_news"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 45,
+  "fields": {
+    "name": "Can add Профиль",
+    "content_type": 12,
+    "codename": "add_account"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 46,
+  "fields": {
+    "name": "Can change Профиль",
+    "content_type": 12,
+    "codename": "change_account"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 47,
+  "fields": {
+    "name": "Can delete Профиль",
+    "content_type": 12,
+    "codename": "delete_account"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 48,
+  "fields": {
+    "name": "Can view Профиль",
+    "content_type": 12,
+    "codename": "view_account"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add family status",
+    "content_type": 13,
+    "codename": "add_familystatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change family status",
+    "content_type": 13,
+    "codename": "change_familystatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete family status",
+    "content_type": 13,
+    "codename": "delete_familystatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view family status",
+    "content_type": 13,
+    "codename": "view_familystatus"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 53,
+  "fields": {
+    "name": "Can add role",
+    "content_type": 14,
+    "codename": "add_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 54,
+  "fields": {
+    "name": "Can change role",
+    "content_type": 14,
+    "codename": "change_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 55,
+  "fields": {
+    "name": "Can delete role",
+    "content_type": 14,
+    "codename": "delete_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 56,
+  "fields": {
+    "name": "Can view role",
+    "content_type": 14,
+    "codename": "view_role"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 57,
+  "fields": {
+    "name": "Can add status",
+    "content_type": 15,
+    "codename": "add_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 58,
+  "fields": {
+    "name": "Can change status",
+    "content_type": 15,
+    "codename": "change_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 59,
+  "fields": {
+    "name": "Can delete status",
+    "content_type": 15,
+    "codename": "delete_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 60,
+  "fields": {
+    "name": "Can view status",
+    "content_type": 15,
+    "codename": "view_status"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 61,
+  "fields": {
+    "name": "Can add register admin user",
+    "content_type": 16,
+    "codename": "add_registeradminuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 62,
+  "fields": {
+    "name": "Can change register admin user",
+    "content_type": 16,
+    "codename": "change_registeradminuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 63,
+  "fields": {
+    "name": "Can delete register admin user",
+    "content_type": 16,
+    "codename": "delete_registeradminuser"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 64,
+  "fields": {
+    "name": "Can view register admin user",
+    "content_type": 16,
+    "codename": "view_registeradminuser"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 1,
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 2,
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 3,
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 4,
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 5,
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 6,
+  "fields": {
+    "app_label": "webapp",
+    "model": "cities"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 7,
+  "fields": {
+    "app_label": "webapp",
+    "model": "events"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 8,
+  "fields": {
+    "app_label": "webapp",
+    "model": "image"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 9,
+  "fields": {
+    "app_label": "webapp",
+    "model": "typeevents"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 10,
+  "fields": {
+    "app_label": "webapp",
+    "model": "userbooked"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 11,
+  "fields": {
+    "app_label": "webapp",
+    "model": "news"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 12,
+  "fields": {
+    "app_label": "accounts",
+    "model": "account"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 13,
+  "fields": {
+    "app_label": "accounts",
+    "model": "familystatus"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 14,
+  "fields": {
+    "app_label": "accounts",
+    "model": "role"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 15,
+  "fields": {
+    "app_label": "accounts",
+    "model": "status"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 16,
+  "fields": {
+    "app_label": "accounts",
+    "model": "registeradminuser"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "52o1tojvioigfbszk9o5w0d7y8kq9zci",
+  "fields": {
+    "session_data": ".eJxVjEEOwiAQRe_C2pCBQmFcuu8ZGmCmUjWQlHZlvLtt0oVu33v_v8UYtjWPW-NlnElchQZx-YUxpCeXw9AjlHuVqZZ1maM8EnnaJodK_Lqd7d9BDi3vazUBKIREHiaHkXqb2MCElgwi2N4na5wjBbwDx4G1AtLYsY-gOkLx-QLy_jd-:1q26Wu:kMQ5IFCR8L_LgHDJ9pmQTn2huwL4y5-nrzwp2J4oT40",
+    "expire_date": "2023-06-08T08:41:04.135Z"
+  }
+},
+{
+  "model": "webapp.cities",
+  "pk": 1,
+  "fields": {
+    "citi_name": "Almaty"
+  }
+},
+{
+  "model": "webapp.cities",
+  "pk": 2,
+  "fields": {
+    "citi_name": "Astana"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 1,
+  "fields": {
+    "events_name": "вебинар"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 2,
+  "fields": {
+    "events_name": "бизнес-завтрак"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 3,
+  "fields": {
+    "events_name": "конференция"
+  }
+},
+{
+  "model": "webapp.typeevents",
+  "pk": 4,
+  "fields": {
+    "events_name": "форум"
+  }
+},
+{
+  "model": "webapp.events",
+  "pk": 1,
+  "fields": {
+    "name": "SAP Discovery Day Almaty 2023",
+    "cities": 1,
+    "type_events": 4,
+    "events_at": "2023-05-30T08:47:45Z",
+    "sponsor": 20,
+    "number_of_seats": 50,
+    "start_register_at": "2023-05-25T18:00:00Z",
+    "end_register_at": "2023-05-29T18:00:00Z",
+    "description": "1 июня 2023 года в отеле Ритц-Карлтон, Алматы, Казахстан, состоится крупнейшее IT-событие для бизнеса в Казахстане — SAP Discovery Day Almaty 2023. Мероприятие соберет на единой площадке руководителей различных бизнес-направлений ведущих компаний из Казахстана, Таджикистана, Туркменистана и Кыргызстана.",
+    "place": "Rits Carlton",
+    "price": "100.00",
+    "is_deleted": false,
+    "created_at": "2023-05-25T08:49:23.520Z",
+    "updated_at": "2023-05-25T08:49:23.520Z",
+    "photo": "user_pic/almaty.jpg"
+  }
+},
+{
+  "model": "webapp.events",
+  "pk": 2,
+  "fields": {
+    "name": "Премия HR-бренд Центральная Азия",
+    "cities": 2,
+    "type_events": 3,
+    "events_at": "2023-06-10T09:50:47Z",
+    "sponsor": 20,
+    "number_of_seats": 100,
+    "start_register_at": "2023-05-25T08:50:56Z",
+    "end_register_at": "2023-06-08T08:51:10Z",
+    "description": "Премия HR-бренд Центральная Азия — самая известная и авторитетная награда для HR-профессионалов Казахстана, Узбекистана и Кыргызстана. Каждый год HeadHunter предоставляет работодателям Центральной Азии возможность рассказать о своих HR-практиках и получить награду за лучшие из них в рамках Премии HR-бренд Центральная Азия.\r\n\r\nВ этом году Премия отмечает свой первый юбилей. За десять лет она стала своеобразным «Оскаром» среди HR-команд. Участие в Премии помогает вывести работу с брендом работодателя на новый уровень, поддержать имидж, привлечь новые кадры, заинтересовать рынок и поддержать вовлечённость действующих сотрудников. За звание лучшего работодателя Центральной Азии поборются 29 казахстанских, 7 узбекистанских и 3 кыргызстанских компании.",
+    "place": "Holliday Inn",
+    "price": "10000.00",
+    "is_deleted": false,
+    "created_at": "2023-05-25T08:52:08.057Z",
+    "updated_at": "2023-05-25T08:52:08.057Z",
+    "photo": "user_pic/NY.jpg"
+  }
+},
+{
+  "model": "webapp.events",
+  "pk": 3,
+  "fields": {
+    "name": "Азиатско-Европейский Форум",
+    "cities": 1,
+    "type_events": 4,
+    "events_at": "2023-06-16T08:52:44Z",
+    "sponsor": 20,
+    "number_of_seats": 100,
+    "start_register_at": "2023-05-25T08:52:52Z",
+    "end_register_at": "2023-06-10T08:53:05Z",
+    "description": "ЮНЕСО уделяет особо значение объединению усилий в области достижения Целей Устойчивого Развития и в этом вопросе ключевая роль отводится движению Клубов ЮНЕСКО, которое объединяет большую часть гражданского общества и делает доступной и понятной обывателям Повестку дня ООН до 2030 года. Текущая пандемия вновь доказала важность и нужность проявления гражданской солидарности, которая в полной мере отражается в мисии и активностях движения Клубов ЮНЕСКО",
+    "place": "Royal Tulip",
+    "price": "15000.00",
+    "is_deleted": false,
+    "created_at": "2023-05-25T08:53:54.484Z",
+    "updated_at": "2023-05-25T08:53:54.484Z",
+    "photo": "user_pic/default_user_pic.jpeg"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 1,
+  "fields": {
+    "image": "user_pic/road.jpg",
+    "user": 20,
+    "created_at": "2023-05-25T08:55:06.015Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 2,
+  "fields": {
+    "image": "user_pic/river.jpeg",
+    "user": 20,
+    "created_at": "2023-05-25T08:56:01.361Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 3,
+  "fields": {
+    "image": "user_pic/relax.jpg",
+    "user": 20,
+    "created_at": "2023-05-25T08:57:47.714Z"
+  }
+},
+{
+  "model": "webapp.image",
+  "pk": 4,
+  "fields": {
+    "image": "user_pic/face.jpg",
+    "user": 20,
+    "created_at": "2023-05-25T09:01:15.075Z"
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 1,
+  "fields": {
+    "name": "SAP Discovery Day Almaty 2023",
+    "user": 20,
+    "cities": 1,
+    "description": "1 июня 2023 года в отеле Ритц-Карлтон, Алматы, Казахстан, состоится крупнейшее IT-событие для бизнеса в Казахстане — SAP Discovery Day Almaty 2023. Мероприятие соберет на единой площадке руководителей различных бизнес-направлений ведущих компаний из Казахстана, Таджикистана, Туркменистана и Кыргызстана.",
+    "created_at": "2023-05-25T08:55:09.732Z",
+    "updated_at": "2023-05-25T08:55:09.732Z",
+    "is_deleted": false,
+    "photo": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 2,
+  "fields": {
+    "name": "100% увеличение международной столичной выставки пищепрома в Казахстане",
+    "user": 20,
+    "cities": 2,
+    "description": "В Астане вот уже в 23-й раз распахнёт свои двери Казахстанская международная выставка по пищевой промышленности InterFood Astana.\r\n\r\nС 31 мая по 2 июня более 70 компаний из Армении, Беларуси, Вьетнама, Германии, Казахстана, Китая, Малайзии, России и Узбекистана представят на своих стендах новинки продуктовых портфелей, современные технологии и инновации в области пищевой промышленности, напитков, ингредиентов и упаковки. В этом году выставка пройдет в новой локации – современном Назарбаев Центре. Новое месторасположение выставки неслучайно, расположение Назарбаев Центра в центре города обеспечивает легкий доступ для посетителей и участников выставки, что позволяет максимально эффективно использовать время и ресурсы на проведение бизнес-встреч и переговоров.",
+    "created_at": "2023-05-25T08:56:21.613Z",
+    "updated_at": "2023-05-25T08:56:21.613Z",
+    "is_deleted": false,
+    "photo": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.news",
+  "pk": 3,
+  "fields": {
+    "name": "инновационные и социально-значимые проекты на форуме Business WIRE Forum",
+    "user": 20,
+    "cities": 1,
+    "description": "В рамках Программы Shell LiveWIRE завершился форум для казахстанских предпринимателей Business WIRE Forum\r\nЕБРР и Шелл Казахстан рассказали о результатах обучающей программы для МСБ Business Bilim. 42 бизнес-проекта были запущены в Западном Казахстане и г. Нур-Султан\r\nПроект казахстанского бизнесмена занял второе место в глобальном конкурсе инноваций\r\nВ Нур-Султане планируется запуск завода по переработке пищевых отходов\r\nОперационный директор Arbuz.kz поделился прогнозами по рынку электронной коммерции\r\nГенеральный менеджер Glovo в Казахстане рассказал о будущем гиг-экономики\r\nКазахстанские предприниматели представили инновационные и социально-значимые проекты на онлайн-форуме Business WIRE Forum. Организаторы форума: Европейский Банк реконструкции и развития и компания Шелл Казахстан в рамках программы для начинающих предпринимателей Shell LiveWIRE при поддержке акимата Западно-Казахстанской области.",
+    "created_at": "2023-05-25T08:57:50.570Z",
+    "updated_at": "2023-05-25T08:57:50.570Z",
+    "is_deleted": false,
+    "photo": [
+      1,
+      3
+    ]
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 20,
+  "fields": {
+    "password": "pbkdf2_sha256$390000$pT6QtQWYlvbY3aB88YjGDu$pjLsXGfquTriSyuJN7us7hI+AY8hZExiJto8ykoMmSA=",
+    "last_login": "2023-05-25T08:41:04.133Z",
+    "is_superuser": true,
+    "username": "root",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2023-05-25T08:39:07.388Z",
+    "first_name": null,
+    "last_name": null,
+    "middle_name": null,
+    "birth_date": null,
+    "about_me": null,
+    "occupation": null,
+    "cities": null,
+    "status": null,
+    "created_at": "2023-05-25T08:39:07.484Z",
+    "updated_at": "2023-05-25T08:39:07.484Z",
+    "family_status": null,
+    "first_visit_app": true,
+    "likes_qty": null,
+    "dislikes_qty": null,
+    "avatar": null,
+    "role": null,
+    "email": "root@root.com",
+    "phone": "",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.account",
+  "pk": 21,
+  "fields": {
+    "password": "1234",
+    "last_login": null,
+    "is_superuser": false,
+    "username": "user",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2023-05-25T08:57:58Z",
+    "first_name": "User",
+    "last_name": "User",
+    "middle_name": "User",
+    "birth_date": "2023-05-25",
+    "about_me": "test",
+    "occupation": "test",
+    "cities": 1,
+    "status": null,
+    "created_at": "2023-05-25T09:01:32.836Z",
+    "updated_at": "2023-05-25T09:01:32.836Z",
+    "family_status": null,
+    "first_visit_app": true,
+    "likes_qty": 0,
+    "dislikes_qty": null,
+    "avatar": 4,
+    "role": null,
+    "email": "user@user.com",
+    "phone": "87778889977",
+    "groups": [],
+    "user_permissions": [
+      48
+    ]
+  }
+}
 ]
