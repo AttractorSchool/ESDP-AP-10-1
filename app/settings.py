@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     # "debug_toolbar",
     'django_bootstrap5',
     "webapp",
-    # "accounts",
+    "accounts",
     'rest_framework',
     # 'rest_framework.authtoken',
     'api'
@@ -85,7 +85,7 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'titany',
+        'NAME': 'titany_2',
         'USER': 'postgres',
         'PASSWORD': '1234',
         'HOST': 'localhost',
@@ -95,18 +95,18 @@ DATABASES = {
 
 
 STATIC_URL = "static/"
-# STATICFILES_DIRS = [
-#     BASE_DIR / "static"
-# ]
-# 
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-# MEDIA_URL = '/uploads/'
-# 
-# LOGIN_REDIRECT_URL = 'index'
-# LOGOUT_REDIRECT_URL = 'index'
-# LOGIN_URL = 'login'
-# 
-# AUTH_USER_MODEL = 'accounts.Account'
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/uploads/'
+
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
+LOGIN_URL = 'login'
+
+AUTH_USER_MODEL = 'accounts.Account'
 # 
 # # Password validation
 # # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
