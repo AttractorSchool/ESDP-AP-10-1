@@ -101,20 +101,22 @@ class Account(AbstractUser):
     )
     email = models.EmailField(
         verbose_name="Электронная почта",
+        null=True,
         unique=True,
         blank=False
     )
     phone = models.CharField(
         verbose_name="Номер телефона",
+        null=True,
         blank=True,
         max_length=30
     )
 
-    # USERNAME_FIELD = "email"
-    # REQUIRED_FIELDS = ['username',]
-    #
-    # def __str__(self):
-    #     return self.username
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = ['username']
+
+    def __str__(self):
+        return self.username
 
     class Meta:
         verbose_name = "Профиль"
@@ -136,3 +138,6 @@ class RegisterAdminUser(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Администратор'
     )
+
+    def __str__(self):
+        return f'{self.admin} created {self.resident}'
