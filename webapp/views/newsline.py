@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from webapp.models import Events, News, Image
+from webapp.models import Events, News
 
 class NewslineView(TemplateView):
     template_name = 'newsline.html'
