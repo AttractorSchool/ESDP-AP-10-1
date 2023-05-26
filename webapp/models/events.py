@@ -97,7 +97,6 @@ class Events(models.Model):
         blank=True,
         upload_to="user_pic",
         verbose_name="Фото мероприятия",
-        default="user_pic/default_user_pic.jpeg"
     )
 
     def delete(self, using=None, keep_parents=False):
@@ -139,4 +138,3 @@ class UserBooked(models.Model):
 
     def __str__(self):
         return f"resident id-{self.resident} booking in events id-{self.event}"
-
