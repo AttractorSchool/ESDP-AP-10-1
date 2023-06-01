@@ -9,7 +9,7 @@
     </tr>
     <tr>
         <td>администратора(admin)</td>
-        <td>root</td>
+        <td>root@root.com</td>
         <td>root</td>
     </tr>
     <tr>
