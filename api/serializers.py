@@ -26,8 +26,8 @@ class EventsSerializer(serializers.ModelSerializer):
         fields = ("id", "name", "cities", "type_events", "events_at",
                   "sponsor", "number_of_seats", "start_register_at", "end_register_at",
                   "resident_booked", "description", "place", "price",
-                  "is_deleted", "create_at", "update_at", "photo")
-        read_only = ("id", "create_at", "update_at", "is_deleted")
+                  "is_deleted", "created_at", "updated_at", "photo")
+        read_only = ("id", "created_at", "updated_at", "is_deleted")
 
 
 class NewsSerializer(serializers.ModelSerializer):
