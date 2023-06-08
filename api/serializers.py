@@ -39,11 +39,11 @@ class EventsSerializer(serializers.ModelSerializer):
             "place",
             "price",
             "is_deleted",
-            "create_at",
-            "update_at",
+            "created_at",
+            "updated_at",
             "photo",
         )
-        read_only = ("id", "create_at", "update_at", "is_deleted")
+        read_only = ("id", "created_at", "updated_at", "is_deleted")
 
 
 class NewsSerializer(serializers.ModelSerializer):
