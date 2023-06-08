@@ -1,25 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Newsline{% endblock %}
 {% block content %}
-{% for news in newsline %}
-<div class="news">
-    <div class="news_info">
-        <p>{{ news.type }}</p>
-        <p><a href="#">{{ news.name }}</a></p>
-        <p>Город: {{ news.cities }}</p>
-        <p class="news_description">Описание: {{ news.description }}</p>
-        {% if news.type == 'Event' %}
-            <img class="image" src="{{ news.photo.url }}" alt="{{ news.name }}-image">
-            <p>Дата мероприятия: {{ news.events_at }}</p>
-        {% elif news.type == 'News' %}
-            <div class="images">
-                {% for image in news.photo.all %}
-                    <img src="{{ image.image.url }}" alt="{{ news.name }}-image">
-                {% endfor %}
-            </div>
-            <p></p>
-        {% endif %}
-    </div>
-</div>
-{% endfor %}
+<h1>Newsline</h1>
+<div id="newsline"></div>
+{% endblock %}
+{% block script_block %}
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/newsline.js' %}"></script>
 {% endblock %}
