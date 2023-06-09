@@ -44,6 +44,16 @@ class EventApiView(APIView):
             response.status_code = 400
             return response
 
+    def delete(self, request, *args, **kwargs):
+        try:
+            objects = get_object_or_404(Events, pk=kwargs.get("pk"))
+            objects.delete()
+        except ObjectDoesNotExist:
+            Response({"error": "введите существующий pk"})
+        return Response({f"delte - {kwargs.get('pk')}": "мягкое удаление успешно выполнелось"})
+
+
+class EventCreateApiView(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         try:
@@ -56,11 +66,3 @@ class EventApiView(APIView):
             response = Response({'errors': "ошибка"})
             response.status_code = 400
             return response
-
-    def delete(self, request, *args, **kwargs):
-        try:
-            objects = get_object_or_404(Events, pk=kwargs.get("pk"))
-            objects.delete()
-        except ObjectDoesNotExist:
-            Response({"error": "введите существующий pk"})
-        return Response({f"delte - {kwargs.get('pk')}": "мягкое удаление успешно выполнелось"})
