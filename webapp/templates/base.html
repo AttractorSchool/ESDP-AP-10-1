@@ -7,6 +7,19 @@
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
+<nav class="hamburger_menu">
+    <div class="container">
+        <input id="hamburger_menu_toggle" type="checkbox"/>
+        <label class="hamburger_menu_btn" for="hamburger_menu_toggle">
+            <span></span>
+        </label>
+        <ul class="hamburger_menu_items">
+            <li><a class="hamburger_menu_item" href="#">AAAAA</a></li>
+            <li><a class="hamburger_menu_item" href="#">BBBBB</a></li>
+            <li><a class="hamburger_menu_item" href="#">CCCCC</a></li>
+        </ul>
+    </div>
+</nav>
 <nav class="navbar">
     <div class="container">
         <ul class="menu">
@@ -20,7 +33,7 @@
                 <a href="#">Календарь</a>
             </li>
             <li>
-                <a href="#">Кабинет</a>
+                <a href="http://127.0.0.1:8000/auth/profile/21">Кабинет</a>
             </li>
         </ul>
     </div>
@@ -29,5 +42,6 @@
     {% block content %}{% endblock %}
 </div>
 <div class="bottom_indent"></div>
+{% block script_block %}{% endblock %}
 </body>
 </html>
