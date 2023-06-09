@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from accounts.models import Review
-from webapp.models import Events, Cities, TypeEvents, News, UserBooked
+from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image
 
 
 class TypeEventsSerializer(serializers.ModelSerializer):
@@ -18,9 +18,16 @@ class CitiesSerializer(serializers.ModelSerializer):
         read_only = ("id",)
 
 
+class ImageSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Image
+        fields = ("id", "image", "user", "created_at")
+        read_only = ("id", "image", "user", "created_at")
+
+
 class EventsSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer(read_only=True)
-    type_events = TypeEventsSerializer(read_only=True)
+    cities = CitiesSerializer()
+    type_events = TypeEventsSerializer()
 
     class Meta:
         model = Events
@@ -47,7 +54,8 @@ class EventsSerializer(serializers.ModelSerializer):
 
 
 class NewsSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer(read_only=True)
+    cities = CitiesSerializer()
+    photo = ImageSerializer(many=True)
 
     class Meta:
         model = News
