@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Profile{% endblock %}
+{% block content %}
+
+<div class="news">
+    <div class="news_info">
+        <img class="image" src="{{ user_obj.avatar.image.url }}" alt="">
+        <p><b>Фамилия:</b> {{ user_obj.last_name }}</p>
+        <p><b>Имя:</b> {{ user_obj.first_name }}</p>
+        <p><b>Отчество:</b> {{ user_obj.middle_name }}</p>
+        <p><b>Дата рождения:</b> {{ user_obj.birth_date }}</p>
+        <p><b>Семейное положение:</b> {{ user_obj.family_status }}</p>
+        <p><b>О себе:</b> {{ user_obj.about_me }}</p>
+        <p><b>Род деятельности:</b> {{ user_obj.occupation }}</p>
+        <p><b>Город:</b> {{ user_obj.cities }}</p>
+        <p><b>Статус:</b> {{ user_obj.status }}</p>
+        <p><b>Email:</b> {{ user_obj.email }}</p>
+        <p><b>Мобильный номер:</b> {{ user_obj.phone }}</p>
+        <p><b>Кол-во лайков:</b> {{ user_obj.likes_qty }}</p>
+    </div>
+</div>
+
+{% endblock %}
