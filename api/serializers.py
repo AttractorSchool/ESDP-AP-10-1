@@ -18,8 +18,8 @@ class CitiesSerializer(serializers.ModelSerializer):
 
 
 class EventsSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer(read_only=True)
-    type_events = TypeEventsSerializer(read_only=True)
+    cities = CitiesSerializer()
+    type_events = TypeEventsSerializer()
 
     class Meta:
         model = Events
