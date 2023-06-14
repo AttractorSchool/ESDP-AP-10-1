@@ -142,3 +142,11 @@ body{
 .hamburger_menu_item:hover{
     background-color: #CFD8DC;
 }
+
+p {
+    line-height: 1.5;
+   }
+
+.profile-fields {
+    color: grey;
+}

@@ -5,18 +5,45 @@
 <div class="news">
     <div class="news_info">
         <img class="image" src="{{ user_obj.avatar.image.url }}" alt="">
-        <p><b>Фамилия:</b> {{ user_obj.last_name }}</p>
-        <p><b>Имя:</b> {{ user_obj.first_name }}</p>
-        <p><b>Отчество:</b> {{ user_obj.middle_name }}</p>
-        <p><b>Дата рождения:</b> {{ user_obj.birth_date }}</p>
-        <p><b>Семейное положение:</b> {{ user_obj.family_status }}</p>
-        <p><b>О себе:</b> {{ user_obj.about_me }}</p>
-        <p><b>Род деятельности:</b> {{ user_obj.occupation }}</p>
-        <p><b>Город:</b> {{ user_obj.cities }}</p>
-        <p><b>Статус:</b> {{ user_obj.status }}</p>
-        <p><b>Email:</b> {{ user_obj.email }}</p>
-        <p><b>Мобильный номер:</b> {{ user_obj.phone }}</p>
-        <p><b>Кол-во лайков:</b> {{ user_obj.likes_qty }}</p>
+        <p><b class="profile-fields">Фамилия:</b><br><i>{{ user_obj.last_name }}</i></p>
+        <p><b class="profile-fields">Имя:</b><br><i> {{ user_obj.first_name }} </i></p>
+        <p><b class="profile-fields">Отчество:</b><br><i> {{ user_obj.middle_name }} </i></p>
+        <br>
+        <p><b>Отрасли:</b><br><i> {{ user_obj.industries }} </i></p>
+        <br>
+        <p><b>Компании:</b><br><i> {{ user_obj.companies }} </i></p>
+        <p><b class="profile-fields">Род деятельности:</b><br><i> {{ user_obj.occupation }} </i></p>
+        <br>
+        <p><b>Чем могу быть полезен</b>
+        <p><b class="profile-fields">Экспертиза:</b><br><i> {{ user_obj.expertise }} </i></p>
+        <p><b class="profile-fields">Ресурсы имеющиеся:</b><br><i> {{ user_obj.resources_available }} </i></p>
+        <p><b class="profile-fields">Достижения:</b><br><i> {{ user_obj.achievements }} </i></p>
+        <br>
+        <p><b>Что я ищу</b>
+        <p><b class="profile-fields">Цель на год:</b><br><i> {{ user_obj.goal_for_the_year }} </i></p>
+        <p><b class="profile-fields">Ресурсы запрашиваемые:</b><br><i> {{ user_obj.resources_searching }} </i></p>
+        <p><b class="profile-fields">Запрос:</b><br><i> {{ user_obj.request }} </i></p>
+        <br>
+        <p><b>О себе</b>
+        <p><b class="profile-fields">Немного о себе:</b><br><i>{{ user_obj.about_me }} </i></p>
+        <p><b class="profile-fields">Город:</b><br><i> {{ user_obj.cities }} </i></p>
+        <p><b class="profile-fields">День рождения:</b><br><i> {{ user_obj.birth_date }} </i></p>
+        <p><b class="profile-fields">Факты обо мне:</b><br><i> {{ user_obj.facts_about_me }} </i></p>
+        <p><b class="profile-fields">Хобби:</b><br><i> {{ user_obj.hobby }} </i></p>
+        <p><b class="profile-fields">Образование:</b><br><i> {{ user_obj.education }} </i></p>
+        <p><b class="profile-fields">Семейное положение:</b><br><i> {{ user_obj.family_status }} </i></p>
+        <p><b class="profile-fields">Дети:</b><br><i> {{ user_obj.children }} </i></p>
+        <p><b class="profile-fields">Сайт:</b><br><i> {{ user_obj.site }} </i></p>
+
+        <br>
+        <p><b>Контакты</b>
+        <p><b class="profile-fields">Email:</b><br><i> {{ user_obj.email }} </i></p>
+        <p><b class="profile-fields">Мобильный номер:</b><br><i> {{ user_obj.phone }} </i></p>
+        <p><b class="profile-fields">Ссылки на социальные сети:</b><br><i> {{ user_obj.social_links }} </i></p>
+        <br>
+        <p><b>Участник с:</b><i> {{ user_obj.created_at }} </i></p>
+        <br>
+        <p><b>Кол-во лайков:</b><br><i> {{ user_obj.likes_qty }} </i></p>
     </div>
 </div>
 
