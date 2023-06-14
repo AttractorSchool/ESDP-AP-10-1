@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from accounts.models import Review
+from accounts.models import Review, Account
 from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image
 
 
@@ -101,3 +101,46 @@ class ReviewsSerializer(serializers.ModelSerializer):
             "created_at",
         )
         read_only = ("id",)
+
+
+class AccountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Account
+        fields = (
+            "id",
+            "first_name",
+            "last_name",
+            "middle_name",
+            "birth_date",
+            "about_me",
+            "occupation",
+            "cities",
+            "status",
+            "created_at",
+            "updated_at",
+            "family_status",
+            "first_visit_app",
+            "likes_qty",
+            "avatar",
+            "role",
+            "email",
+            "phone",
+            "companies",
+            "expertise",
+            "resources_available",
+            "resources_searching",
+            "achievements",
+            "goal_for_the_year",
+            "request",
+            "hobby",
+            "education",
+            "children",
+            "facts_about_me",
+            "site",
+            "social_links",
+        )
+        read_only = ("id",)
+
+
+
+
