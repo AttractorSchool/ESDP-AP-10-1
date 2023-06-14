@@ -87,8 +87,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'titany_2',
-        'USER': 'macbookair',
-        'PASSWORD': '3091',
+        'USER': 'postgres',
+        'PASSWORD': '1234',
         'HOST': 'host.docker.internal', #вместо localhost для работы дб на локальной машиине через докер
         'PORT': '',
     }

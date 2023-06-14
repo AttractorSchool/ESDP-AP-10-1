@@ -79,11 +79,6 @@ class Account(AbstractUser):
         blank=True,
         verbose_name="Количество лайков"
     )
-    dislikes_qty = models.IntegerField(
-        null=True,
-        blank=True,
-        verbose_name="Количество дизлайков"
-    )
     avatar = models.ForeignKey(
         null=True,
         blank=True,
@@ -111,6 +106,93 @@ class Account(AbstractUser):
         blank=True,
         max_length=30
     )
+    industries = models.CharField(
+        verbose_name="Отрасли",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    companies = models.CharField(
+        verbose_name="Компании",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    expertise = models.CharField(
+        verbose_name="Экспертиза",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    resources_available = models.CharField(
+        verbose_name="Ресурсы имеющиеся",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    resources_searching = models.CharField(
+        verbose_name="Ресурсы запрашиваемые",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    achievements = models.CharField(
+        verbose_name="Достижения",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    goal_for_the_year = models.CharField(
+        verbose_name="Цель на год",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    request = models.CharField(
+        verbose_name="Запрос",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    hobby = models.CharField(
+        verbose_name="Хобби",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    education = models.CharField(
+        verbose_name="Образование",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    children = models.CharField(
+        verbose_name="Дети",
+        null=True,
+        blank=True,
+        max_length=50
+    )
+    facts_about_me = models.CharField(
+        verbose_name="Факты обо мне",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+    site = models.CharField(
+        verbose_name="Сайт",
+        null=True,
+        blank=True,
+        max_length=50
+    )
+    social_links = models.CharField(
+        verbose_name="Ссылки на социальные сети",
+        null=True,
+        blank=True,
+        max_length=250
+    )
+
+
+
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = ['username']
