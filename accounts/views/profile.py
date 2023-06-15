@@ -7,11 +7,8 @@ class ProfileListView(TemplateView):
     template_name = 'profile_list_view.html'
     ordering = ["created_at"]
 
+
 class ProfileView(DetailView):
     model = get_user_model()
     template_name = 'profile.html'
     context_object_name = 'user_obj'
-
-
-
-
