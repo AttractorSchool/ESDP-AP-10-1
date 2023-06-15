@@ -104,6 +104,9 @@ class ReviewsSerializer(serializers.ModelSerializer):
 
 
 class AccountSerializer(serializers.ModelSerializer):
+    cities = CitiesSerializer()
+    avatar = ImageSerializer()
+
     class Meta:
         model = Account
         fields = (

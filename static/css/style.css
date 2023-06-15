@@ -150,3 +150,24 @@ p {
 .profile-fields {
     color: grey;
 }
+
+.avatar {
+    width: 15%; /* Ширина */
+    margin: 0 0 0 3.5%; /* Отступ слева */
+    background: #f0f0f0; /* Цвет фона */
+    border-radius: 100%; /* Радиус скругления */
+    padding: 1%; /* Поля */
+}
+
+
+.profile_str {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-bottom: solid black 2px;
+    margin: 40px 55px 50px 50px;
+    padding: 30px 100px 80px 20px;
+    font-weight: bold;
+
+}
