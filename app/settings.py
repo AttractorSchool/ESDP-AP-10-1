@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     "accounts",
     'rest_framework',
     # 'rest_framework.authtoken',
-    'api'
+    'api',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -87,8 +88,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'titany_2',
-        'USER': 'postgres',
-        'PASSWORD': '1234',
+        'USER': 'macbookair',
+        'PASSWORD': '3091',
         'HOST': 'host.docker.internal', #вместо localhost для работы дб на локальной машиине через докер
         'PORT': '',
     }
