@@ -24,9 +24,14 @@ class NewsSimpleView(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         try:
+            photo_list = data.get('photo')
+            data.pop('photo')
             data['cities'] = Cities.objects.get(id=data.get('cities'))
             data['user'] = Account.objects.get(id=data.get('user'))
             news = News.objects.create(**data)
+            for photo_id in photo_list:
+                news.photo.add(Image.objects.get(id=photo_id))
+                news.save()
             return Response({"create": "успешно создано"})
         except Exception:
             response = Response({'errors': "ошибка"})
