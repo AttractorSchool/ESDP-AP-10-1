@@ -21,6 +21,19 @@ class EventsSimpleView(APIView):
             serializer = EventsSerializer(events, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
 
+    def post(self, request, *args, **kwargs):
+        data = json.loads(request.body)
+        try:
+            data['cities'] = Cities.objects.get(id=data.get('cities'))
+            data['type_events'] = TypeEvents.objects.get(id=data.get('type_events'))
+            data['sponsor'] = Account.objects.get(id=data.get('sponsor'))
+            events = Events.objects.create(**data)
+            return Response({"create": "успешно создано"})
+        except Exception:
+            response = Response({'errors': "ошибка"})
+            response.status_code = 400
+            return response
+
 
 class EventApiView(APIView):
 
@@ -53,16 +66,5 @@ class EventApiView(APIView):
         return Response({f"delte - {kwargs.get('pk')}": "мягкое удаление успешно выполнелось"})
 
 
-class EventCreateApiView(APIView):
-    def post(self, request, *args, **kwargs):
-        data = json.loads(request.body)
-        try:
-            data['cities'] = Cities.objects.get(id=data.get('cities'))
-            data['type_events'] = TypeEvents.objects.get(id=data.get('type_events'))
-            data['sponsor'] = Account.objects.get(id=data.get('sponsor'))
-            events = Events.objects.create(**data)
-            return Response({"create": "успешно создано"})
-        except Exception:
-            response = Response({'errors': "ошибка"})
-            response.status_code = 400
-            return response
+
+

@@ -26,8 +26,8 @@ class ImageSerializer(serializers.ModelSerializer):
 
 
 class EventsSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer()
-    type_events = TypeEventsSerializer()
+    cities = CitiesSerializer(read_only=True)
+    type_events = TypeEventsSerializer(read_only=True)
 
     class Meta:
         model = Events
@@ -54,8 +54,8 @@ class EventsSerializer(serializers.ModelSerializer):
 
 
 class NewsSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer()
-    photo = ImageSerializer(many=True)
+    cities = CitiesSerializer(read_only=True)
+    photo = ImageSerializer(many=True, read_only=True)
 
     class Meta:
         model = News
@@ -104,9 +104,6 @@ class ReviewsSerializer(serializers.ModelSerializer):
 
 
 class AccountSerializer(serializers.ModelSerializer):
-    cities = CitiesSerializer()
-    avatar = ImageSerializer()
-
     class Meta:
         model = Account
         fields = (
