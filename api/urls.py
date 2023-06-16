@@ -6,10 +6,10 @@ from api.views.reviews_api_view import ReviewsSimpleView
 from api.views.newsline import NewslineApiView
 
 urlpatterns = [
-    path('events/', EventsSimpleView.as_view(), name="events_list"),
-    path('events/<int:pk>', EventApiView.as_view(), name="events"),
-    path('events/create', EventCreateApiView.as_view(), name="events_create"),
-    path('news/', NewsSimpleView.as_view(), name="news_list"),
+    path('events/', EventsSimpleView.as_view(), name="events_list_api"),
+    path('events/<int:pk>', EventApiView.as_view(), name="event_detail_api"),
+    path('events/create', EventCreateApiView.as_view(), name="event_create_api"),
+    path('news/', NewsSimpleView.as_view(), name="news_list_api"),
     path("reviews/", ReviewsSimpleView.as_view(), name="reviews_list_api"),
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
 ]

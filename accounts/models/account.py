@@ -38,7 +38,7 @@ class Account(AbstractUser):
         verbose_name="Род деятельности"
     )
     cities = models.ForeignKey(
-        to='webapp.Cities',
+        to='support_app.Cities',
         related_name='сities_for_account',
         on_delete=models.CASCADE,
         verbose_name="Город",
@@ -82,7 +82,7 @@ class Account(AbstractUser):
     avatar = models.ForeignKey(
         null=True,
         blank=True,
-        to="webapp.Image",
+        to="support_app.Image",
         verbose_name='Аватар',
         on_delete=models.CASCADE
     )

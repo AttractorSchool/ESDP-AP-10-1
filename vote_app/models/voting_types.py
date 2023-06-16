@@ -3,7 +3,7 @@ from django.db import models
 
 class VotingTypes(models.Model):
     voting_type = models.ForeignKey(
-        to='webapp.NameVotingTypes',
+        to='vote_app.NameVotingTypes',
         related_name='name_voting_types',
         on_delete=models.CASCADE,
         verbose_name="Тип голосования",
@@ -11,7 +11,7 @@ class VotingTypes(models.Model):
         blank=True
     )
     vote = models.ForeignKey(
-        to='webapp.Vote',
+        to='vote_app.Vote',
         related_name='vote_type',
         on_delete=models.CASCADE,
         verbose_name="Голосование типы",

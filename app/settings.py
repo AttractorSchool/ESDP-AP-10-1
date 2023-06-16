@@ -39,7 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # "debug_toolbar",
     'django_bootstrap5',
-    "webapp",
+    "events_app",
+    "requests_app",
+    "vote_app",
+    "support_app",
     "accounts",
     'rest_framework',
     # 'rest_framework.authtoken',
@@ -62,7 +65,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'webapp/templates']
+        "DIRS": [BASE_DIR / 'events_app/templates']
         ,
         "APP_DIRS": True,
         "OPTIONS": {
@@ -86,10 +89,10 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'titany_2',
+        'NAME': 'titany_3',
         'USER': 'postgres',
-        'PASSWORD': '1234',
-        'HOST': 'host.docker.internal', #вместо localhost для работы дб на локальной машиине через докер
+        'PASSWORD': '2580',
+        'HOST': 'localhost',
         'PORT': '',
     }
 }

@@ -12,7 +12,7 @@ class Events(models.Model):
         verbose_name="Наименование"
     )
     cities = models.ForeignKey(
-        to='webapp.Cities',
+        to='support_app.Cities',
         related_name='сities',
         on_delete=models.CASCADE,
         verbose_name="Город",
@@ -20,7 +20,7 @@ class Events(models.Model):
         blank=True
     )
     type_events = models.ForeignKey(
-        to='webapp.TypeEvents',
+        to='events_app.TypeEvents',
         related_name='type_events',
         on_delete=models.CASCADE,
         verbose_name="Тип мероприятия",
@@ -92,11 +92,13 @@ class Events(models.Model):
         auto_now=True,
         verbose_name="Дата обнавления"
     )
-    photo = models.ImageField(
+    photo = models.ForeignKey(
+        to='support_app.Image',
+        related_name='event_image',
+        on_delete=models.CASCADE,
+        verbose_name="Фото мероприятия",
         null=True,
         blank=True,
-        upload_to="user_pic",
-        verbose_name="Фото мероприятия",
     )
 
     def delete(self, using=None, keep_parents=False):
@@ -137,4 +139,4 @@ class UserBooked(models.Model):
     )
 
     def __str__(self):
-        return f"resident id-{self.resident} booking in events id-{self.event}"
+        return f"resident id-{self.resident} booking in events_app id-{self.event}"

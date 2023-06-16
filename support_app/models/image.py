@@ -14,7 +14,7 @@ class Image(models.Model):
         related_name='user_image',
         blank=False,
         null=False,
-        verbose_name='Организатор',
+        verbose_name='Отправитель',
         on_delete=models.CASCADE
     )
     created_at = models.DateTimeField(

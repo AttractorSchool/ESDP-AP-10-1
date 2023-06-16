@@ -4,7 +4,7 @@ from django.db import models
 
 class UsersWhoVoted(models.Model):
     possible_answer = models.ForeignKey(
-        to='webapp.VotingOptions',
+        to='vote_app.VotingOptions',
         related_name='possible_answer',
         on_delete=models.CASCADE,
         verbose_name="Вариант ответа",

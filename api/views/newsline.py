@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from api.serializers import EventsSerializer, NewsSerializer
-from webapp.models import Events, News
+from events_app.models import Events, News
 
 
 class NewslineApiView(APIView):

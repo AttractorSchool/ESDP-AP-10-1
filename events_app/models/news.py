@@ -17,7 +17,7 @@ class News(models.Model):
         on_delete=models.CASCADE
     )
     cities = models.ForeignKey(
-        to='webapp.Cities',
+        to='support_app.Cities',
         related_name='сities_for_news',
         on_delete=models.CASCADE,
         verbose_name="Город"
@@ -28,7 +28,7 @@ class News(models.Model):
         verbose_name="Описание"
     )
     photo = models.ManyToManyField(
-        to="webapp.Image",
+        to="support_app.Image",
         related_name="photo_for_news",
         verbose_name="Фото"
     )

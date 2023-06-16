@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class WebappConfig(AppConfig):
+class AdminAppConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'webapp'
+    name = 'requests_app'

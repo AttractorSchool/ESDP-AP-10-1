@@ -4,23 +4,23 @@ from django.db import models
 
 class AttachingToBlock(models.Model):
     list_of_votes = models.ForeignKey(
-        to='webapp.ListVotes',
+        to='vote_app.ListVotes',
         related_name='list_of_votes',
         on_delete=models.CASCADE,
         verbose_name="Список голосования",
-        null=True,
-        blank=True
+        null=False,
+        blank=False
     )
     events = models.ForeignKey(
-        to='webapp.Events',
-        related_name='events',
+        to='events_app.Events',
+        related_name='events_app',
         on_delete=models.CASCADE,
         verbose_name="Мероприятия",
         null=True,
         blank=True
     )
     news = models.ForeignKey(
-        to='webapp.News',
+        to='events_app.News',
         related_name='news',
         on_delete=models.CASCADE,
         verbose_name="Новости",
@@ -29,8 +29,8 @@ class AttachingToBlock(models.Model):
     )
     users = models.ForeignKey(
         to=get_user_model(),
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         on_delete=models.CASCADE,
         verbose_name='Пользователь которому дали список из голосований'
     )

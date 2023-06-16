@@ -36,7 +36,7 @@ class ListVotes(models.Model):
         default=False
     )
     vote = models.ManyToManyField(
-        to="webapp.Vote",
+        to="vote_app.Vote",
         related_name="vote_list",
         verbose_name="Голосование список"
     )
