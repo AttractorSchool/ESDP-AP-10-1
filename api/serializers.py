@@ -1,7 +1,7 @@
 from rest_framework import serializers
 
 from events_app.models import Events, TypeEvents, News, UserBooked
-from other_app.models import Cities, Image
+from support_app.models import Cities, Image
 from accounts.models import Review, Account
 
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from other_app.models import Cities, Image
+from support_app.models import Cities, Image
 
 # Register your models here.
 

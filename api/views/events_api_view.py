@@ -8,7 +8,7 @@ from rest_framework.views import APIView
 from accounts.models import Account
 from api.serializers import EventsSerializer
 from events_app.models import Events, TypeEvents
-from other_app.models import Cities
+from support_app.models import Cities
 
 class EventsSimpleView(APIView):
 
