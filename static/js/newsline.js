@@ -2,39 +2,40 @@ $.ajax({
     url: 'http://127.0.0.1:8000/api/newsline/',
     method: 'GET',
     success: function(data, status) {
-        const newsline = document.getElementById('newsline');
-        for (let i = 0; i < data.length; i++) {
-            const newsBlock = document.createElement('div');
-            const newsName = document.createElement('p');
-            const newsNameLink = document.createElement('a');
-            newsNameLink.innerText = data[i].name
-            newsName.append(newsNameLink)
-            const newsDescription = document.createElement('p');
-            newsDescription.innerText = data[i].description
-            const newsCreatedAt = document.createElement('p');
-            newsCreatedAt.innerText = data[i].created_at
-            newsBlock.append(newsName, newsDescription, newsCreatedAt)
-            newsline.append(newsBlock)
-            if (!data[i].type_events){
-                const newsPhoto = document.createElement('div');
-                newsPhoto.className = 'images'
-                for (let j = 0; j < data[i].photo.length; j++){
-                    const newsImage = document.createElement('img');
-                    newsImage.src = `${data[i].photo[j].image}`
-                    newsPhoto.append(newsImage)
-                    newsBlock.append(newsPhoto)
-                }
-            }
-            else {
-                const newsPhoto = document.createElement('img');
-                newsPhoto.className = 'image'
-                newsPhoto.src = `${data[i].photo}`
-                newsBlock.append(newsPhoto)
-            }
-            newsBlock.className = 'news'
-            newsDescription.className = 'news_description'
-        }
-    },
-    error: function(response, status) {
+    const newsline = document.getElementById('newsline');
+
+    for (let i = 0; i < data.length; i++) {
+      const newsBlock = document.createElement('div');
+      const articleWrapper = document.createElement('div');
+      articleWrapper.className = 'article-wrapper';
+
+      const figure = document.createElement('figure');
+      const newsPhoto = document.createElement('img');
+      newsPhoto.src = data[i].photo;
+      newsPhoto.alt = '';
+      figure.appendChild(newsPhoto);
+      articleWrapper.appendChild(figure);
+
+      const articleBody = document.createElement('div');
+      articleBody.className = 'article-body';
+
+      const newsTitle = document.createElement('h2');
+      newsTitle.innerText = data[i].name;
+      articleBody.appendChild(newsTitle);
+
+      const newsDescription = document.createElement('p');
+      newsDescription.innerText = data[i].description;
+      articleBody.appendChild(newsDescription);
+
+      articleWrapper.appendChild(articleBody);
+      newsBlock.appendChild(articleWrapper);
+
+      newsBlock.className = 'news';
+      newsDescription.className = 'news_description';
+
+      newsline.appendChild(newsBlock);
+    }
+  },
+    error: function (response, status) {
     }
 });
