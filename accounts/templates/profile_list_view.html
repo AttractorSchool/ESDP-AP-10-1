@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Newsline{% endblock %}
+{% block content %}
+<h1>Profile list</h1>
+<div id="profile_list"></div>
+{% endblock %}
+{% block script_block %}
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/profile_list.js' %}"></script>
+{% endblock %}

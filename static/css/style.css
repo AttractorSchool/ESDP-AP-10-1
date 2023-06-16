@@ -1,18 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
 }
-body{
-    margin-bottom: 60px;
-    font-size: 25px;
+
+body {
+    margin: 0;
+    padding: 48px 0;
+    font-family: "Figtree", sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    background-image: linear-gradient(45deg, #09355C, #133C61);
+    min-height: 100vh;
 }
-.container{
+
+.container {
     margin: 0 auto;
     max-width: 1200px;
 }
-.navbar{
+
+.navbar {
     display: block;
-    background: #424949;
+    background: #628BB0;
     position: fixed;
     bottom: 0;
     height: 100px;
@@ -22,7 +30,8 @@ body{
     box-sizing: border-box;
     padding: 7px 30px;
 }
-.menu{
+
+.menu {
     font-size: 40px;
     line-height: 1;
     padding: 0;
@@ -32,50 +41,62 @@ body{
     display: flex;
     justify-content: space-around;
 }
-.menu li{
+
+.menu li {
     list-style-type: none;
 }
-.menu a{
+
+.menu a {
     display: inline-block;
     text-decoration: none;
     color: inherit;
     padding: 5px 15px;
 }
-.menu a:hover{
+
+.menu a:hover {
     color: #AED6F1;
     text-decoration: underline;
 }
-.news{
-    border-bottom: solid black 2px;
+
+.news {
+    border: solid white 4px;
+    border-radius: 40px;
     margin: 60px 0px;
     padding: 5px 15px;
 }
-.news_description{
+
+.news_description {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
-.image{
+
+.image {
     width: 100%;
     height: 100%;
 }
-.images{
+
+.images {
     width: 100%;
 }
-.images img{
+
+.images img {
     width: 30%;
     display: inline-block;
 }
-.bottom_indent{
+
+.bottom_indent {
     margin-top: 100px;
 }
-<<<<<<< HEAD
-#hamburger_menu_toggle{
+
+HEAD
+#hamburger_menu_toggle {
     opacity: 0;
 }
-.hamburger_menu_btn{
+
+.hamburger_menu_btn {
     display: flex;
     align-items: center;
     position: fixed;
@@ -86,39 +107,47 @@ body{
     cursor: pointer;
     z-index: 1;
 }
+
 .hamburger_menu_btn > span,
 .hamburger_menu_btn > span::before,
-.hamburger_menu_btn > span::after{
+.hamburger_menu_btn > span::after {
     display: block;
     position: absolute;
     width: 100%;
     height: 2px;
     background-color: #616161;
 }
-.hamburger_menu_btn > span::before{
+
+.hamburger_menu_btn > span::before {
     content: '';
     top: -15px;
 }
-.hamburger_menu_btn > span::after{
+
+.hamburger_menu_btn > span::after {
     content: '';
     top: 15px;
 }
-#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span{
+
+#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span {
     transform: rotate(45deg);
 }
-#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span::before{
+
+#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span::before {
     top: 0;
     transform: rotate(0);
 }
-#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span::after{
+
+#hamburger_menu_toggle:checked ~ .hamburger_menu_btn > span::after {
     top: 0;
     transform: rotate(90deg);
 }
-#hamburger_menu_toggle:checked ~ .hamburger_menu_items{
+
+#hamburger_menu_toggle:checked ~ .hamburger_menu_items {
     visibility: visible;
     right: 0;
 }
-.hamburger_menu_items{
+
+.hamburger_menu_items {
     display: block;
     position: fixed;
     visibility: hidden;
@@ -133,20 +162,142 @@ body{
     background-color: #ECEFF1;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
 }
-.hamburger_menu_item{
+
+.hamburger_menu_item {
     display: block;
     padding: 12px 24px;
     color: #333;
     text-decoration: none;
 }
-.hamburger_menu_item:hover{
+
+.hamburger_menu_item:hover {
     background-color: #CFD8DC;
 }
 
 p {
     line-height: 1.5;
-   }
+}
 
 .profile-fields {
-    color: grey;
+    color: #09355C;
+}
+
+.avatar {
+    width: 15%; /* Ширина */
+    margin: 0 0 0 3.5%; /* Отступ слева */
+    background: #f0f0f0; /* Цвет фона */
+    border-radius: 100%; /* Радиус скругления */
+    padding: 1%; /* Поля */
+}
+
+
+.profile_str {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row-reverse;
+    align-items: center;
+    border-bottom: solid black 2px;
+    margin: 40px 55px 50px 50px;
+    padding: 30px 100px 80px 20px;
+    font-weight: bold;
+
+}
+
+.svg {
+    height: 60px;
+    width: 60px;
+    margin-top: 10px;
+}
+
+.events_svg {
+    height: 60px;
+    width: 60px;
+}
+
+.chat_svg {
+    height: 60px;
+    width: 60px;
+}
+
+.profile_svg {
+    height: 60px;
+    width: 60px;
+}
+
+.newsline_svg {
+    height: 60px;
+    width: 60px;
+}
+
+article {
+    border-radius: 16px;
+    box-shadow: none;
+    width: 930px;
+}
+
+article h2 {
+    margin: 0 0 18px 0;
+    font-family: "Bebas Neue", cursive;
+    font-size: 1.9rem;
+    letter-spacing: 0.06em;
+    color: #28666e;
+    transition: color 0.3s ease-out;
+}
+
+figure {
+    margin: 0;
+    padding: 0;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.article-body {
+    padding: 24px;
+}
+
+.articles {
+    display: grid;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 24px;
+}
+
+.newsline_header {
+    color: white;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.profile_wrapper {
+    background-color: #09355C;
+    color: #fff;
+    padding: 20px;
+}
+
+.profile {
+    background-color: #09355C;;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+
+.profile_wrapper p {
+    margin-bottom: 10px;
+}
+
+.profile_wrapper b {
+    font-weight: bold;
+}
+
+.profile_wrapper i {
+    font-style: italic;
+}
+
+.profile_image {
+    width: 800px;
+    height: 800px;
+    border-radius: 50%;
+    margin-left: 40px;
 }

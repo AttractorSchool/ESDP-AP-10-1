@@ -11,10 +11,10 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 import os
 from pathlib import Path
+from decouple import config
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
@@ -26,7 +26,6 @@ SECRET_KEY = "django-insecure-lss*=@=5ojk2@wy_!gwto+fl_-_gxgd=zupkn0a$8c2%z2(sbd
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -46,7 +45,8 @@ INSTALLED_APPS = [
     "accounts",
     'rest_framework',
     # 'rest_framework.authtoken',
-    'api'
+    'api',
+    'chat',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "app.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
@@ -89,14 +88,13 @@ WSGI_APPLICATION = "app.wsgi.application"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'titany_3',
-        'USER': 'postgres',
-        'PASSWORD': '2580',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
-
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [
@@ -136,7 +134,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
 
@@ -147,7 +144,6 @@ TIME_ZONE = "UTC"
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
@@ -220,7 +216,7 @@ BOOTSTRAP5 = {
     'server_side_validation': True,
 
     # Renderers (only set these if you have studied the source and understand the inner workings).
-    'formset_renderers':{
+    'formset_renderers': {
         'default': 'django_bootstrap5.renderers.FormsetRenderer',
     },
     'form_renderers': {
