@@ -2,13 +2,17 @@
 {% load static %}
 {% block title %}Newsline{% endblock %}
 {% block content %}
-<h1>Newsline</h1>
-<div id="newsline"></div>
+    <h1 class="newsline_header">Новости</h1>
+    <div class="news_div">
+        <section class="articles">
+            <article id="newsline">
+            </article>
+    </div>
 {% endblock %}
 {% block script_block %}
-<script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-<script src="{% static 'js/newsline.js' %}"></script>
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+    <script src="{% static 'js/newsline.js' %}"></script>
 {% endblock %}
