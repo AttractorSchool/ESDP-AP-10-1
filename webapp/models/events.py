@@ -92,11 +92,13 @@ class Events(models.Model):
         auto_now=True,
         verbose_name="Дата обнавления"
     )
-    photo = models.ImageField(
+    photo = models.ForeignKey(
+        to='webapp.Image',
+        related_name='event_image',
+        on_delete=models.CASCADE,
+        verbose_name="Фото мероприятия",
         null=True,
         blank=True,
-        upload_to="user_pic",
-        verbose_name="Фото мероприятия",
     )
 
     def delete(self, using=None, keep_parents=False):

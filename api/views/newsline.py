@@ -4,9 +4,10 @@ from rest_framework.views import APIView
 
 from api.serializers import EventsSerializer, NewsSerializer
 from webapp.models import Events, News
-
+from rest_framework.permissions import IsAuthenticated
 
 class NewslineApiView(APIView):
+    permission_classes = (IsAuthenticated,)
 
     def get(self, request, *args, **kwargs):
         events = Events.objects.all().order_by('created_at')

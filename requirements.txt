@@ -5,8 +5,10 @@ django-bootstrap-v5==1.0.11
 django-bootstrap5==22.2
 django_debug_toolbar==3.8.1
 djangorestframework==3.14.0
+djangorestframework-simplejwt==5.2.2
 Pillow==9.5.0
 psycopg2-binary==2.9.6
+PyJWT==2.7.0
 python-decouple==3.8
 pytz==2023.3
 soupsieve==2.4.1
