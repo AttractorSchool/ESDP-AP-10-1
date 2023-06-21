@@ -4,6 +4,13 @@ from django.contrib.auth import get_user_model
 
 
 class Account(AbstractUser):
+    username = models.CharField(
+        max_length=30,
+        unique=False,
+        blank=True,
+        null=True
+    )
+
     first_name = models.CharField(
         max_length=30,
         null=True,
@@ -191,14 +198,11 @@ class Account(AbstractUser):
         max_length=250
     )
 
-
-
-
     USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = ['username']
+    REQUIRED_FIELDS = []
 
     def __str__(self):
-        return self.username
+        return self.email
 
     class Meta:
         verbose_name = "Профиль"
