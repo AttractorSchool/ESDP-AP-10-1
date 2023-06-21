@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # "debug_toolbar",
     'django_bootstrap5',
+    'bootstrap5',
     "webapp",
     "accounts",
     'rest_framework',
@@ -64,7 +65,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'webapp/templates']
+        "DIRS": [BASE_DIR / 'templates']
         ,
         "APP_DIRS": True,
         "OPTIONS": {
