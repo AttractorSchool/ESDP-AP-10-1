@@ -1,7 +1,8 @@
 from rest_framework import serializers
 
 from accounts.models import Review, Account
-from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image
+from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image, Vote, NameVotingTypes, VotingTypes, \
+    VotingOptions, UsersWhoVoted, ListVotes, AttachingToBlock
 
 
 class TypeEventsSerializer(serializers.ModelSerializer):
@@ -142,5 +143,106 @@ class AccountSerializer(serializers.ModelSerializer):
         read_only = ("id",)
 
 
+class VoteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Vote
+        fields = (
+            "id",
+            "question_to_vote",
+            "updated_at",
+        )
+        read_only = ("id", "updated_at")
 
 
+class NameVotingTypesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = NameVotingTypes
+        fields = (
+            "id",
+            "name_of_voting_type",
+        )
+        read_only = ("id",)
+
+
+class VotingTypesSerializer(serializers.ModelSerializer):
+    voting_type = NameVotingTypesSerializer(read_only=True)
+    vote = VoteSerializer(read_only=True)
+
+    class Meta:
+        model = VotingTypes
+        fields = (
+            "id",
+            "voting_type",
+            "vote",
+            "boolean_value",
+        )
+        read_only = ("id",)
+
+
+class VotingOptionsSerializer(serializers.ModelSerializer):
+    vote = VoteSerializer(read_only=True)
+
+    class Meta:
+        model = VotingOptions
+        fields = (
+            "id",
+            "option",
+            "vote",
+            "updated_at",
+            "is_deleted",
+        )
+        read_only = ("id", "updated_at")
+
+
+class UsersWhoVotedSerializer(serializers.ModelSerializer):
+    possible_answer = VotingOptionsSerializer(read_only=True)
+    users = AccountSerializer(read_only=True)
+
+    class Meta:
+        model = UsersWhoVoted
+        fields = (
+            "id",
+            "possible_answer",
+            "users",
+            "response_at",
+        )
+        read_only = ("id",)
+
+
+class ListVotesSerializer(serializers.ModelSerializer):
+    user_who_created_list_votes = AccountSerializer(read_only=True)
+    vote = VoteSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = ListVotes
+        fields = (
+            "id",
+            "name_of_the_vote",
+            "user_who_created_list_votes",
+            "date_group_was_added_from_polls",
+            "updated_at",
+            "voting_opening_at",
+            "expiration_at",
+            "is_deleted",
+            "vote",
+        )
+        read_only = ("id",)
+
+
+class AttachingToBlockSerializer(serializers.ModelSerializer):
+    list_of_votes = ListVotesSerializer(read_only=True)
+    events = EventsSerializer(read_only=True)
+    news = NewsSerializer(read_only=True)
+    users = AccountSerializer(read_only=True)
+
+    class Meta:
+        model = AttachingToBlock
+        fields = (
+            "id",
+            "list_of_votes",
+            "events",
+            "news",
+            "users",
+            "created_at",
+        )
+        read_only = ("id",)
