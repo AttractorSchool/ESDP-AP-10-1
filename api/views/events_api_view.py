@@ -7,7 +7,7 @@ from rest_framework.views import APIView
 
 from accounts.models import Account
 from api.serializers import EventsSerializer
-from webapp.models import Events, Cities, TypeEvents
+from webapp.models import Events, Cities, TypeEvents, Image
 
 
 class EventsSimpleView(APIView):
@@ -24,6 +24,7 @@ class EventsSimpleView(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         try:
+            data['photo'] = Image.objects.get(id=data.get('photo'))
             data['cities'] = Cities.objects.get(id=data.get('cities'))
             data['type_events'] = TypeEvents.objects.get(id=data.get('type_events'))
             data['sponsor'] = Account.objects.get(id=data.get('sponsor'))
