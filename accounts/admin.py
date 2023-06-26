@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from accounts.models import Account, Review, FamilyStatus, Status
+from accounts.models import Account, Review, FamilyStatus, Status, Role
 
 
 class AccountAdmin(admin.ModelAdmin):
@@ -23,5 +23,6 @@ admin.site.register(Account, AccountAdmin)
 admin.site.register(Review, ReviewAdmin)
 admin.site.register(FamilyStatus)
 admin.site.register(Status)
+admin.site.register(Role)
 
 
