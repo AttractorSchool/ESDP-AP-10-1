@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from accounts.models import Review, Account
+from accounts.models import Review, Account, FamilyStatus, Role, Status
 from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image, Vote, NameVotingTypes, VotingTypes, \
     VotingOptions, UsersWhoVoted, ListVotes, AttachingToBlock
 
@@ -104,7 +104,31 @@ class ReviewsSerializer(serializers.ModelSerializer):
         read_only = ("id",)
 
 
+class FamilyStatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = FamilyStatus
+        fields = ("id", "name")
+        read_only = ("id",)
+
+
+class RoleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Role
+        fields = ("id", "name")
+        read_only = ("id",)
+
+
+class StatusSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Status
+        fields = ("id", "name")
+        read_only = ("id",)
+
+
 class AccountSerializer(serializers.ModelSerializer):
+    role = RoleSerializer(read_only=True)
+    status = StatusSerializer(read_only=True)
+
     class Meta:
         model = Account
         fields = (
