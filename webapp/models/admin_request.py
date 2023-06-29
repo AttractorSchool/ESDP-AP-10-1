@@ -6,6 +6,7 @@ class AdminRequest(models.Model):
     user_reviewer = models.ForeignKey(
         to=get_user_model(),
         related_name='admin_reviewer',
+        null=True,
         blank=True,
         verbose_name='Проверяющий',
         on_delete=models.CASCADE
@@ -13,7 +14,8 @@ class AdminRequest(models.Model):
     user_sender = models.ForeignKey(
         to=get_user_model(),
         related_name='user_request',
-        blank=True,
+        null=False,
+        blank=False,
         verbose_name='Отправитель',
         on_delete=models.CASCADE
     )
@@ -23,22 +25,26 @@ class AdminRequest(models.Model):
     )
     closing_at = models.DateTimeField(
         null=True,
+        blank=True,
         default=None,
         verbose_name="Дата закрытия"
     )
     approved = models.BooleanField(
-        verbose_name="Удалено",
+        verbose_name="Утвержден?",
         null=True,
-        default=True
+        blank=True,
+        default=None
     )
     request_text = models.TextField(
         max_length=3000,
         null=True,
+        blank=True,
         verbose_name="Текст запроса"
     )
     response_text = models.TextField(
         max_length=3000,
         null=True,
+        blank=True,
         verbose_name="Ответ админа"
     )
     sub_level = models.ForeignKey(
@@ -57,3 +63,6 @@ class AdminRequest(models.Model):
         null=True,
         blank=True
     )
+
+    def __str__(self):
+        return f"{self.user_sender} {self.created_at}"

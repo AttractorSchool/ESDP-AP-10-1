@@ -13,6 +13,7 @@ class ChatRequest(models.Model):
         to=get_user_model(),
         related_name='chat_second_user',
         blank=True,
+        null=True,
         verbose_name='Второй пользователь',
         on_delete=models.CASCADE
     )
@@ -27,10 +28,16 @@ class ChatRequest(models.Model):
     description = models.TextField(
         max_length=3000,
         null=False,
+        blank=False,
         verbose_name="Описание"
     )
     rules = models.TextField(
         max_length=3000,
         null=False,
-        verbose_name="Правила"
+        blank=False,
+        verbose_name="Правила",
+        default=None
     )
+
+    def __str__(self):
+        return f"chat request - {self.chat_name}"

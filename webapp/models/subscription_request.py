@@ -12,6 +12,8 @@ class SubscriptionLevel(models.Model):
         max_digits=15,
         decimal_places=2,
         default=0,
+        null=False,
+        blank=False,
         verbose_name="Цена"
     )
     created_at = models.DateTimeField(
@@ -22,3 +24,6 @@ class SubscriptionLevel(models.Model):
         auto_now=True,
         verbose_name="Дата обнавления"
     )
+
+    def __str__(self):
+        return f"{self.level_name} - {self.price}"
