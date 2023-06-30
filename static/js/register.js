@@ -20,6 +20,7 @@ document.getElementById('registrationForm').addEventListener('submit', function(
             localStorage.setItem('accessToken', data.access);
             localStorage.setItem('refreshToken', data.refresh);
             document.getElementById('message').innerText = 'Registration successful!';
+            window.location.href = "/auth/login";
         } else {
             document.getElementById('message').innerText = 'Registration failed.';
             console.error(data);
