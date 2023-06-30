@@ -1,6 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.validators import RegexValidator
 
 
 class Account(AbstractUser):
@@ -10,7 +11,6 @@ class Account(AbstractUser):
         blank=True,
         null=True
     )
-
     first_name = models.CharField(
         max_length=30,
         null=True,
@@ -107,11 +107,16 @@ class Account(AbstractUser):
         unique=True,
         blank=False
     )
+    phoneNumberRegex = RegexValidator(
+        regex=r"^\+?1?\d{8,15}$"
+    )
     phone = models.CharField(
         verbose_name="Номер телефона",
         null=True,
         blank=True,
-        max_length=30
+        max_length=16,
+        unique=True,
+        validators=[phoneNumberRegex]
     )
     industries = models.CharField(
         verbose_name="Отрасли",
