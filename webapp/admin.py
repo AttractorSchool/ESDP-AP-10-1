@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 from webapp.models import Events, Cities, TypeEvents, News, Image, UserBooked, Vote, ListVotes, AttachingToBlock, \
-    NameVotingTypes, UsersWhoVoted, VotingTypes, VotingOptions
+    NameVotingTypes, UsersWhoVoted, VotingTypes, VotingOptions, SubscriptionLevel, AdminRequest, ChatRequest
 
 
 # Register your models here.
@@ -105,6 +105,37 @@ class VotingOptionsAdmin(admin.ModelAdmin):
     readonly_fields = ("id", "updated_at")
 
 
+class SubscriptionLevelAdmin(admin.ModelAdmin):
+    list_display = ("id", "level_name", "price", "created_at", "updated_at")
+    list_filter = ("id", "level_name", "price", "created_at", "updated_at")
+    search_fields = ("level_name", "price")
+    filter = ("level_name", "price", "created_at", "updated_at")
+    readonly_fields = ("id", "created_at", "updated_at")
+
+
+class ChatRequestAdmin(admin.ModelAdmin):
+    list_display = ("id", "chat_name", "second_user", "cities", "description", "rules")
+    list_filter = ("id", "chat_name", "second_user", "cities", "description", "rules")
+    search_fields = ("chat_name", "second_user", "cities", "description", "rules")
+    filter = ("chat_name", "second_user", "cities", "description", "rules")
+    readonly_fields = ("id",)
+
+
+class AdminRequestAdmin(admin.ModelAdmin):
+    list_display = (
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
+    list_filter = (
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
+    search_fields = (
+        "user_reviewer", "user_sender", "approved", "request_text", "response_text", "sub_level", "chat_request")
+    filter = (
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
+    readonly_fields = ("id", "created_at")
+
+
 admin.site.register(Events, EventsAdmin)
 admin.site.register(Cities, CitiesAdmin)
 admin.site.register(TypeEvents, TypeEventsAdmin)
@@ -118,3 +149,6 @@ admin.site.register(NameVotingTypes, NameVotingTypesAdmin)
 admin.site.register(UsersWhoVoted, UsersWhoVotedAdmin)
 admin.site.register(VotingTypes, VotingTypesAdmin)
 admin.site.register(VotingOptions, VotingOptionsAdmin)
+admin.site.register(SubscriptionLevel, SubscriptionLevelAdmin)
+admin.site.register(ChatRequest, ChatRequestAdmin)
+admin.site.register(AdminRequest, AdminRequestAdmin)

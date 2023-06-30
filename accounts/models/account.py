@@ -10,7 +10,6 @@ class Account(AbstractUser):
         blank=True,
         null=True
     )
-
     first_name = models.CharField(
         max_length=30,
         null=True,
