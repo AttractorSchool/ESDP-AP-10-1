@@ -1,11 +1,13 @@
 from django.contrib.auth import get_user_model
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 
 class ListVotes(models.Model):
     name_of_the_vote = models.CharField(
         verbose_name="Наименование голосования",
-        max_length=200
+        max_length=200,
+        validators=[MinLengthValidator(2)]
     )
     user_who_created_list_votes = models.ForeignKey(
         to=get_user_model(),

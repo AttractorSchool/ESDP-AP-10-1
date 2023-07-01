@@ -1,7 +1,9 @@
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
-from django.core.validators import MinValueValidator, MaxValueValidator
+from django.core.validators import MinValueValidator, MaxValueValidator, MinLengthValidator
+
+from accounts.models.validators import validate_date_event
 
 
 class Events(models.Model):
@@ -9,7 +11,8 @@ class Events(models.Model):
         max_length=200,
         null=False,
         blank=False,
-        verbose_name="Наименование"
+        verbose_name="Наименование",
+        validators=[MinLengthValidator(2)]
     )
     cities = models.ForeignKey(
         to='webapp.Cities',
@@ -30,7 +33,8 @@ class Events(models.Model):
     events_at = models.DateTimeField(
         verbose_name="Дата мероприятия",
         null=False,
-        blank=False
+        blank=False,
+        validators=[validate_date_event]
     )
     sponsor = models.ForeignKey(
         to=get_user_model(),
@@ -49,12 +53,14 @@ class Events(models.Model):
     start_register_at = models.DateTimeField(
         verbose_name="Дата начала регистрации",
         null=True,
-        default=None
+        default=None,
+        validators=[validate_date_event]
     )
     end_register_at = models.DateTimeField(
         verbose_name="Дата конца регистрации",
         null=True,
-        blank=True
+        blank=True,
+        validators=[validate_date_event]
     )
     resident_booked = models.ManyToManyField(
         to=get_user_model(),
@@ -66,18 +72,21 @@ class Events(models.Model):
     description = models.TextField(
         max_length=3000,
         null=False,
-        verbose_name="Описание"
+        verbose_name="Описание",
+        validators=[MinLengthValidator(2)]
     )
     place = models.CharField(
         max_length=200,
         null=True,
-        verbose_name="Место"
+        verbose_name="Место",
+        validators=[MinLengthValidator(2)]
     )
     price = models.DecimalField(
         max_digits=10,
         decimal_places=2,
         default=0,
-        verbose_name="Цена"
+        verbose_name="Цена",
+        validators=[MinValueValidator(0)]
     )
     is_deleted = models.BooleanField(
         verbose_name="Удалено",
@@ -98,7 +107,7 @@ class Events(models.Model):
         on_delete=models.CASCADE,
         verbose_name="Фото мероприятия",
         null=True,
-        blank=True,
+        blank=True
     )
 
     def delete(self, using=None, keep_parents=False):
