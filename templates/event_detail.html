@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Event Detail{% endblock %}
+{% block content %}
+    <div  class="about_current_page">
+        <h1 class="newsline_header">{{ event.type_events|upper }}</h1>
+    </div>
+    <div class="profile_card_wrapper">
+        <div class="profile_card">
+            <div class="event_div">
+                <div style="text-align: center;"  class="eve_name">
+                    <h3 style="font-style: normal;font-weight: 700;font-size: 20px;line-height: 37px;">{{ event.name }}</h3>
+                </div>
+            </div>
+            <div style="display: flex; align-items: center; justify-content: center;" class="photo_event">
+                <img style="height: 180px; width:300px; "
+                     src="/uploads/user_pic/almaty.jpg" alt="Event Photo" class="profile_card_pic">
+            </div>
+            <div class="profile_card_info_div">
+                <div class="profile_names">
+                    <div class="event_div">
+                        <p style="font-style: italic;font-weight: 400;font-size: 14px;line-height: 22px;color: #000000;">{{ event.description }}</p>
+                    </div>
+                </div>
+                <div class="availible">
+                    <p style="font-style: normal;font-weight: 500;font-size: 20px;line-height: 27px;text-align: center;">{{ available_seats }}
+                        свободно из {{ event.number_of_seats }}</p>
+                </div>
+
+                <a href="#" class="thank_profile_link">
+                    <div class="profile_card_button_wrapper">
+                    <span class="profile_card_button">
+                        Зарегистрироваться
+                    </span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}
+
