@@ -1,3 +1,4 @@
+from django.core.validators import MinLengthValidator
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth import get_user_model
@@ -7,7 +8,8 @@ class News(models.Model):
     name = models.CharField(
         max_length=200,
         null=False,
-        verbose_name="Наименование"
+        verbose_name="Наименование",
+        validators=[MinLengthValidator(2)]
     )
     user = models.ForeignKey(
         to=get_user_model(),
@@ -25,7 +27,8 @@ class News(models.Model):
     description = models.TextField(
         max_length=3000,
         null=False,
-        verbose_name="Описание"
+        verbose_name="Описание",
+        validators=[MinLengthValidator(2)]
     )
     photo = models.ManyToManyField(
         to="webapp.Image",
