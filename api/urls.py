@@ -14,5 +14,4 @@ urlpatterns = [
     path("reviews/", ReviewsSimpleView.as_view(), name="reviews_list_api"),
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
     path("accounts/", AccountsSimpleView.as_view(), name="accounts_api"),
-
 ]
