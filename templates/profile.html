@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}Profile{% endblock %}
 {% block content %}
     <div class="profile_wrapper">
@@ -40,6 +41,11 @@
             <p><b>Участник с:</b><i> {{ user_obj.created_at }} </i></p>
             <br>
             <p><b>Кол-во лайков:</b><br><i> {{ user_obj.likes_qty }} </i></p>
+            <button class="like_btn" data-pk="{{ user_obj.pk }}">Like{{ user_obj.pk }}</button>
         </div>
     </div>
+{% endblock %}
+{% block script_block %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{% static 'js/like.js' %}"></script>
 {% endblock %}
