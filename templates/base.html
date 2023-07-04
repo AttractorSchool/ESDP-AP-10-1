@@ -4,75 +4,58 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
-          rel="stylesheet">
     <title>{% block title %}{% endblock %}</title>
 </head>
 <body>
-<div class="base_styles">
-    <div class="header">
-        <div class="container">
-            <div class="titany_logo">
-                <img src="{% static 'svg/titany_logo.png' %}" alt="LOGO" class="titany_logo_img">
-            </div>
-            <nav class="hamburger_menu">
-                <div class="container_burger">
-                    <input id="hamburger_menu_toggle" type="checkbox"/>
-                    <label class="hamburger_menu_btn" for="hamburger_menu_toggle">
-                        <span></span>
-                    </label>
-                    <ul class="hamburger_menu_items">
-                        <li>
-                            <button onclick="logout()">Logout</button>
-                        </li>
-                        <li><a class="hamburger_menu_item" href="#">Test 2</a></li>
-                        <li><a class="hamburger_menu_item" href="#">Test 3</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>
-    </div>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav_menu">
-                <ul class="menu">
-                    <li class="svg">
-                        <a class="svg_link" href="{% url 'newsline' %}">
-                            <img style="width: 41px; height: 41px" src="{% static 'svg/newsline.png' %}" alt="Новости"/>
-                        </a>
-                    </li>
-                    <li class="svg">
-                        <a class="svg_link" href="#">
-                            <img style="width: 41px; height: 41px" src="{% static 'svg/chat.png' %}" alt="Чаты"/>
-                        </a>
-                    </li>
-                    <li class="svg">
-                        <a class="svg_link" href="#">
-                            <img style="width: 41px; height: 41px" src="{% static 'svg/events.png' %}"
-                                 alt="Мероприятия"/>
-                        </a>
-                    </li>
-                    <li class="svg">
-                        <a class="svg_link" href="{% url 'account_list' %}">
-                            <img style="width: 41px; height: 41px" src="{% static 'svg/profile.png' %}"
-                                 alt="Резиденты"/>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-    </nav>
+<nav class="hamburger_menu">
     <div class="container">
-        {% block content %}{% endblock %}
+        <input id="hamburger_menu_toggle" type="checkbox"/>
+        <label class="hamburger_menu_btn" for="hamburger_menu_toggle">
+            <span></span>
+        </label>
+        <ul class="hamburger_menu_items">
+            <li>
+                <button onclick="logout()">Logout</button>
+            </li>
+            <li><a class="hamburger_menu_item" href="#">Test 2</a></li>
+            <li><a class="hamburger_menu_item" href="#">Test 3</a></li>
+        </ul>
     </div>
-    <div class="bottom_indent"></div>
-    {% block script_block %}
-  <script src="{% static 'js/logout.js' %}"></script>
-<script src="{% static 'js/check_auth.js' %}"></script>
-  {% endblock %}
+</nav>
+<nav class="navbar">
+    <div class="container">
+        <div class="nav_menu">
+            <ul class="menu">
+                <li class="svg">
+                    <a class="newsline_svg" href="{% url 'newsline' %}"><img src="{% static 'svg/newsline.svg' %}"
+                                                                             alt="Новости"/></a>
+                </li>
+                <li class="svg">
+                    <a class="chat_svg" href="#"><img style="width: 60px; height: 60px"
+                                                      src="{% static 'svg/chat.svg' %}" alt="Чаты"/></a>
+                </li>
+                <li class="svg">
+                    <a class="events_svg" href="#"><img style="width: 60px; height: 60px"
+                                                        src="{% static 'svg/events.png' %}" alt="Мероприятия"/></a>
+                </li>
+                <li class="svg">
+                    {% if user_obj %}
+                    <a class="profile_svg" href="{% url 'profile' user_obj.pk %}"><img
+                            style="width: 60px; height: 60px" src="{% static 'svg/profile.svg' %}"
+                            alt="Резиденты"/></a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    {% block content %}{% endblock %}
 </div>
+<div class="bottom_indent"></div>
+{% block script_block %}
+<script src="{% static 'js/logout.js' %}"></script>
+<script src="{% static 'js/check_auth.js' %}"></script>
+{% endblock %}
 </body>
 </html>
