@@ -24,6 +24,15 @@ class SubscriptionLevel(models.Model):
         auto_now=True,
         verbose_name="Дата обнавления"
     )
+    is_deleted = models.BooleanField(
+        verbose_name="Удалено",
+        null=False,
+        default=False
+    )
+
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.save()
 
     def __str__(self):
         return f"{self.level_name} - {self.price}"
