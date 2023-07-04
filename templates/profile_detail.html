@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Profile Detail{% endblock %}
+{% block content %}
+    <div class="about_current_page">
+        <h1 class="newsline_header">ПРОФИЛЬ {{ account.first_name.upper }}</h1>
+    </div>
+    <div class="profile_card_wrapper">
+        <div class="profile_card">
+            <div class="profile_card_pic_div">
+                <img src="{% static 'svg/user.png' %}" alt="Avatar" class="profile_card_pic">
+            </div>
+            <div class="profile_card_info_div">
+                <div class="profile_names">
+                    <p class="profile_first_last_names">{{ account.first_name }} {{ account.last_name }}</p>
+                </div>
+                <div class="profiles_card_info">
+                    <p class="account_info_sm"><b>Город:</b> {{ account.cities }}</p>
+                    <p class="account_info_big"><b>О резиденте:</b> {{ account.about_me }}</p>
+                    <p class="account_info_sm"><b>Род деятельности:</b> {{ account.occupation }}</p>
+                    <p class="account_info_sm"><b>Телефон:</b> {{ account.phone }}</p>
+                    <p class="account_info_sm"><b>Хобби:</b> {{ account.hobby }}</p>
+                    <p class="account_info_big"><b>Факты обо мне:</b> {{ account.facts_about_me }}</p>
+                    <p class="account_info_big"><b>Цель на год:</b> {{ account.goal_for_the_year }}</p>
+                    <p class="account_info_sm"><b>E-mail:</b> {{ account.email }}</p>
+                    <p class="profile_likes_count"><b>Количество лайков:</b> {{ account.likes_qty }}</p>
+                </div>
+            </div>
+            <div class="profile_card_button_div">
+                {% if account.pk == request.user.pk %}
+                    <a href="#" class="update_profile_link">
+                        <div class="profile_card_button_wrapper">
+                            <span class="profile_card_button">
+                                Редактировать
+                            </span>
+                        </div>
+                    </a>
+                {% else %}
+                    <a href="#" class="thank_profile_link">
+                        <div class="profile_card_button_wrapper">
+                            <span class="profile_card_button">
+                                Спасибо
+                            </span>
+                        </div>
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
