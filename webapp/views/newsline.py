@@ -1,3 +1,4 @@
+from django.views.generic import ListView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.views.generic import TemplateView
@@ -5,11 +6,19 @@ from rest_framework.permissions import IsAuthenticated
 from accounts.views.authentification import CookieJWTAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 
+from webapp.models import Events
 
-class NewslineView(TemplateView):
+
+class NewslineView(ListView):
+    model = Events
     template_name = 'newsline.html'
+    context_object_name = 'events'
     authentication_classes = [CookieJWTAuthentication]
     permission_classes = [IsAuthenticated]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.order_by('-created_at')
 
     def dispatch(self, request, *args, **kwargs):
         authenticator = self.authentication_classes[0]()
