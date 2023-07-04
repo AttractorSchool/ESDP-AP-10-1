@@ -20,6 +20,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             localStorage.setItem('accessToken', data.access);
             localStorage.setItem('refreshToken', data.refresh);
             document.getElementById('message').innerText = 'Login successful!';
+            window.location.href = "/auth/profile/" + data.user_id;
         } else {
             document.getElementById('message').innerText = 'Login failed.';
             console.error(data);

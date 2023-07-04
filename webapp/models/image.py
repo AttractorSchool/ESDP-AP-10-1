@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.core.validators import validate_image_file_extension
 
 
 class Image(models.Model):
@@ -8,6 +9,7 @@ class Image(models.Model):
         blank=False,
         upload_to="user_pic",
         verbose_name="Фото",
+        validators=[validate_image_file_extension]
     )
     user = models.ForeignKey(
         to=get_user_model(),

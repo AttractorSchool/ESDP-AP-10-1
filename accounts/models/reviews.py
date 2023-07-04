@@ -1,3 +1,4 @@
+from django.core.validators import MinLengthValidator
 from django.db import models
 from django.contrib.auth import get_user_model
 
@@ -20,7 +21,9 @@ class Review(models.Model):
         max_length=3000,
         null=True,
         verbose_name='Текст отзыва',
-        blank=True)
+        blank=True,
+        validators=[MinLengthValidator(2)]
+    )
     like = models.BooleanField(
         verbose_name="Лайк",
         null=True,
