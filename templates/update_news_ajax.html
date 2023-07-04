@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Newsline{% endblock %}
+{% block content %}
+<div class="container cont">
+    <div class="row d-flex justify-content-center">
+        <div class="col-7 card text-bg-light form-margins">
+            <h2>Добавление</h2>
+   
+                <input type="hidden" name="csrfmiddlewaretoken"
+                       value="xlrwwWEPHuFakS391qbnZ9xBbiOXIdjOV8CANq3n54bPIwDUI4WRuiPa288O6BQb">
+
+                <div class="mb-3"><label class="form-label" for="id_name">Название</label><input type="text" name="name"
+                                                                                                 maxlength="200"
+                                                                                                 class="form-control"
+                                                                                                 required=""
+                                                                                                 id="id_name"></div>
+                <div class="mb-3"><label class="form-label" for="id_cities">Город</label><select name="cities"
+                                                                                                 class="form-select"
+                                                                                                 id="id_cities">
+                    <option value="" >---------</option>
+
+
+                </select></div>
+                <div class="mb-3"><label class="form-label" for="id_user">Организатор</label><select name="user"
+                                                                                                    class="form-select"
+                                                                                                    id="id_user">
+                    <option value="" selected="">---------</option>
+
+
+
+                </select></div>
+                <div class="mb-3"><label class="form-label" for="id_description">Описание</label><textarea
+                        name="description" cols="40" rows="10" maxlength="3000" class="form-control" required=""
+                        id="id_description"></textarea></div>
+                <div class="input-group mb-3">
+                    <input type="file" class="form-control" id="id_photo" >
+                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
+                  </div>
+                  
+                <button type="submit"  value="Обновить" id="create_id">Обновить</button>
+
+        </div>
+    </div>
+</div>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/news_update.js' %}"></script>
+{% endblock %}

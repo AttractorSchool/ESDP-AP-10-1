@@ -1,13 +1,16 @@
 from django.urls import path
 
 from api.views.attaching_to_block_api_view import AttachingToBlockSimpleView, AttachingToBlockApiView
+from api.views.cities_api_view import CitiesSimpleView
 from api.views.events_api_view import EventsSimpleView, EventApiView
 from api.views.list_votes import ListVotesSimpleView, ListVotesApiView
 from api.views.name_voting_types_api_view import NameVotingTypesSSimpleView, NameVotingTypesSApiView
 from api.views.news_api_view import NewsSimpleView, NewsApiView
+from api.views.photo_api_view import PhotoSimpleView
 from api.views.profile import AccountsSimpleView, AccountApiView
 from api.views.reviews_api_view import ReviewsSimpleView
 from api.views.newsline import NewslineApiView
+from api.views.type_events_api_views import TypeEventsSimpleView
 from api.views.users_who_voted_api_view import UsersWhoVotedSimpleView, UsersWhoVotedApiView
 from api.views.vote_api_view import VoteApiView, VoteSimpleView
 from api.views.voting_options import VotingOptionsSimpleView, VotingOptionsApiView
@@ -36,4 +39,7 @@ urlpatterns = [
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
     path("accounts/", AccountsSimpleView.as_view(), name="accounts_list"),
     path('accounts/<int:pk>', AccountApiView.as_view(), name="events"),
+    path("cities/", CitiesSimpleView.as_view(), name="cities_list"),
+    path("photo/", PhotoSimpleView.as_view(), name="photo_list"),
+    path("type_events/", TypeEventsSimpleView.as_view(), name="type_events_list"),
 ]
