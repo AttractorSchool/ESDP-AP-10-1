@@ -29,6 +29,7 @@ class ImageSerializer(serializers.ModelSerializer):
 class EventsSerializer(serializers.ModelSerializer):
     cities = CitiesSerializer(read_only=True)
     type_events = TypeEventsSerializer(read_only=True)
+    photo = ImageSerializer( read_only=True)
 
     class Meta:
         model = Events

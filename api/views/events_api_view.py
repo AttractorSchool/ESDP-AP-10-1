@@ -24,12 +24,13 @@ class EventsSimpleView(APIView):
     def post(self, request, *args, **kwargs):
         data = json.loads(request.body)
         try:
-            data['photo'] = Image.objects.get(id=data.get('photo'))
+            data['photo'] = Image.objects.create(image=data.get('photo'),
+                                                 user=Account.objects.get(id=data.get('sponsor')))
             data['cities'] = Cities.objects.get(id=data.get('cities'))
             data['type_events'] = TypeEvents.objects.get(id=data.get('type_events'))
             data['sponsor'] = Account.objects.get(id=data.get('sponsor'))
             events = Events.objects.create(**data)
-            return Response({"create": "успешно создано"})
+            return Response({"create": "успешно создано", "id": events.id})
         except Exception:
             response = Response({'errors': "ошибка"})
             response.status_code = 400
