@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Newsline{% endblock %}
+{% block content %}
+<div class="event" id="events"></div>
+<button type="submit"  value="" id="update_id">Изменить</button>
+<button type="submit"  value="" id="delete">Удалить</button>
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="{% static 'js/events_detail.js' %}"></script>
+{% endblock %}
