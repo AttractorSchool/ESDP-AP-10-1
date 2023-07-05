@@ -2,18 +2,43 @@
 {% load static %}
 {% block title %}Newsline{% endblock %}
 {% block content %}
-    <h1 class="newsline_header">Новости</h1>
-    <div class="news_div">
-        <section class="articles">
-            <article id="newsline">
-            </article>
+    <div class="about_current_page">
+        <h1 class="newsline_header">НОВОСТИ И СОБЫТИЯ</h1>
     </div>
+    <div class="events_div">
+        <div class="wrapper">
+            {% for event in events %}
+                <a href="{% url 'events_detail' event.pk %}" class="event_card_link">
+                    <div class="event_card">
+                        <div class="event_card_image">
+                            <img src="/uploads/user_pic/almaty.jpg" alt="event_image" class="event_card_img">
+                        </div>
+                        <div class="event_card_description">
+                            <div class="event_card_description_header_div">
+                                <h4 class="event_card_description_header">{{ event.name }}</h4>
+                            </div>
+                            <div class="event_card_description_div">
+                                <p class="event_card_description">
+                                    {{ event.description|truncatechars_html:130 }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    {#    <div class="news_div">#}
+    {#        <section class="articles">#}
+    {#            <article id="newsline">#}
+    {#            </article>#}
+    {#        </section>#}
+    {#    </div>#}
 {% endblock %}
 {% block script_block %}
-    <script
-            src="https://code.jquery.com/jquery-3.3.1.min.js"
-            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-            crossorigin="anonymous"></script>
-<!--    <script src="{% static 'js/newsline.js' %}"></script>-->
-    <script src="{% static 'js/newsline.js' %}"></script>
+    {#    <script#}
+    {#            src="https://code.jquery.com/jquery-3.3.1.min.js"#}
+    {#            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="#}
+    {#            crossorigin="anonymous"></script>#}
+    {#    <script src="{% static 'js/newsline.js' %}"></script>#}
 {% endblock %}
