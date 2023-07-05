@@ -6,7 +6,7 @@ from api.views.list_votes import ListVotesSimpleView, ListVotesApiView
 from api.views.name_voting_types_api_view import NameVotingTypesSSimpleView, NameVotingTypesSApiView
 from api.views.news_api_view import NewsSimpleView, NewsApiView
 from api.views.profile import AccountsSimpleView, AccountApiView
-from api.views.reviews_api_view import ReviewsSimpleView
+from api.views.reviews_api_view import ReviewsSimpleView, ReviewApiView
 from api.views.newsline import NewslineApiView
 from api.views.users_who_voted_api_view import UsersWhoVotedSimpleView, UsersWhoVotedApiView
 from api.views.vote_api_view import VoteApiView, VoteSimpleView
@@ -33,6 +33,7 @@ urlpatterns = [
     path('attaching_to_block/', AttachingToBlockSimpleView.as_view(), name="attaching_to_block_list"),
     path('attaching_to_block/<int:pk>', AttachingToBlockApiView.as_view(), name="attaching_to_block"),
     path("reviews/", ReviewsSimpleView.as_view(), name="reviews_list_api"),
+    path("reviews/<int:pk>", ReviewApiView.as_view(), name="reviews_api"),
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
     path("accounts/", AccountsSimpleView.as_view(), name="accounts_list"),
     path('accounts/<int:pk>', AccountApiView.as_view(), name="events"),

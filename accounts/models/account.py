@@ -1,6 +1,8 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.utils import timezone
+
 from accounts.models.validators import validate_full_name, validate_age, phoneNumberRegex
 from django.core.validators import MinLengthValidator, URLValidator
 
@@ -219,9 +221,20 @@ class Account(AbstractUser):
         max_length=250,
         validators=[MinLengthValidator(2)]
     )
+    is_deleted = models.BooleanField(
+        verbose_name="Удалено",
+        null=False,
+        default=False
+    )
+
 
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
+
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.deleted_at = timezone.now()
+        self.save()
 
     def __str__(self):
         return self.email

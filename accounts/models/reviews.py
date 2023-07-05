@@ -1,6 +1,7 @@
 from django.core.validators import MinLengthValidator
 from django.db import models
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 
 
 class Review(models.Model):
@@ -37,6 +38,16 @@ class Review(models.Model):
         auto_now=True,
         verbose_name="Дата и время обновления",
     )
+    is_deleted = models.BooleanField(
+        verbose_name="Удалено",
+        null=False,
+        default=False
+    )
+
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.deleted_at = timezone.now()
+        self.save()
 
     def __str__(self):
         return f'Отзыв от {self.user_write_review.username} к профилю : {self.user_receive_review.last_name}'
