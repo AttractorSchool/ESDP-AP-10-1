@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'api',
     'chat',
     'rest_framework_simplejwt',
+    'calendar'
 ]
 
 MIDDLEWARE = [

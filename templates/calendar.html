@@ -1,0 +1,18 @@
+{% extends 'base_calendar.html' %}
+{% load static %}
+{% block title %}
+    Calendar
+{% endblock %}
+{% block content %}
+    <div class="calendar-wrapper">
+        {{ cal }}
+    </div>
+    <div class="calendar-buttons">
+        <a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ prev_month }}">Previous Month</a>
+        <a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ next_month }}">Next Month</a>
+    </div>
+    <a class="btn btn-info" href="{% url 'cal:event_new' %}">New Event</a>
+{% endblock %}
+{% block script %}
+    <script src="{% static 'js/calendar_script.js' %}"></script>
+{% endblock %}
