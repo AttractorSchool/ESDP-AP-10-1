@@ -17,6 +17,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         if (data.access && data.refresh) {
+            console.log('Received Data: ', data);
             document.getElementById('message').innerText = 'Login successful!';
             window.location.href = "/accounts/";
         } else {

@@ -1,5 +1,6 @@
 from django.urls import path
 
+from accounts.views.auth import CheckAuthView
 from api.views.attaching_to_block_api_view import AttachingToBlockSimpleView, AttachingToBlockApiView
 from api.views.events_api_view import EventsSimpleView, EventApiView
 from api.views.list_votes import ListVotesSimpleView, ListVotesApiView
@@ -37,4 +38,5 @@ urlpatterns = [
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
     path("accounts/", AccountsSimpleView.as_view(), name="accounts_list"),
     path('accounts/<int:pk>', AccountApiView.as_view(), name="events"),
+    path('check_auth/', CheckAuthView.as_view(), name='check_auth'),
 ]

@@ -9,10 +9,11 @@ class CookieJWTAuthentication(JWTAuthentication):
         print(f'Header: {header}')
         if header is None:
             raw_token = request.COOKIES.get('jwt')
-            print(f'Raw token {raw_token}')
+            print(f'Raw token from Cookie: {raw_token}')
             if raw_token is None:
                 return None
             validated_token = self.get_validated_token(raw_token)
+            print(f'Validated Token: {validated_token}')
             user_id = validated_token.get("user_id")
             User = get_user_model()
             try:
