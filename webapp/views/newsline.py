@@ -19,21 +19,21 @@ class NewslineView(ListView):
         queryset = super().get_queryset()
         return queryset.order_by('-created_at')
 
-    # def dispatch(self, request, *args, **kwargs):
-    #     authenticator = self.authentication_classes[0]()
-    #
-    #     try:
-    #         user_auth_tuple = authenticator.authenticate(request)
-    #     except AuthenticationFailed:
-    #         return HttpResponseRedirect(reverse('login'))
-    #     else:
-    #         if user_auth_tuple:
-    #             print(user_auth_tuple)
-    #             request.user, request.auth = user_auth_tuple
-    #         else:
-    #             return HttpResponseRedirect(reverse('login'))
-    #
-    #     return super().dispatch(request, *args, **kwargs)
+    def dispatch(self, request, *args, **kwargs):
+        authenticator = self.authentication_classes[0]()
+
+        try:
+            user_auth_tuple = authenticator.authenticate(request)
+        except AuthenticationFailed:
+            return HttpResponseRedirect(reverse('login'))
+        else:
+            if user_auth_tuple:
+                print(user_auth_tuple)
+                request.user, request.auth = user_auth_tuple
+            else:
+                return HttpResponseRedirect(reverse('login'))
+
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         print(self.request.user)
