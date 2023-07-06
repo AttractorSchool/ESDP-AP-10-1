@@ -23,7 +23,7 @@ class AdminRequest(models.Model):
         auto_now_add=True,
         verbose_name="Дата создания"
     )
-    closing_at = models.DateTimeField(
+    closed_at = models.DateTimeField(
         null=True,
         blank=True,
         default=None,
@@ -65,6 +65,15 @@ class AdminRequest(models.Model):
         null=True,
         blank=True
     )
+    is_deleted = models.BooleanField(
+        verbose_name="Удалено",
+        null=False,
+        default=False
+    )
+
+    def delete(self, using=None, keep_parents=False):
+        self.is_deleted = True
+        self.save()
 
     def __str__(self):
         return f"{self.user_sender} {self.created_at}"
