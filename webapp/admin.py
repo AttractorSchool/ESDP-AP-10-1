@@ -106,10 +106,10 @@ class VotingOptionsAdmin(admin.ModelAdmin):
 
 
 class SubscriptionLevelAdmin(admin.ModelAdmin):
-    list_display = ("id", "level_name", "price", "created_at", "updated_at", "is_deleted")
-    list_filter = ("id", "level_name", "price", "created_at", "updated_at", "is_deleted")
-    search_fields = ("level_name", "price", "is_deleted")
-    filter = ("level_name", "price", "created_at", "updated_at", "is_deleted")
+    list_display = ("id", "level_name", "price", "created_at", "updated_at")
+    list_filter = ("id", "level_name", "price", "created_at", "updated_at")
+    search_fields = ("level_name", "price")
+    filter = ("level_name", "price", "created_at", "updated_at")
     readonly_fields = ("id", "created_at", "updated_at")
 
 
@@ -123,16 +123,16 @@ class ChatRequestAdmin(admin.ModelAdmin):
 
 class AdminRequestAdmin(admin.ModelAdmin):
     list_display = (
-        "id", "user_reviewer", "user_sender", "created_at", "closed_at", "approved", "request_text", "response_text",
-        "sub_level", "chat_request", "is_deleted")
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
     list_filter = (
-        "id", "user_reviewer", "user_sender", "created_at", "closed_at", "approved", "request_text", "response_text",
-        "sub_level", "chat_request", "is_deleted")
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
     search_fields = (
-        "user_reviewer", "user_sender", "approved", "request_text", "response_text", "sub_level", "chat_request", "is_deleted")
+        "user_reviewer", "user_sender", "approved", "request_text", "response_text", "sub_level", "chat_request")
     filter = (
-        "id", "user_reviewer", "user_sender", "created_at", "closed_at", "approved", "request_text", "response_text",
-        "sub_level", "chat_request", "is_deleted")
+        "id", "user_reviewer", "user_sender", "created_at", "closing_at", "approved", "request_text", "response_text",
+        "sub_level", "chat_request")
     readonly_fields = ("id", "created_at")
 
 

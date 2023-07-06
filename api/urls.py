@@ -13,8 +13,6 @@ from api.views.users_who_voted_api_view import UsersWhoVotedSimpleView, UsersWho
 from api.views.vote_api_view import VoteApiView, VoteSimpleView
 from api.views.voting_options import VotingOptionsSimpleView, VotingOptionsApiView
 from api.views.voting_types_api_view import VotingTypesSimpleView, VotingTypesApiView
-from api.views.admin_request import ChatRequestApiView, SubscriptionLevelRequestApiView, SubscriptionLevelApiView, \
-    SubscriptionLevelDetailApiView, RequestApiView, AdminRequestListApiView, AdminRequestDetailApiView
 
 urlpatterns = [
     path('events/', EventsSimpleView.as_view(), name="events_list"),
@@ -40,12 +38,5 @@ urlpatterns = [
     path("newsline/", NewslineApiView.as_view(), name="newsline_api"),
     path("accounts/", AccountsSimpleView.as_view(), name="accounts_list"),
     path('accounts/<int:pk>', AccountApiView.as_view(), name="events"),
-    path('chat_request/', ChatRequestApiView.as_view(), name="chat_request"),
-    path('sub_request/', SubscriptionLevelRequestApiView.as_view(), name="sub_request"),
-    path('sub_level/', SubscriptionLevelApiView.as_view(), name="sub_level"),
-    path('sub_level/<int:pk>', SubscriptionLevelDetailApiView.as_view(), name="sub_level_detail"),
-    path('request/', RequestApiView.as_view(), name="request"),
-    path('request_all/', AdminRequestListApiView.as_view(), name="request_all"),
-    path('request/<int:pk>', AdminRequestDetailApiView.as_view(), name="request_detail"),
     path('user_like/<int:id>', UserLikeView.as_view(), name='user_like')
 ]
