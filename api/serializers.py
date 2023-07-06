@@ -2,7 +2,7 @@ from rest_framework import serializers
 
 from accounts.models import Review, Account, FamilyStatus, Role, Status
 from webapp.models import Events, Cities, TypeEvents, News, UserBooked, Image, Vote, NameVotingTypes, VotingTypes, \
-    VotingOptions, UsersWhoVoted, ListVotes, AttachingToBlock
+    VotingOptions, UsersWhoVoted, ListVotes, AttachingToBlock, SubscriptionLevel, ChatRequest, AdminRequest
 
 
 class TypeEventsSerializer(serializers.ModelSerializer):
@@ -270,3 +270,94 @@ class AttachingToBlockSerializer(serializers.ModelSerializer):
             "created_at",
         )
         read_only = ("id",)
+
+
+class SubscriptionLevelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = SubscriptionLevel
+        fields = (
+            "id",
+            "level_name",
+            "price",
+            "created_at",
+            "updated_at",
+            "is_deleted"
+        )
+        read_only = ("id", "created_at", "updated_at")
+
+    def validate_level_name(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError("Имя уровня подписки не может иметь менее 3 символов")
+        return value
+
+    def validate_price(self, value):
+        value = int(value)
+        if value < 1000:
+            raise serializers.ValidationError("Цена подписки должна быть больше 1000 ед.")
+        return value
+
+
+class ChatRequestSerializer(serializers.ModelSerializer):
+    second_user = AccountSerializer(read_only=True)
+    cities = CitiesSerializer(read_only=True)
+
+    class Meta:
+        model = ChatRequest
+        fields = (
+            "id",
+            "chat_name",
+            "second_user",
+            "cities",
+            "description",
+            "rules"
+        )
+        read_only = ("id",)
+
+    def validate_chat_name(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError("Нужно название чата имеющее 3 и более символов")
+        return value
+
+    def validate_description(self, value):
+        if len(value) < 10:
+            raise serializers.ValidationError("Нужно написать краткое описание чата (больше 10 символов)")
+        return value
+
+    def validate_rules(self, value):
+        if len(value) < 3:
+            raise serializers.ValidationError("Нужны минимальные правила")
+        return value
+
+
+class AdminRequestSerializer(serializers.ModelSerializer):
+    user_reviewer = AccountSerializer(read_only=True)
+    user_sender = AccountSerializer(read_only=True)
+    sub_level = SubscriptionLevelSerializer(read_only=True)
+    chat_request = ChatRequestSerializer(read_only=True)
+
+    class Meta:
+        model = AdminRequest
+        fields = (
+            "id",
+            "user_reviewer",
+            "user_sender",
+            "created_at",
+            "closed_at",
+            "approved",
+            "request_text",
+            "response_text",
+            "sub_level",
+            "chat_request",
+            "is_deleted"
+        )
+        read_only = ("id", "created_at")
+
+    def validate_request_text(self, value):
+        if len(value) < 3 or len(value) == 0:
+            raise serializers.ValidationError("Текст запроса должен иметь 3 и более символов или быть пустым")
+        return value
+
+    def validate_response_text(self, value):
+        if len(value) < 3 or len(value) == 0:
+            raise serializers.ValidationError("Текст ответа на запрос должен иметь 3 и более символов или быть пустым")
+        return value
