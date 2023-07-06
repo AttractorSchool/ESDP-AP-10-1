@@ -1,22 +1,24 @@
 from django.views.generic import ListView, DetailView
+from rest_framework.permissions import IsAuthenticated
 
 from accounts.models import Account
+from accounts.cookie_auth import CookieJWTAuthentication
 
 
 class ProfileListView(ListView):
     model = Account
     template_name = 'profile_list_django.html'
     context_object_name = 'accounts'
+    authentication_classes = [CookieJWTAuthentication, ]
+    permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.order_by('-pk')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        user_account = Account.objects.filter(username=self.request.user.username).first()
-        context['user_account'] = user_account
-        return context
+        print(f'Authenticated user: {self.request.user}')
+        user_account = self.request.user
+        queryset = super().get_queryset().exclude(pk=user_account.pk)
+        queryset = queryset.order_by('-pk')
+        queryset = [user_account] + list(queryset)
+        return queryset
 
 
 class ProfileDetailView(DetailView):

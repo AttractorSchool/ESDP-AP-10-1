@@ -1,5 +1,5 @@
 from django.urls import path
-from accounts.views.authentification import RegisterUserView, LoginUserView
+from accounts.views.auth import RegisterUserView, LoginUserView
 from accounts.views.profile import ProfileView, ProfileListView
 
 

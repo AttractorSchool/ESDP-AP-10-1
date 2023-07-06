@@ -17,10 +17,8 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     .then(response => response.json())
     .then(data => {
         if (data.access && data.refresh) {
-            localStorage.setItem('accessToken', data.access);
-            localStorage.setItem('refreshToken', data.refresh);
             document.getElementById('message').innerText = 'Login successful!';
-            window.location.href = "/auth/profile/" + data.user_id;
+            window.location.href = "/accounts/";
         } else {
             document.getElementById('message').innerText = 'Login failed.';
             console.error(data);
