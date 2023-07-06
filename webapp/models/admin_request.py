@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth import get_user_model
-
+from django.core.validators import MinLengthValidator
 
 class AdminRequest(models.Model):
     user_reviewer = models.ForeignKey(
@@ -39,13 +39,15 @@ class AdminRequest(models.Model):
         max_length=3000,
         null=True,
         blank=True,
-        verbose_name="Текст запроса"
+        verbose_name="Текст запроса",
+        validators=[MinLengthValidator(2)]
     )
     response_text = models.TextField(
         max_length=3000,
         null=True,
         blank=True,
-        verbose_name="Ответ админа"
+        verbose_name="Ответ админа",
+        validators=[MinLengthValidator(2)]
     )
     sub_level = models.ForeignKey(
         to='webapp.SubscriptionLevel',

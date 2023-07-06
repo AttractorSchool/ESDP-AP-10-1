@@ -1,3 +1,4 @@
+from django.core.validators import MinLengthValidator
 from django.db import models
 
 
@@ -10,7 +11,8 @@ class VotingOptions(models.Model):
     )
     option = models.TextField(
         verbose_name="Вариант",
-        max_length=100
+        max_length=100,
+        validators=[MinLengthValidator(1)]
     )
     updated_at = models.DateTimeField(
         auto_now=True,
