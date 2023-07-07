@@ -37,7 +37,6 @@ class NewsForm(forms.ModelForm):
         return name
 
 
-
 class EventsForm(forms.ModelForm):
     class Meta:
         model = Events
