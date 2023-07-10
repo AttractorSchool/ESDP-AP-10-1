@@ -23,6 +23,10 @@ class CalendarView(generic.ListView):
         context['cal'] = mark_safe(html_cal)
         context['prev_month'] = self.prev_month(d)
         context['next_month'] = self.next_month(d)
+        today = date.today()
+        events_today = Events.objects.filter(events_at__year=today.year, events_at__month=today.month,
+                                             events_at__day=today.day).exclude(is_deleted=True)
+        context['events_today'] = events_today
         return context
 
     @staticmethod
@@ -50,10 +54,9 @@ class CalendarView(generic.ListView):
 
 def event(request, event_id=None):
     instance = get_object_or_404(Events, pk=event_id) if event_id else None
-
     form = EventForm(request.POST or None, instance=instance)
     if request.method == 'POST' and form.is_valid():
         form.save()
-        return HttpResponseRedirect(reverse('cal:calendar'))
+        return HttpResponseRedirect(reverse('calendar'))
 
-    return render(request, 'event.html', {'form': form})
+    return render(request, 'event_create.html', {'form': form})

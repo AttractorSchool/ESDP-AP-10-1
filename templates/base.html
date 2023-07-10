@@ -49,7 +49,7 @@
                         </a>
                     </li>
                     <li class="svg">
-                        <a class="svg_link" href="#">
+                        <a class="svg_link" href="{% url 'calendar' %}">
                             <img style="width: 41px; height: 41px" src="{% static 'svg/events.png' %}"
                                  alt="Мероприятия"/>
                         </a>
@@ -72,6 +72,7 @@
     {% block script_block %}
         <script src="{% static 'js/logout.js' %}"></script>
         <script src="{% static 'js/check_auth.js' %}"></script>
+        <script src="{% static 'js/calendar_script.js' %}"></script>
     {% endblock %}
 </div>
 </body>

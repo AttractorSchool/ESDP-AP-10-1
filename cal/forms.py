@@ -5,7 +5,10 @@ from django.forms import ModelForm, TextInput, DateInput, Textarea, NumberInput,
 class EventForm(ModelForm):
     class Meta:
         model = Events
-        fields = '__all__'
+        fields = [
+            'name', 'cities', 'type_events', 'events_at', 'sponsor', 'number_of_seats', 'start_register_at',
+            'end_register_at', 'description', 'place', 'price', 'photo'
+        ]
         widgets = {
             'name': TextInput(attrs={'class': 'form-control'}),
             'cities': Select(attrs={'class': 'form-control'}),

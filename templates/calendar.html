@@ -1,18 +1,40 @@
 {% extends 'base_calendar.html' %}
 {% load static %}
+
 {% block title %}
     Calendar
 {% endblock %}
+
 {% block content %}
-    <div class="calendar-wrapper">
-        {{ cal }}
+    <div class="calendar-container">
+        <div class="calendar-wrapper">
+            {{ cal }}
+        </div>
+        <div class="calendar-buttons">
+            <a class="btn btn-info calendar_button_custom" href="{% url 'calendar' %}?{{ prev_month }}">Предыдущий
+                месяц</a>
+            <a class="btn btn-info calendar_button_custom" href="{% url 'calendar' %}?{{ next_month }}">Следующий
+                месяц</a>
+        </div>
+        <div class="calendar_new_event_button">
+            <a class="btn btn-info calendar_button_custom" href="{% url 'event_new' %}">Новое событие</a>
+        </div>
+        <div class="events-today">
+            <h2 class="events_for_today">События на сегодня</h2>
+            {% for event in events_today %}
+                <a href="{% url 'events_detail' event.pk %}" class="event_card_mini_link">
+                    <div class="event_card_mini">
+                        <p class="event_name_calendar">
+                            {{ event.name }}
+                        </p>
+                    </div>
+                </a>
+            {% empty %}
+                <p>No events for today.</p>
+            {% endfor %}
+        </div>
+        <div class="calendar-header">
+            <h1 class="newsline-header">КАЛЕНДАРЬ МЕРОПРИЯТИЙ</h1>
+        </div>
     </div>
-    <div class="calendar-buttons">
-        <a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ prev_month }}">Previous Month</a>
-        <a class="btn btn-info" href="{% url 'cal:calendar' %}?{{ next_month }}">Next Month</a>
-    </div>
-    <a class="btn btn-info" href="{% url 'cal:event_new' %}">New Event</a>
-{% endblock %}
-{% block script %}
-    <script src="{% static 'js/calendar_script.js' %}"></script>
 {% endblock %}
