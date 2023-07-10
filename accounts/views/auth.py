@@ -3,7 +3,7 @@ from rest_framework import status
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from accounts.serializers import UserSerializer, LoginSerializer
 
@@ -27,6 +27,8 @@ class RegisterUserView(APIView):
 
 
 class LoginUserView(APIView):
+    permission_classes = [AllowAny]
+
     def post(self, request):
         serializer = LoginSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
@@ -39,7 +41,8 @@ class LoginUserView(APIView):
         }
         print(f'Login Response: {res}')
         response = Response(res, status=status.HTTP_200_OK)
-        response.set_cookie(key='jwt', value=str(refresh.access_token), httponly=True)
+        response.set_cookie(key='jwt', value=str(refresh.access_token), httponly=True, secure=False)
+        response.set_cookie(key='refresh_jwt', value=str(refresh), httponly=True, secure=False)
         return response
 
     def get(self, request):
@@ -50,6 +53,7 @@ class LogoutUserView(APIView):
     def post(self, request):
         response = Response({"detail": "Logout Successful"}, status=status.HTTP_200_OK)
         response.delete_cookie('jwt')
+        response.delete_cookie('refresh_jwt')
         print(f'Requested Cookies: {request.COOKIES}')
         return response
 

@@ -13,9 +13,11 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             email: email,
             password: password,
         }),
+        credentials: 'include',
     })
     .then(response => response.json())
     .then(data => {
+        console.log('Login response: ', data);
         if (data.access && data.refresh) {
             console.log('Received Data: ', data);
             document.getElementById('message').innerText = 'Login successful!';

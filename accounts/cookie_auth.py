@@ -1,6 +1,6 @@
 from rest_framework_simplejwt.authentication import JWTAuthentication
-
 from django.contrib.auth import get_user_model
+from rest_framework_simplejwt.exceptions import InvalidToken, TokenError
 
 
 class CookieJWTAuthentication(JWTAuthentication):
@@ -12,7 +12,14 @@ class CookieJWTAuthentication(JWTAuthentication):
             print(f'Raw token from Cookie: {raw_token}')
             if raw_token is None:
                 return None
-            validated_token = self.get_validated_token(raw_token)
+            try:
+                validated_token = self.get_validated_token(raw_token)
+            except TokenError as e:
+                if isinstance(e, InvalidToken):
+                    print("Access token is expired.")
+                    return None
+                else:
+                    return None
             print(f'Validated Token: {validated_token}')
             user_id = validated_token.get("user_id")
             User = get_user_model()
