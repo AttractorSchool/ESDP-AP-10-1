@@ -28,7 +28,7 @@
             </div>
             <div class="profile_card_button_div">
                 {% if account.pk != request.user.pk %}
-                    <a href="{% url 'start_chat' %}" class="update_profile_link">
+                    <a href=" {% url 'start_chat' account.email %} " class="update_profile_link">
                         <div class="profile_card_button_wrapper">
                             <span class="profile_card_button">
                                 Написать
