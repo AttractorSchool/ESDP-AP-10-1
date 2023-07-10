@@ -13,14 +13,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             email: email,
             password: password,
         }),
+        credentials: 'include',
     })
     .then(response => response.json())
     .then(data => {
+        console.log('Login response: ', data);
         if (data.access && data.refresh) {
-            localStorage.setItem('accessToken', data.access);
-            localStorage.setItem('refreshToken', data.refresh);
+            console.log('Received Data: ', data);
             document.getElementById('message').innerText = 'Login successful!';
-            window.location.href = "/auth/profile/" + data.user_id;
+            window.location.href = "/accounts/";
         } else {
             document.getElementById('message').innerText = 'Login failed.';
             console.error(data);
