@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Update news{% endblock %}
+{% block content %}
+    <div class="container cont" style="padding-top: 100px;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-7 card text-bg-light form-margins">
+                <h2>Изменение</h2>
+                <form method="post" enctype="multipart/form-data">
+                    {% include 'partial/news_form.html' with button_text='Изменить' %}
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
