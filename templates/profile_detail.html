@@ -27,6 +27,17 @@
                 </div>
             </div>
             <div class="profile_card_button_div">
+                {% if account.pk != request.user.pk %}
+                    <a href=" {% url 'start_chat' account.email %} " class="update_profile_link">
+                        <div class="profile_card_button_wrapper">
+                            <span class="profile_card_button">
+                                Написать
+                            </span>
+                        </div>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="profile_card_button_div">
                 {% if account.pk == request.user.pk %}
                     <a href="#" class="update_profile_link">
                         <div class="profile_card_button_wrapper">
@@ -36,7 +47,7 @@
                         </div>
                     </a>
                 {% else %}
-                    <a href="#" class="thank_profile_link">
+                    <a href="#" class="thank_profile_link" data-pk="{{ account.pk }}">
                         <div class="profile_card_button_wrapper">
                             <span class="profile_card_button">
                                 Спасибо
@@ -48,3 +59,5 @@
         </div>
     </div>
 {% endblock %}
+<script src="{% static 'js/like.js' %}"></script>
+

@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% load humanize %}
+
+{% block navbar %}
+<nav class="navbar navbar-light bg-light sticky-top">
+    <div class="container-fluid d-flex justify-content-end">
+        <div class="navbar-nav">
+            <a class="nav-link" href="{% url 'create_group_chat' %}">Create Group Chat</a>
+        </div>
+    </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="chat-list-container">
+    <div class="list-group">
+        {% if not chats_with_recipients %}
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        <p>No messages yet.</p>
+        {% else %}
+        {% for item in chats_with_recipients %}
+        <a href="{% url 'room' room_id=item.room_id %}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <div class="d-flex align-items-center">
+                    {% if item.avatar_url %}
+                    <img src="{{ item.avatar_url }}" class="rounded-circle" alt="Profile Picture" width="50"
+                         height="50">
+                    {% else %}
+                    <img src="{% static 'groupchat.png' %}" class="rounded-circle" alt="Profile Picture" width="50"
+                         height="50">
+                    {% endif %}
+                    <div>
+                        <h5 class="mb-1">{{ item.chat_name }}</h5>
+                        {% if item.chat %}
+                        <p class="mb-1">{{ item.chat.message }}</p>
+                        {% else %}
+                        <p class="mb-1" style="font-style: italic; color: grey;">No messages yet...</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% if item.chat %}
+                <small class="text-body-secondary">{{ item.chat.timestamp|naturaltime }}</small>
+                {% endif %}
+            </div>
+        </a>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

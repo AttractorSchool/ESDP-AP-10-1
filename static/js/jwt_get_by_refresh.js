@@ -1,5 +1,6 @@
 var fd = new FormData();
-fd.append("refresh", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY4NzI3NzA5MywiaWF0IjoxNjg3MTkwNjkzLCJqdGkiOiI3MGZhY2NjNjg4Njc0NTRmODU5OTc3ZGJhMDUxOTAyMiIsInVzZXJfaWQiOjJ9.llEE3TK7ECwdByQ57QUb58eQsk9BEyFQqRhSd83GgP4");
+fd.append("refresh", localStorage.getItem('refreshToken'));
+
 $.ajax({
     url: 'http://127.0.0.1:8000/api/token/refresh/',
     type: "POST",
@@ -8,5 +9,8 @@ $.ajax({
     contentType: false,
     success: function(data, status) {
         console.log(data);
+        if (data.access) {
+            localStorage.setItem('accessToken', data.access);
+        }
     }
 });

@@ -2,7 +2,6 @@ import json
 import uuid
 import logging
 from django.contrib.auth import get_user_model
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import JsonResponse, HttpResponse
 from django.urls import reverse
@@ -15,12 +14,11 @@ logger = logging.getLogger(__name__)
 User = get_user_model()
 
 
-def index(request):
-    return render(request, 'chat/index.html')
-
-
-class RoomView(LoginRequiredMixin, View):
+class RoomView(View):
     def get(self, request, room_uuid):
+        if not request.user.is_authenticated:
+            return HttpResponse('Unauthorized', status=401)
+
         room = ChatRoom.objects.filter(id=room_uuid).first()
         if room is None:
             return HttpResponse("Room not found", status=404)
@@ -30,16 +28,19 @@ class RoomView(LoginRequiredMixin, View):
                       {'room_name': room.name, 'room_uuid': str(room.id), 'old_messages': old_messages, 'room': room})
 
 
-class StartChatView(LoginRequiredMixin, View):
-    def get(self, request, username):
-        other_user = get_object_or_404(User, username=username)
+class StartChatView(View):
+    def get(self, request, email):
+        if not request.user.is_authenticated:
+            return HttpResponse('Unauthorized', status=401)
+
+        other_user = get_object_or_404(User, email=email)
         user_rooms = ChatRoom.objects.filter(users=request.user, chat_type=ChatType.PRIVATE.name)
         other_user_rooms = ChatRoom.objects.filter(users=other_user, chat_type=ChatType.PRIVATE.name)
         common_rooms = user_rooms.intersection(other_user_rooms)
         room = common_rooms.first()
         if room is None:
             room = ChatRoom.objects.create(
-                name=f'Chat with {other_user.username}',
+                name=f'Chat with {other_user.email}',
                 chat_type=ChatType.PRIVATE.name
             )
             room.users.add(request.user, other_user)
@@ -47,8 +48,11 @@ class StartChatView(LoginRequiredMixin, View):
         return redirect(reverse('room_view', args=[str(room.id)]))
 
 
-class ChatsView(LoginRequiredMixin, View):
+class ChatsView(View):
     def get(self, request):
+        if not request.user.is_authenticated:
+            return HttpResponse('Unauthorized', status=401)
+
         chatrooms = ChatRoom.objects.filter(users=request.user).distinct()
         chats_with_recipients = []
         for room in chatrooms:
@@ -71,11 +75,15 @@ class ChatsView(LoginRequiredMixin, View):
                                                   'room_id': str(room.id), 'avatar_url': avatar_url})
 
         chats_with_recipients.sort(key=lambda x: x['chat'].timestamp if x['chat'] else timezone.now(), reverse=True)
+        print(f'Chats with recipients: {chats_with_recipients}')
         return render(request, 'chat/chat_list.html', {'chats_with_recipients': chats_with_recipients})
 
 
 @csrf_exempt
 def connect(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Not authorized'}, status=403)
+
     logger.debug(request.body)
     user = request.user.username if request.user.is_authenticated else 'Anonymous'
     response = {
@@ -124,6 +132,9 @@ def publish(request):
 
 @csrf_exempt
 def subscribe(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Not authorized'}, status=403)
+
     logger.debug(request.body)
     response = {
         'result': {}

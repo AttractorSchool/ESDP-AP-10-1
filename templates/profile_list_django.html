@@ -2,60 +2,38 @@
 {% load static %}
 {% block title %}Profile List{% endblock %}
 {% block content %}
-    <div class="about_current_page">
-        <h1 class="newsline_header">РЕЗИДЕНТЫ</h1>
-    </div>
-    <div class="scrollable-container">
-        <div class="block_profiles">
-            {% if user_account %}
-                <div class="user_card">
-                    <a href="{% url 'account_detail' user_account.pk %}" class="user_card_link">
-                        <div class="about_user">
-                            <div class="about_user_name">
-                                <h4 class="about_user_name_heading">{{ user_account.first_name }} {{ user_account.last_name }}</h4>
-                            </div>
-                            <div class="about_user_scope">
-                                <h5 class="about_user_scope_heading">{{ user_account.occupation }}</h5>
-                            </div>
-                        </div>
-                        <div class="user_pic_div">
-                            {% if not user_account.avatar %}
-                                <img src="../static/svg/user.png" alt="Avatar" class="user_pic">
-                            {% else %}
-                                <img src="{{ user_account.avatar }}" alt="" class="user_pic">
-                            {% endif %}
-                        </div>
-                    </a>
-                </div>
-                <hr class="separator">
-            {% endif %}
-            {% for account in accounts %}
-                <div class="user_card">
-                    <a href="{% url 'account_detail' account.pk %}" class="user_card_link">
-                        <div class="about_user">
-                            <div class="about_user_name">
-                                <h4 class="about_user_name_heading">{{ account.first_name }} {{ account.last_name }}</h4>
-                            </div>
-                            <div class="about_user_scope">
-                                <h5 class="about_user_scope_heading">{{ account.occupation }}</h5>
-                            </div>
-                        </div>
-                        <div class="user_pic_div">
-                            {% if not account.avatar %}
-                                <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
-                            {% else %}
-                                <img src="{{ account.avatar }}" alt="" class="user_pic">
-                            {% endif %}
-                        </div>
-                    </a>
-                </div>
-            {% empty %}
-                <div class="user_card">
-                    <div class="no_profiles">
-                        <h5 class="no_profiles_text">No accounts found</h5>
+<div class="about_current_page">
+    <h1 class="newsline_header">РЕЗИДЕНТЫ</h1>
+</div>
+<div class="scrollable-container">
+    <div class="block_profiles">
+        {% for account in accounts %}
+        <div class="user_card">
+            <a href="{% url 'account_detail' account.pk %}" class="user_card_link">
+                <div class="about_user">
+                    <div class="about_user_name">
+                        <h4 class="about_user_name_heading">{{ account.first_name }} {{ account.last_name }}</h4>
+                    </div>
+                    <div class="about_user_scope">
+                        <h5 class="about_user_scope_heading">{{ account.occupation }}</h5>
                     </div>
                 </div>
-            {% endfor %}
+                <div class="user_pic_div">
+                    {% if not account.avatar %}
+                    <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
+                    {% else %}
+                    <img src="{{ account.avatar }}" alt="" class="user_pic">
+                    {% endif %}
+                </div>
+            </a>
         </div>
+        {% empty %}
+        <div class="user_card">
+            <div class="no_profiles">
+                <h5 class="no_profiles_text">No accounts found</h5>
+            </div>
+        </div>
+        {% endfor %}
     </div>
+</div>
 {% endblock %}

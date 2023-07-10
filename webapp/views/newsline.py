@@ -2,7 +2,7 @@ from django.views.generic import ListView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from rest_framework.permissions import IsAuthenticated
-from accounts.views.authentification import CookieJWTAuthentication
+from accounts.cookie_auth import CookieJWTAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 
 from webapp.models import Events
