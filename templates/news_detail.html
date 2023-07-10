@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}News detail{% endblock %}
+
+{% block content %}
+    <div class="container cont" style="padding-top: 100px;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-7 card text-bg-light form-margins">
+                <h2>News detail:</h2>
+                <p>Name: {{ news.name }}</p>
+                <div class="text-center">
+                    <img style="height: 180px; width:300px;" src="{{ news.photo.all.first.image.url }}" alt="News Photo" class="event_detail_card_pic">
+                </div>
+                <p>Cities {{ news.cities }}</p>
+                <p>Description: {{ news.description }}</p>
+            </div>
+            <a href="{% url 'news_delete' news.pk %}" class="btn btn-danger">Удалить</a>
+        </div>
+    </div>
+{% endblock %}
