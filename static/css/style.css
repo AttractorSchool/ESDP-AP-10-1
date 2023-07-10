@@ -468,12 +468,10 @@ ul {
 }
 
 .burger-menu {
-    display: flex;
-    position: inherit;
-    top: 0vh;
-    left: 100vw;
-    right: -100vw;
-    bottom: 0vh;
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
     background-color: #072A2B;
     padding: 5px;
     box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
@@ -484,10 +482,8 @@ ul {
 }
 
 .burger-menu.active {
-    left: 50vw;
-    right: 0;
-    position: initial;
-    height: 930px;
+    display: flex;
+     height: 847px;
 }
 
 .burger-menu a {
@@ -504,7 +500,6 @@ ul {
 }
 
 .burger_menu_nav_custom {
-    position: relative;
 }
 
 .navi_admin{
