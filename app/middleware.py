@@ -54,4 +54,3 @@ class JWTRefreshTokenMiddleware(MiddlewareMixin):
                     if auth_user is not None:
                         request.user = auth_user
         return response
-
