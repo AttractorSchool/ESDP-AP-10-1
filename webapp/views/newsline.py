@@ -15,10 +15,6 @@ class NewslineView(ListView):
     authentication_classes = [CookieJWTAuthentication]
     permission_classes = [IsAuthenticated]
 
-    def get_queryset(self):
-        queryset = super().get_queryset()
-        return queryset.order_by('-created_at')
-
     def dispatch(self, request, *args, **kwargs):
         authenticator = self.authentication_classes[0]()
 
@@ -38,5 +34,6 @@ class NewslineView(ListView):
     def get_context_data(self, **kwargs):
         print(self.request.user)
         context = super().get_context_data(**kwargs)
+        context['events'] = Events.objects.all().exclude(is_deleted=True).order_by('-created_at')
         context['user_obj'] = self.request.user
         return context
