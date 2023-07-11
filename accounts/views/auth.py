@@ -39,7 +39,6 @@ class LoginUserView(APIView):
             'access': str(refresh.access_token),
             'user_id': user.id,
         }
-        print(f'Login Response: {res}')
         response = Response(res, status=status.HTTP_200_OK)
         response.set_cookie(key='jwt', value=str(refresh.access_token), httponly=True, secure=False)
         response.set_cookie(key='refresh_jwt', value=str(refresh), httponly=True, secure=False)
@@ -54,7 +53,6 @@ class LogoutUserView(APIView):
         response = Response({"detail": "Logout Successful"}, status=status.HTTP_200_OK)
         response.delete_cookie('jwt')
         response.delete_cookie('refresh_jwt')
-        print(f'Requested Cookies: {request.COOKIES}')
         return response
 
 
@@ -62,5 +60,4 @@ class CheckAuthView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request):
-        print(f'Authenticated: {request.user.is_authenticated}')
         return Response({"authenticated": True})

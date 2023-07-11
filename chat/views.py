@@ -23,7 +23,7 @@ class RoomView(View):
         if room is None:
             return HttpResponse("Room not found", status=404)
 
-        old_messages = ChatMessage.objects.filter(room=room).order_by('-timestamp')
+        old_messages = ChatMessage.objects.filter(room=room).order_by('timestamp')
         return render(request, 'chat/room.html',
                       {'room_name': room.name, 'room_uuid': str(room.id), 'old_messages': old_messages, 'room': room})
 
@@ -57,7 +57,7 @@ class ChatsView(View):
         chats_with_recipients = []
         for room in chatrooms:
             chat = ChatMessage.objects.filter(room=room).order_by('-timestamp').first()
-            if room.is_group:
+            if room.is_group_chat():
                 chat_name = room.name
                 avatar_url = room.avatar.url if room.avatar else None
                 if chat:
@@ -69,8 +69,11 @@ class ChatsView(View):
             else:
                 if chat:
                     recipient = room.users.exclude(id=request.user.id).first()
-                    chat_name = recipient.first_name + " " + recipient.last_name
-                    avatar_url = recipient.avatar.url if recipient.avatar else None
+                    if recipient.first_name and recipient.last_name:
+                        chat_name = recipient.first_name + " " + recipient.last_name
+                    else:
+                        chat_name = recipient.email
+                    avatar_url = recipient.avatar.image.url if recipient.avatar else None
                     chats_with_recipients.append({'chat': chat, 'chat_name': chat_name,
                                                   'room_id': str(room.id), 'avatar_url': avatar_url})
 
@@ -85,7 +88,7 @@ def connect(request):
         return JsonResponse({'error': 'Not authorized'}, status=403)
 
     logger.debug(request.body)
-    user = request.user.username if request.user.is_authenticated else 'Anonymous'
+    user = request.user.email if request.user.is_authenticated else 'Anonymous'
     response = {
         'result': {
             'user': user

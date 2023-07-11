@@ -13,7 +13,6 @@ class ProfileListView(ListView):
     permission_classes = [IsAuthenticated, ]
 
     def get_queryset(self):
-        print(f'Authenticated user: {self.request.user}')
         user_account = self.request.user
         queryset = super().get_queryset().exclude(pk=user_account.pk)
         queryset = queryset.order_by('-pk')

@@ -13,48 +13,50 @@
 {% endblock %}
 
 {% block content %}
-<div class="chat-list-container">
-    <div class="list-group">
+<div class="about_current_page">
+    <h1 class="newsline_header">СООБЩЕНИЯ</h1>
+</div>
+<div class="scrollable-container">
+    <div class="block_profiles">
         {% if not chats_with_recipients %}
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
-        <p>No messages yet.</p>
+        <div class="user_card">
+            <div class="no_profiles">
+                <h5 class="no_profiles_text">No chats yet.</h5>
+            </div>
+        </div>
         {% else %}
         {% for item in chats_with_recipients %}
-        <a href="{% url 'room' room_id=item.room_id %}" class="list-group-item list-group-item-action">
-            <div class="d-flex w-100 justify-content-between">
-                <div class="d-flex align-items-center">
+        <div class="user_card">
+            <a href="{% url 'room_view' room_uuid=item.room_id %}" class="user_card_link">
+                <div class="user_pic_div">
                     {% if item.avatar_url %}
-                    <img src="{{ item.avatar_url }}" class="rounded-circle" alt="Profile Picture" width="50"
-                         height="50">
+                    <img src="{{ item.avatar_url }}" alt="Profile Picture" class="user_pic">
                     {% else %}
-                    <img src="{% static 'groupchat.png' %}" class="rounded-circle" alt="Profile Picture" width="50"
-                         height="50">
+                    <img src="{% static 'groupchat.png' %}" class="user_pic">
                     {% endif %}
-                    <div>
-                        <h5 class="mb-1">{{ item.chat_name }}</h5>
+                </div>
+                <div class="about_user">
+                    <div class="about_user_name">
+                        <h4 class="about_user_name_heading">{{ item.chat_name }}</h4>
+                    </div>
+                    <div class="about_user_scope">
+                        <h5 class="about_user_scope_heading">
+                            {% if item.chat %}
+                            {{ item.chat.message }}
+                            {% else %}
+                            No messages yet...
+                            {% endif %}
+                        </h5>
+                    </div>
+                    <div class="chat_timestamp">
                         {% if item.chat %}
-                        <p class="mb-1">{{ item.chat.message }}</p>
-                        {% else %}
-                        <p class="mb-1" style="font-style: italic; color: grey;">No messages yet...</p>
+                        <small class="text-body-secondary">{{ item.chat.timestamp|naturaltime }}</small>
                         {% endif %}
                     </div>
                 </div>
-                {% if item.chat %}
-                <small class="text-body-secondary">{{ item.chat.timestamp|naturaltime }}</small>
-                {% endif %}
-            </div>
-        </a>
+
+            </a>
+        </div>
         {% endfor %}
         {% endif %}
     </div>
