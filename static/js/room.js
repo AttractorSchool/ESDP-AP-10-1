@@ -14,9 +14,18 @@ centrifuge.on('disconnect', function (ctx) {
 
 const channelName = 'rooms:' + roomId;
 
+let userEmail = "{% if user.is_authenticated %}{{ user.email }}{% endif %}";
+
 const sub = centrifuge.subscribe(channelName, function (ctx) {
     const chatNewThread = document.createElement('li');
-    const chatNewMessage = document.createTextNode(ctx.data.user + ': ' + ctx.data.message);
+    let chatNewMessage;
+    if (ctx.data.user === userEmail) {
+        chatNewThread.classList.add('current-user');
+        chatNewMessage = document.createTextNode(ctx.data.message);
+    } else {
+        chatNewThread.classList.add('other-user');
+        chatNewMessage = document.createTextNode(ctx.data.message);
+    }
     chatNewThread.appendChild(chatNewMessage);
     chatThread.appendChild(chatNewThread);
     chatThread.scrollTop = chatThread.scrollHeight;
@@ -32,7 +41,7 @@ messageInput.onkeyup = function (e) {
         if (!message) {
             return;
         }
-        sub.publish({ 'message': message });
+        sub.publish({ 'message': message, 'user': userEmail });
         messageInput.value = '';
     }
 };

@@ -5,14 +5,18 @@
 <head>
     <meta charset="utf-8"/>
     <title>Chat Room</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chat.css' %}">
     <script src="https://cdn.jsdelivr.net/gh/centrifugal/centrifuge-js@2.8.3/dist/centrifuge.min.js"></script>
 </head>
 
 <body>
 <ul id="chat-thread" class="chat-thread">
     {% for message in old_messages %}
-    <li><strong>{{ message.user.username }}:</strong> {{ message.message }}</li>
+    {% if message.user.email == request.user.email %}
+    <li class="current-user"><strong></strong> {{ message.message }}</li>
+    {% else %}
+    <li class="other-user"><strong></strong> {{ message.message }}</li>
+    {% endif %}
     {% endfor %}
 </ul>
 <div class="chat-message">
@@ -23,6 +27,12 @@
 {% block extrajs %}
 <script src="{% static 'js/room.js' %}"></script>
 {% endblock %}
+<script>
+window.onload = function() {
+    var chatThread = document.getElementById('chat-thread');
+    chatThread.scrollTop = chatThread.scrollHeight;
+};
+</script>
 </body>
 
 </html>
