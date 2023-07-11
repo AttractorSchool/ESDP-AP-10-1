@@ -17,21 +17,20 @@
             <div class="titany_logo">
                 <img src="{% static 'svg/titany_logo.png' %}" alt="LOGO" class="titany_logo_img">
             </div>
-            <nav class="hamburger_menu">
-                <div class="container_burger">
-                    <input id="hamburger_menu_toggle" type="checkbox"/>
-                    <label class="hamburger_menu_btn" for="hamburger_menu_toggle">
-                        <span></span>
-                    </label>
-                    <ul class="hamburger_menu_items">
-                        <li>
-                            <button onclick="logout()">Logout</button>
-                        </li>
-                        <li><a class="hamburger_menu_item" href="#">Test 2</a></li>
-                        <li><a class="hamburger_menu_item" href="#">Test 3</a></li>
-                    </ul>
-                </div>
-            </nav>
+            <div class="burger_menu_custom_div">
+                <nav class="burger_menu_nav_custom">
+                    <div class="burger-button">
+                        <span class="burger-top"></span>
+                        <span class="burger-middle"></span>
+                        <span class="burger-bottom"></span>
+                    </div>
+                    <div class="burger-menu">
+                        <div class="navi_admin"> <a href="">Администратор</a></div>
+
+                        <a class="exit_but" href="">Выйти</a>
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
     <nav class="navbar">
@@ -49,7 +48,7 @@
                         </a>
                     </li>
                     <li class="svg">
-                        <a class="svg_link" href="#">
+                        <a class="svg_link" href="{% url 'calendar' %}">
                             <img style="width: 41px; height: 41px" src="{% static 'svg/events.png' %}"
                                  alt="Мероприятия"/>
                         </a>
@@ -72,7 +71,11 @@
     {% block script_block %}
         <script src="{% static 'js/logout.js' %}"></script>
         <script src="{% static 'js/check_auth.js' %}"></script>
+        <script src="{% static 'js/calendar_script.js' %}"></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
+        <script src="{% static 'js/burger.js' %}"></script>
     {% endblock %}
 </div>
+
 </body>
 </html>

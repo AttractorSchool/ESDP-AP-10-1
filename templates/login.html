@@ -1,17 +1,17 @@
 {% load static %}
 {% block title %}User Login{% endblock %}
 {% block content %}
-<form id="loginForm">
-    Email:<br>
-    <input type="email" id="email" required>
-    <br>
-    Password:<br>
-    <input type="password" id="password" required>
-    <br><br>
-    <input type="submit" value="Login">
-</form>
-<div id="message"></div>
+    <form id="loginForm">
+        Email:<br>
+        <input type="email" id="email" required>
+        <br>
+        Password:<br>
+        <input type="password" id="password" required>
+        <br><br>
+        <input type="submit" value="Login">
+    </form>
+    <div id="message"></div>
 {% endblock %}
 {% block script_block %}
-<script src="{% static 'js/login.js' %}"></script>
+    <script src="{% static 'js/login.js' %}"></script>
 {% endblock %}

@@ -4,6 +4,7 @@
     height: 932px;
     background: #217995;
     margin: 0 0 0 400px;
+    overflow: hidden;
 }
 
 .header {
@@ -99,12 +100,12 @@ ul {
 
 .user_card {
     background: #EEEEEE;
-    border: 3px solid #0A292C;
-    border-radius: 24px;
-    width: 350px;
-    height: 71px;
+    border: 2px solid #0A292C;
+    border-radius: 10px;
+    width: 390px;
+    height: 80px;
     display: flex;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .user_pic {
@@ -168,7 +169,7 @@ ul {
 }
 
 .separator {
-    width: 80%;
+    width: 390px;
 }
 
 .user_card_link {
@@ -299,13 +300,13 @@ ul {
 }
 
 .event_card {
-    width: 348px;
+    width: 390px;
     height: 178px;
     background: #EEEEEE;
     border: 3px solid #0A292C;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
-    margin-top: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
     display: flex;
 }
 
@@ -323,8 +324,8 @@ ul {
 .event_card_img {
     width: 110px;
     height: 110px;
-    border: 3px solid #0A292C;
-    border-radius: 24px;
+    border: 2px solid #0A292C;
+    border-radius: 3px;
 }
 
 .event_card_description_header_div {
@@ -394,9 +395,9 @@ ul {
 }
 
 .event_detail_card_pic {
-    border: 3px solid #0A292C;
+    border: 2px solid #0A292C;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 24px;
+    border-radius: 10px;
 }
 
 .event_detail_card_header {
@@ -410,4 +411,277 @@ ul {
 
 .event_card_description_div {
     width: 217px;
+}
+
+.calendar-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-height: 860px;
+    overflow-y: auto;
+}
+
+.calendar-header {
+    text-align: center;
+    margin-top: 90px;
+}
+
+.calendar-wrapper {
+    background-color: #217995;
+    color: #fff;
+    padding: 20px;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.calendar-buttons {
+    display: flex;
+    justify-content: space-around;
+    order: 2;
+}
+
+.calendar-buttons a {
+    display: inline-block;
+    color: #fff;
+    padding: 10px 20px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.btn-info {
+    background-color: #072A2B;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.calendar caption {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+.calendar th {
+    background-color: #217995;
+    color: #fff;
+    padding: 10px;
+}
+
+.calendar td {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.calendar .date {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.calendar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.calendar li {
+    margin-bottom: 5px;
+}
+
+.calendar li a {
+    color: #217995;
+    text-decoration: none;
+}
+
+.calendar li a:hover {
+    text-decoration: underline;
+}
+
+.event-list {
+    display: none;
+}
+
+.event-count {
+    display: block;
+    font-size: 18px;
+    color: orange;
+}
+
+.back_to_calendar_link {
+    margin-top: 100px;
+}
+
+.calendar_new_event_button {
+    display: flex;
+    justify-content: center;
+    order: 3;
+}
+
+.events-today {
+    order: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.newsline-header {
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 43px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-block-end: 0;
+}
+
+.event_card_mini {
+    width: 390px;
+    height: 40px;
+    background: #EEEEEE;
+    border: 3px solid #0A292C;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.event_name_calendar {
+    color: black;
+}
+
+.event_card_mini_link {
+    text-decoration: none;
+}
+
+.calendar_button_custom {
+    background: #D37724;
+    border: 3px solid #0A292C;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+
+.calendar-container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.calendar-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.calendar-container::-webkit-scrollbar-thumb {
+    background-color: transparent;
+}
+
+.events_for_today {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 43px;
+    color: #FFFFFF;
+    margin-block-end: 0;
+}
+
+.burger-button {
+    position: absolute;
+    top: 2vh;
+    right: 2vh;
+    z-index: 9;
+    padding: 8px;
+}
+
+.burger-button span {
+    width: 40px;
+    border: 2px solid #D37724;
+    background-color: #D37724;
+    display: block;
+    border-radius: 22px;
+    transition: 0.3s;
+}
+
+.burger-button.active span {
+    border-color: #D37724;
+    background-color: #D37724;
+}
+
+.burger-top, .burger-bottom {
+    position: absolute;
+}
+
+.burger-top {
+    top: -02px;
+}
+
+.burger-bottom {
+    bottom: -02px;
+}
+
+.burger-button.active .burger-top {
+    position: absolute;
+    top: 8px;
+    transform: rotateZ(45deg);
+}
+
+.burger-button.active .burger-middle {
+    border-color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.burger-button.active .burger-bottom {
+    position: absolute;
+    bottom: 8px;
+    transform: rotateZ(-45deg);
+}
+
+.burger-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    background-color: #072A2B;
+    padding: 5px;
+    box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.1);
+    z-index: 8;
+    transition: 1s;
+    flex-direction: column;
+    align-items: center;
+}
+
+.burger-menu.active {
+    display: flex;
+     height: 847px;
+}
+
+.burger-menu a {
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: 300;
+    color: #C3BFBC;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    display: block;
+    padding: 5px 15px;
+    text-align: center;
+    white-space: nowrap;
+     margin: 0;
+}
+
+.burger_menu_nav_custom {
+}
+
+.navi_admin{
+    margin-top: 300px;
+    margin-bottom: 50px;
 }
