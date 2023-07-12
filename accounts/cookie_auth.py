@@ -29,7 +29,7 @@ class CookieJWTAuthentication(JWTAuthentication):
                             return None
                         return user, validated_token
                     except TokenError:
-                        raise AuthenticationFailed('Refresh token is invalid')
+                        raise AuthenticationFailed('Refresh token is invalid or expired')
                 return None
             user_id = validated_token.get("user_id")
             User = get_user_model()

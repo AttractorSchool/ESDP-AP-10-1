@@ -8,6 +8,10 @@ from django.urls import reverse
 from django.utils import timezone
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
+from accounts.cookie_auth import CookieJWTAuthentication
+from rest_framework.exceptions import AuthenticationFailed
+from django.http import HttpResponseRedirect
+from rest_framework.permissions import IsAuthenticated
 from .models import ChatMessage, ChatRoom, ChatType
 
 logger = logging.getLogger(__name__)
@@ -49,10 +53,23 @@ class StartChatView(View):
 
 
 class ChatsView(View):
-    def get(self, request):
-        if not request.user.is_authenticated:
-            return HttpResponse('Unauthorized', status=401)
+    authentication_classes = [CookieJWTAuthentication]
+    permission_classes = [IsAuthenticated]
 
+    def dispatch(self, request, *args, **kwargs):
+        authenticator = self.authentication_classes[0]()
+        try:
+            user_auth_tuple = authenticator.authenticate(request)
+        except AuthenticationFailed:
+            return HttpResponseRedirect(reverse('login'))
+        else:
+            if user_auth_tuple:
+                request.user, request.auth = user_auth_tuple
+            else:
+                return HttpResponseRedirect(reverse('login'))
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request):
         chatrooms = ChatRoom.objects.filter(users=request.user).distinct()
         chats_with_recipients = []
         for room in chatrooms:
@@ -76,9 +93,7 @@ class ChatsView(View):
                     avatar_url = recipient.avatar.image.url if recipient.avatar else None
                     chats_with_recipients.append({'chat': chat, 'chat_name': chat_name,
                                                   'room_id': str(room.id), 'avatar_url': avatar_url})
-
         chats_with_recipients.sort(key=lambda x: x['chat'].timestamp if x['chat'] else timezone.now(), reverse=True)
-        print(f'Chats with recipients: {chats_with_recipients}')
         return render(request, 'chat/chat_list.html', {'chats_with_recipients': chats_with_recipients})
 
 
@@ -104,7 +119,6 @@ def publish(request):
 
     logger.debug(request.body)
     data = json.loads(request.body.decode("utf-8"))
-    print(f'Data {data}')
     message = data.get("data", {}).get("message")
     channel = data.get("channel")
     if channel and message:
@@ -112,13 +126,11 @@ def publish(request):
         try:
             room_uuid = uuid.UUID(room_uuid_str)
         except ValueError:
-            print(f"Invalid UUID: {room_uuid_str}")
             return JsonResponse({'error': 'Invalid UUID'}, status=400)
 
         try:
             room = ChatRoom.objects.get(id=room_uuid)
         except ChatRoom.DoesNotExist:
-            print(f"Room with UUID {room_uuid} does not exist")
             return JsonResponse({'error': 'Room does not exist'}, status=404)
 
         chat_message = ChatMessage(room=room, message=message, user=request.user)
