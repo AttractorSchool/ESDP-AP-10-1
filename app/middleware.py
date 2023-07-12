@@ -9,21 +9,6 @@ from accounts.cookie_auth import CookieJWTAuthentication
 class CombinedMiddleware(MiddlewareMixin):
     def process_request(self, request):
         if request.path != reverse('login'):
-            raw_refresh_token = request.COOKIES.get('refresh_jwt')
-
-            if raw_refresh_token is not None:
-                try:
-                    refresh = RefreshToken(raw_refresh_token)
-                    new_tokens = refresh.access_token
-
-                    request.COOKIES['jwt'] = str(new_tokens)
-                    request.COOKIES['refresh_jwt'] = str(refresh)
-                except TokenError as e:
-                    if isinstance(e, InvalidToken):
-                        return redirect('login')
-                    else:
-                        print(f"Error while refreshing tokens: {str(e)}")
-
             auth = CookieJWTAuthentication()
             try:
                 auth_result = auth.authenticate(request)
@@ -34,3 +19,21 @@ class CombinedMiddleware(MiddlewareMixin):
                 auth_user, _ = auth_result
                 if auth_user is not None:
                     request.user = auth_user
+
+    def process_response(self, request, response):
+        raw_refresh_token = request.COOKIES.get('refresh_jwt')
+
+        if raw_refresh_token is not None:
+            try:
+                refresh = RefreshToken(raw_refresh_token)
+                new_tokens = refresh.access_token
+
+                response.set_cookie(key='jwt', value=str(new_tokens), httponly=True, secure=False)
+                response.set_cookie(key='refresh_jwt', value=str(refresh), httponly=True, secure=False)
+            except TokenError as e:
+                if isinstance(e, InvalidToken):
+                    return redirect('login')
+                else:
+                    print(f"Error while refreshing tokens: {str(e)}")
+
+        return response
