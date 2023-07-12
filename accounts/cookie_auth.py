@@ -2,6 +2,7 @@ from rest_framework_simplejwt.authentication import JWTAuthentication
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.exceptions import TokenError, InvalidToken
 from rest_framework_simplejwt.tokens import RefreshToken
+from rest_framework.exceptions import AuthenticationFailed
 
 
 class CookieJWTAuthentication(JWTAuthentication):
@@ -28,7 +29,7 @@ class CookieJWTAuthentication(JWTAuthentication):
                             return None
                         return user, validated_token
                     except TokenError:
-                        return None
+                        raise AuthenticationFailed('Refresh token is invalid')
                 return None
             user_id = validated_token.get("user_id")
             User = get_user_model()
