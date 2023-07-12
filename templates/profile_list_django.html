@@ -22,7 +22,7 @@
                     {% if not account.avatar %}
                     <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
                     {% else %}
-                    <img src="{{ account.avatar }}" alt="" class="user_pic">
+                    <img src="{{ account.avatar.image.url }}" alt="" class="user_pic">
                     {% endif %}
                 </div>
             </a>

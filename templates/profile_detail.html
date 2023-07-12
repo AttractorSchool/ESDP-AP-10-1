@@ -8,7 +8,7 @@
     <div class="profile_card_wrapper">
         <div class="profile_card">
             <div class="profile_card_pic_div">
-                <img src="{% static 'svg/user.png' %}" alt="Avatar" class="profile_card_pic">
+                <img src="{{ account.avatar.image.url }}" alt="Avatar" class="profile_card_pic">
             </div>
             <div class="profile_card_info_div">
                 <div class="profile_names">
