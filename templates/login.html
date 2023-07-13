@@ -1,14 +1,20 @@
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}User Login{% endblock %}
 {% block content %}
-    <form id="loginForm">
-        Email:<br>
-        <input type="email" id="email" required>
+    <form class="log_form" id="loginForm">
+        <h1 class="login_h">АВТОРИЗАЦИЯ</h1>
+        <div class="email_log">
+            <input class=profile_card_button_login type="email" id="email" required placeholder="Введите почту">
+        </div>
         <br>
-        Password:<br>
-        <input type="password" id="password" required>
-        <br><br>
-        <input type="submit" value="Login">
+        <input class=profile_card_button_login type="password" id="password" required placeholder="Введите пароль">
+        <br>
+        <div class="profile_card_button_wrapper log">
+            <span class="profile_card_button">
+             <input class=log_btn type="submit" value="Login">
+            </span>
+        </div>
     </form>
     <div id="message"></div>
 {% endblock %}
