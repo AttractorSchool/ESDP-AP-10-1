@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Group Detail{% endblock %}
+{% block content %}
+<div class="about_current_page">
+    <h1 class="newsline_header">{{ group.name }}</h1>
+</div>
+<div class="scrollable-container">
+    <div class="block_profiles">
+        <img src="{{ group.avatar.url }}" alt="Group Avatar">
+        <h2>{{ group.name }}</h2>
+        <p>{{ group.description }}</p>
+        <h3>Участники:</h3>
+        {% for member in group.users.all %}
+        <div class="user_card">
+            <a href="{% url 'account_detail' member.pk %}" class="user_card_link">
+                <div class="about_user">
+                    <div class="about_user_name">
+                        <h4 class="about_user_name_heading">{{ member.first_name }} {{ member.last_name }}</h4>
+                    </div>
+                </div>
+                <div class="user_pic_div">
+                    {% if not member.avatar %}
+                    <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
+                    {% else %}
+                    <img src="{{ member.avatar.url }}" alt="" class="user_pic">
+                    {% endif %}
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

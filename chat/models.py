@@ -50,5 +50,8 @@ class ChatMessage(models.Model):
     message = models.TextField()
     timestamp = models.DateTimeField(default=timezone.now)
 
+    def display_timestamp(self):
+        return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")
+
     class Meta:
         ordering = ['timestamp']

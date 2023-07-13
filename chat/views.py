@@ -28,9 +28,16 @@ class RoomView(View):
         if room is None:
             return HttpResponse("Room not found", status=404)
 
+        if room.chat_type == ChatType.PRIVATE.name:
+            other_user = room.users.exclude(id=request.user.id).first()
+        else:
+            other_user = None
+
         old_messages = ChatMessage.objects.filter(room=room).order_by('timestamp')
         return render(request, 'chat/room.html',
-                      {'room_name': room.name, 'room_uuid': str(room.id), 'old_messages': old_messages, 'room': room})
+                      {'room_name': room.name, 'room_uuid': str(room.id),
+                       'old_messages': old_messages, 'room': room,
+                       'other_user': other_user})
 
 
 class StartChatView(View):
@@ -96,6 +103,28 @@ class ChatsView(View):
                                                   'room_id': str(room.id), 'avatar_url': avatar_url})
         chats_with_recipients.sort(key=lambda x: x['chat'].timestamp if x['chat'] else timezone.now(), reverse=True)
         return render(request, 'chat/chat_list.html', {'chats_with_recipients': chats_with_recipients})
+
+
+class GroupDetailView(View):
+    authentication_classes = [CookieJWTAuthentication, ]
+    permission_classes = [IsAuthenticated]
+
+    def dispatch(self, request, *args, **kwargs):
+        authenticator = self.authentication_classes[0]()
+        try:
+            user_auth_tuple = authenticator.authenticate(request)
+        except AuthenticationFailed:
+            return HttpResponseRedirect(reverse('login'))
+        else:
+            if user_auth_tuple:
+                request.user, request.auth = user_auth_tuple
+            else:
+                return HttpResponseRedirect(reverse('login'))
+        return super().dispatch(request, *args, **kwargs)
+
+    def get(self, request, *args, **kwargs):
+        group = get_object_or_404(ChatRoom, pk=kwargs['pk'])
+        return render(request, 'chat/group_detail.html', {'group': group})
 
 
 @csrf_exempt

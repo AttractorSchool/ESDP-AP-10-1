@@ -21,7 +21,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         if (data.access && data.refresh) {
             console.log('Received Data: ', data);
             document.getElementById('message').innerText = 'Login successful!';
-            window.location.href = "/accounts/";
+            window.location.href = "/newsline/";
         } else {
             document.getElementById('message').innerText = 'Login failed.';
             console.error(data);

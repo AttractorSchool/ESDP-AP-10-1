@@ -10,15 +10,66 @@
 </head>
 
 <body>
+{% if user.is_authenticated %}
+    <input type="hidden" id="user-first-name" value="{{ user.first_name }}">
+    <input type="hidden" id="user-last-name" value="{{ user.last_name }}">
+    <input type="hidden" id="user-email" value="{{ user.email }}">
+{% endif %}
+
+<nav>
+    <div class="navbar-container">
+        <a class="navbar-item" href="{% url 'chat_list' %}">
+            <button>Назад</button>
+        </a>
+        <div class="navbar-item navbar-profile">
+            {% if room.is_group_chat %}
+            <a href="{% url 'group_detail' room.id %}">
+                {{ room.name }}
+                {% if room.avatar %}
+                <img src="{{ room.avatar.url }}" alt="{{ room.name }}'s avatar" class="navbar-avatar">
+                {% endif %}
+            </a>
+            {% else %}
+            {% if other_user.first_name and other_user.last_name %}
+            <a href="{% url 'account_detail' other_user.id %}">
+                {{ other_user.first_name }} {{ other_user.last_name }}
+                {% if other_user.avatar %}
+                <img src="{{ other_user.avatar.image.url }}"
+                     alt="{{ other_user.first_name }} {{ other_user.last_name }}'s avatar" class="navbar-avatar">
+                {% endif %}
+            </a>
+            {% else %}
+            <a href="{% url 'account_detail' other_user.id %}">
+                {{ other_user.email }}
+                {% if other_user.avatar %}
+                <img src="{{ other_user.avatar.image.url }}" alt="{{ other_user.email }}'s avatar"
+                     class="navbar-avatar">
+                {% endif %}
+            </a>
+            {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</nav>
+
 <ul id="chat-thread" class="chat-thread">
     {% for message in old_messages %}
     {% if message.user.email == request.user.email %}
-    <li class="current-user"><strong></strong> {{ message.message }}</li>
+    <li class="current-user">
+        <div class="user-name">{{ message.user.first_name }} {{ message.user.last_name }}</div>
+        <div class="message-content">{{ message.message }}</div>
+        <div class="timestamp">{{ message.timestamp|date:"F d, Y, H:i" }}</div>
+    </li>
     {% else %}
-    <li class="other-user"><strong></strong> {{ message.message }}</li>
+    <li class="other-user">
+        <div class="user-name">{{ message.user.first_name }} {{ message.user.last_name }}</div>
+        <div class="message-content">{{ message.message }}</div>
+        <div class="timestamp">{{ message.timestamp|date:"F d, Y, H:i" }}</div>
+    </li>
     {% endif %}
     {% endfor %}
 </ul>
+
 <div class="chat-message">
     <input id="chat-message-input" class="chat-message-input" type="text" autocomplete="off" autofocus/>
 </div>

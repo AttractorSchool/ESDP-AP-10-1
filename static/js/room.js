@@ -14,19 +14,39 @@ centrifuge.on('disconnect', function (ctx) {
 
 const channelName = 'rooms:' + roomId;
 
-let userEmail = "{% if user.is_authenticated %}{{ user.email }}{% endif %}";
+let userFirstName = document.getElementById('user-first-name') ? document.getElementById('user-first-name').value : '';
+let userLastName = document.getElementById('user-last-name') ? document.getElementById('user-last-name').value : '';
+let userEmail = document.getElementById('user-email') ? document.getElementById('user-email').value : '';
 
 const sub = centrifuge.subscribe(channelName, function (ctx) {
     const chatNewThread = document.createElement('li');
-    let chatNewMessage;
+    const chatMessageBody = document.createElement('div');
+    chatMessageBody.classList.add('message-body');
+
+    const chatUserName = document.createElement('div');
+    chatUserName.classList.add('user-name');
+    chatUserName.innerText = ctx.data.userFirstName + ' ' + ctx.data.userLastName;
+
+    const chatTimestamp = document.createElement('div');
+    chatTimestamp.classList.add('timestamp');
+    chatTimestamp.innerText = new Date(ctx.data.timestamp).toLocaleString();
+
+    const chatMessageContent = document.createElement('div');
+    chatMessageContent.classList.add('message-content');
+    const chatNewMessage = document.createTextNode(ctx.data.message);
+    chatMessageContent.appendChild(chatNewMessage);
+
+    chatMessageBody.appendChild(chatUserName);
+    chatMessageBody.appendChild(chatMessageContent);
+    chatMessageBody.appendChild(chatTimestamp);
+    chatNewThread.appendChild(chatMessageBody);
+
     if (ctx.data.user === userEmail) {
         chatNewThread.classList.add('current-user');
-        chatNewMessage = document.createTextNode(ctx.data.message);
     } else {
         chatNewThread.classList.add('other-user');
-        chatNewMessage = document.createTextNode(ctx.data.message);
     }
-    chatNewThread.appendChild(chatNewMessage);
+
     chatThread.appendChild(chatNewThread);
     chatThread.scrollTop = chatThread.scrollHeight;
 });
@@ -41,7 +61,7 @@ messageInput.onkeyup = function (e) {
         if (!message) {
             return;
         }
-        sub.publish({ 'message': message, 'user': userEmail });
+        sub.publish({ 'message': message, 'user': userEmail, 'timestamp': new Date().toISOString(), 'userFirstName': userFirstName, 'userLastName': userLastName });
         messageInput.value = '';
     }
 };
