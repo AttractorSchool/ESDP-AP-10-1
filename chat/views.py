@@ -80,11 +80,12 @@ class ChatsView(View):
     def get(self, request):
         chatrooms = ChatRoom.objects.filter(users=request.user).distinct()
         chats_with_recipients = []
+        default_avatar_url = '/uploads/groupchats/default.png'
         for room in chatrooms:
             chat = ChatMessage.objects.filter(room=room).order_by('-timestamp').first()
             if room.is_group_chat():
                 chat_name = room.name
-                avatar_url = room.avatar.url if room.avatar else None
+                avatar_url = room.avatar.url if room.avatar else default_avatar_url
                 if chat:
                     chats_with_recipients.append({'chat': chat, 'chat_name': chat_name,
                                                   'room_id': str(room.id), 'avatar_url': avatar_url})

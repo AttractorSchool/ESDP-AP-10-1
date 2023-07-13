@@ -11,9 +11,9 @@
 
 <body>
 {% if user.is_authenticated %}
-    <input type="hidden" id="user-first-name" value="{{ user.first_name }}">
-    <input type="hidden" id="user-last-name" value="{{ user.last_name }}">
-    <input type="hidden" id="user-email" value="{{ user.email }}">
+<input type="hidden" id="user-first-name" value="{{ user.first_name }}">
+<input type="hidden" id="user-last-name" value="{{ user.last_name }}">
+<input type="hidden" id="user-email" value="{{ user.email }}">
 {% endif %}
 
 <nav>
@@ -27,6 +27,8 @@
                 {{ room.name }}
                 {% if room.avatar %}
                 <img src="{{ room.avatar.url }}" alt="{{ room.name }}'s avatar" class="navbar-avatar">
+                {% else %}
+                <img src="/uploads/groupchats/default.png" alt="Group Avatar" class="navbar-avatar">
                 {% endif %}
             </a>
             {% else %}
@@ -83,6 +85,7 @@ window.onload = function() {
     var chatThread = document.getElementById('chat-thread');
     chatThread.scrollTop = chatThread.scrollHeight;
 };
+
 </script>
 </body>
 

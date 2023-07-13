@@ -7,8 +7,11 @@
 </div>
 <div class="scrollable-container">
     <div class="block_profiles">
+        {% if group.avatar %}
         <img src="{{ group.avatar.url }}" alt="Group Avatar">
-        <h2>{{ group.name }}</h2>
+        {% else %}
+        <img src="/uploads/groupchats/default.png" alt="Group Avatar">
+        {% endif %}
         <p>{{ group.description }}</p>
         <h3>Участники:</h3>
         {% for member in group.users.all %}
