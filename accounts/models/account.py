@@ -227,7 +227,6 @@ class Account(AbstractUser):
         default=False
     )
 
-
     USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
@@ -238,6 +237,9 @@ class Account(AbstractUser):
 
     def __str__(self):
         return self.email
+
+    def get_full_name(self):
+        return f'{self.first_name} {self.last_name}'
 
     class Meta:
         verbose_name = "Профиль"

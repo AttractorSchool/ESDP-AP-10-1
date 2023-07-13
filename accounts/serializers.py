@@ -1,6 +1,8 @@
 from rest_framework import serializers
 from django.contrib.auth import get_user_model, authenticate
 
+from webapp.models import Image
+
 User = get_user_model()
 
 
@@ -14,6 +16,15 @@ class UserSerializer(serializers.ModelSerializer):
         user = User(email=validated_data['email'])
         user.set_password(validated_data['password'])
         user.save()
+
+        default_image = Image.objects.create(
+            image='user_pic/default_user_pic.jpeg',
+            user=user
+        )
+
+        user.avatar = default_image
+        user.save()
+
         return user
 
 
