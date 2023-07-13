@@ -1,17 +1,23 @@
+{% extends 'base.html' %}
 {% load static %}
 {% block title %}User Registration{% endblock %}
 {% block content %}
-<form id="registrationForm">
-    Email:<br>
-    <input type="email" id="email" required>
-    <br>
-    Password:<br>
-    <input type="password" id="password" required>
-    <br><br>
-    <input type="submit" value="Register">
-</form>
-<div id="message"></div>
+    <form class="reg_form" id="registrationForm">
+        <h1 class="login_h">РЕГИСТРАЦИЯ</h1>
+        <div class="email_log">
+            <input class=profile_card_button_login type="email" id="email" required placeholder="Введите почту">
+        </div>
+        <br>
+        <input class=profile_card_button_login type="password" id="password" required placeholder="Введите пароль">
+        <br>
+        <div class="profile_card_button_wrapper log">
+            <span class="profile_card_button">
+             <input class=log_btn type="submit" value="Регистрация">
+            </span>
+        </div>
+    </form>
+    <div id="message"></div>
 {% endblock %}
 {% block script_block %}
-<script src="{% static 'js/register.js' %}"></script>
+    <script src="{% static 'js/register.js' %}"></script>
 {% endblock %}

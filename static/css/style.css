@@ -662,7 +662,7 @@ ul {
 
 .burger-menu.active {
     display: flex;
-    height: 847px;
+    height: 850px;
 }
 
 .burger-menu a {
@@ -742,10 +742,16 @@ ul {
     margin-left: 23px;
 }
 
-.profile_card_button_login{
+.profile_card_button_login {
     width: 250px;
     height: 41px;
     border-radius: 10px;
     text-align: center;
     font-size: 20px;
 }
+
+.reg_form {
+    margin-top: 300px;
+    margin-left: 100px;
+}
+
