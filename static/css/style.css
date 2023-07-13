@@ -662,7 +662,7 @@ ul {
 
 .burger-menu.active {
     display: flex;
-     height: 847px;
+    height: 847px;
 }
 
 .burger-menu a {
@@ -675,13 +675,13 @@ ul {
     padding: 5px 15px;
     text-align: center;
     white-space: nowrap;
-     margin: 0;
+    margin: 0;
 }
 
 .burger_menu_nav_custom {
 }
 
-.navi_admin{
+.navi_admin {
     margin-top: 300px;
     margin-bottom: 50px;
 }
@@ -704,4 +704,46 @@ ul {
     height: auto;
     object-fit: cover;
     border-radius: 50%;
+}
+
+
+.log_form {
+    margin-top: 250px;
+    margin-left: 100px;
+}
+
+.login_h {
+    height: 58px;
+    font-family: 'Playfair Display', serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 43px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 70px;
+}
+
+.log_btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: "Playfair Display", serif;
+
+}
+
+.profile_card_button_wrapper.log {
+    width: 200px;
+    margin-top: 30px;
+    margin-left: 23px;
+}
+
+.profile_card_button_login{
+    width: 250px;
+    height: 41px;
+    border-radius: 20px;
 }
