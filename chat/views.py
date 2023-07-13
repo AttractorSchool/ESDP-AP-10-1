@@ -128,21 +128,6 @@ class GroupDetailView(View):
         return render(request, 'chat/group_detail.html', {'group': group})
 
 
-@csrf_exempt
-def connect(request):
-    if not request.user.is_authenticated:
-        return JsonResponse({'error': 'Not authorized'}, status=403)
-
-    logger.debug(request.body)
-    user = request.user.email if request.user.is_authenticated else 'Anonymous'
-    response = {
-        'result': {
-            'user': user
-        }
-    }
-    return JsonResponse(response)
-
-
 class CreateGroupChatView(View):
     def get(self, request):
         form = GroupChatForm(user=request.user)
@@ -182,6 +167,21 @@ class UpdateGroupChatView(View):
 
 
 @csrf_exempt
+def connect(request):
+    if not request.user.is_authenticated:
+        return JsonResponse({'error': 'Not authorized'}, status=403)
+
+    logger.debug(request.body)
+    user = request.user.email if request.user.is_authenticated else 'Anonymous'
+    response = {
+        'result': {
+            'user': user
+        }
+    }
+    return JsonResponse(response)
+
+
+@csrf_exempt
 def publish(request):
     if not request.user.is_authenticated:
         return JsonResponse({'error': 'Not authorized'}, status=403)
@@ -208,7 +208,8 @@ def publish(request):
     response = {
         'result': {
             'message': message,
-            'user': request.user.username
+            'user': request.user.username,
+            'avatarUrl': request.user.avatar.image.url if request.user.avatar else None,
         }
     }
     return JsonResponse(response)
