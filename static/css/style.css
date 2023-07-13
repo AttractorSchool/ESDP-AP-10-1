@@ -685,3 +685,23 @@ ul {
     margin-top: 300px;
     margin-bottom: 50px;
 }
+
+.avatar-container {
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.avatar-image {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+    border-radius: 50%;
+}

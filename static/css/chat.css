@@ -8,20 +8,6 @@ body {
     background-attachment: fixed;
 }
 
-::-webkit-scrollbar {
-    width: 10px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: rgba(25, 147, 147, 0.1);
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background-color: rgba(25, 147, 147, 0.2);
-}
-
 .chat-thread {
     margin: 24px auto 0 auto;
     padding: 0 20px 0 0;
@@ -281,4 +267,18 @@ nav a:hover {
     100% {
         margin-right: 0;
     }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.1);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgba(25, 147, 147, 0.2);
 }

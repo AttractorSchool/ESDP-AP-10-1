@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block title %}Group Detail{% endblock %}
+{% block header %}
+{% endblock %}
 {% block content %}
 <div class="about_current_page">
     <h1 class="newsline_header">{{ group.name }}</h1>
@@ -8,11 +10,16 @@
 <div class="scrollable-container">
     <div class="block_profiles">
         {% if group.avatar %}
-        <img src="{{ group.avatar.url }}" alt="Group Avatar">
+        <div class="avatar-container">
+            <img src="{{ group.avatar.url }}" alt="Group Avatar" class="avatar-image">
+        </div>
         {% else %}
-        <img src="/uploads/groupchats/default.png" alt="Group Avatar">
+        <div class="avatar-container">
+            <img src="/uploads/groupchats/default.png" alt="Group Avatar" class="avatar-image">
+        </div>
         {% endif %}
         <p>{{ group.description }}</p>
+        <a href="{% url 'update_chat' room_uuid=group.id %}">Редактировать...</a>
         <h3>Участники:</h3>
         {% for member in group.users.all %}
         <div class="user_card">
@@ -24,9 +31,9 @@
                 </div>
                 <div class="user_pic_div">
                     {% if not member.avatar %}
-                    <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
+                        <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
                     {% else %}
-                    <img src="{{ member.avatar.url }}" alt="" class="user_pic">
+                        <img src="{{ member.avatar.url }}" alt="" class="user_pic">
                     {% endif %}
                 </div>
             </a>
