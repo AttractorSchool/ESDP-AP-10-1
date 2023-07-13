@@ -18,6 +18,13 @@
 </div>
 <div class="scrollable-container">
     <div class="block_profiles">
+        <div class="user_card">
+            <a href="{% url 'group_chat' %}" class="user_card_link">
+                <div class="no_profiles">
+                    <h5 class="no_profiles_text">Создать групповой чат.</h5>
+                </div>
+            </a>
+        </div>
         {% if not chats_with_recipients %}
         <div class="user_card">
             <div class="no_profiles">
@@ -54,7 +61,6 @@
                         {% endif %}
                     </div>
                 </div>
-
             </a>
         </div>
         {% endfor %}

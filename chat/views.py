@@ -13,6 +13,7 @@ from rest_framework.exceptions import AuthenticationFailed
 from django.http import HttpResponseRedirect
 from rest_framework.permissions import IsAuthenticated
 from .models import ChatMessage, ChatRoom, ChatType
+from .forms import GroupChatForm
 
 logger = logging.getLogger(__name__)
 User = get_user_model()
@@ -110,6 +111,23 @@ def connect(request):
         }
     }
     return JsonResponse(response)
+
+
+class CreateGroupChatView(View):
+    def get(self, request):
+        form = GroupChatForm()
+        return render(request, 'chat/group_chat.html', {'form': form})
+
+    def post(self, request):
+        form = GroupChatForm(request.POST, request.FILES)
+        if form.is_valid():
+            group_chat = form.save(commit=False)
+            group_chat.creator = request.user
+            group_chat.chat_type = ChatType.GROUP.name
+            group_chat.save()
+            form.save_m2m()
+            return redirect(reverse('room_view', args=[str(group_chat.id)]))
+        return render(request, 'chat/create_group_chat.html', {'form': form})
 
 
 @csrf_exempt
