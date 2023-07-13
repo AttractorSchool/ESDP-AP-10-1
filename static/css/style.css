@@ -745,5 +745,7 @@ ul {
 .profile_card_button_login{
     width: 250px;
     height: 41px;
-    border-radius: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
 }
