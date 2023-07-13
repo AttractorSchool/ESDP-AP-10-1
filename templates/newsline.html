@@ -11,7 +11,7 @@
                 <a href="{% url 'events_detail' event.pk %}" class="event_card_link">
                     <div class="event_card">
                         <div class="event_card_image">
-                            <img src="/uploads/user_pic/almaty.jpg" alt="event_image" class="event_card_img">
+                            <img src="{{ event.photo.image.url }}" alt="event_image" class="event_card_img">
                         </div>
                         <div class="event_card_description">
                             <div class="event_card_description_header_div">
@@ -28,10 +28,4 @@
             {% endfor %}
         </div>
     </div>
-    {#    <div class="news_div">#}
-    {#        <section class="articles">#}
-    {#            <article id="newsline">#}
-    {#            </article>#}
-    {#        </section>#}
-    {#    </div>#}
 {% endblock %}
