@@ -125,7 +125,7 @@ class GroupDetailView(View):
 
     def get(self, request, *args, **kwargs):
         group = get_object_or_404(ChatRoom, pk=kwargs['pk'])
-        return render(request, 'chat/group_detail.html', {'group': group})
+        return render(request, 'chat/group_detail.html', {'group': group, 'current_user': request.user})
 
 
 class CreateGroupChatView(View):

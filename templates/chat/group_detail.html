@@ -19,9 +19,29 @@
         </div>
         {% endif %}
         <p>{{ group.description }}</p>
+        {% if group.creator == current_user %}
         <a href="{% url 'update_chat' room_uuid=group.id %}">Редактировать...</a>
+        {% endif %}
+        <h3>Админ:</h3>
+        <div class="user_card">
+            <a href="{% url 'account_detail' group.creator.pk %}" class="user_card_link">
+                <div class="about_user">
+                    <div class="about_user_name">
+                        <h4 class="about_user_name_heading">{{ group.creator.first_name }} {{ group.creator.last_name }}</h4>
+                    </div>
+                </div>
+                <div class="user_pic_div">
+                    {% if not group.creator.avatar %}
+                    <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
+                    {% else %}
+                    <img src="{{ group.creator.avatar.url }}" alt="" class="user_pic">
+                    {% endif %}
+                </div>
+            </a>
+        </div>
         <h3>Участники:</h3>
         {% for member in group.users.all %}
+        {% if member != group.creator %}
         <div class="user_card">
             <a href="{% url 'account_detail' member.pk %}" class="user_card_link">
                 <div class="about_user">
@@ -31,13 +51,14 @@
                 </div>
                 <div class="user_pic_div">
                     {% if not member.avatar %}
-                        <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
+                    <img src="{% static 'svg/user.png' %}" alt="Avatar" class="user_pic">
                     {% else %}
-                        <img src="{{ member.avatar.url }}" alt="" class="user_pic">
+                    <img src="{{ member.avatar.url }}" alt="" class="user_pic">
                     {% endif %}
                 </div>
             </a>
         </div>
+        {% endif %}
         {% endfor %}
     </div>
 </div>
