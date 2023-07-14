@@ -2,8 +2,9 @@ import uuid
 from django.db import models
 from django.utils import timezone
 from enum import Enum
-from accounts.models import Account
 import logging
+
+from accounts.models import Account
 
 logger = logging.getLogger(__name__)
 
@@ -44,11 +45,21 @@ class ChatRoomMembership(models.Model):
         logger.debug(f"ChatRoomMembership created: User - {self.user.username}, Room - {self.chat_room.name}")
 
 
+class File(models.Model):
+    file = models.FileField(upload_to='chatfiles/')
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(Account, on_delete=models.CASCADE)
+    room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE, related_name='files')
+    chat_message = models.ForeignKey('ChatMessage', on_delete=models.CASCADE, null=True, blank=True,
+                                     related_name='related_files')
+
+
 class ChatMessage(models.Model):
     user = models.ForeignKey(Account, on_delete=models.CASCADE)
     room = models.ForeignKey(ChatRoom, on_delete=models.CASCADE)
     message = models.TextField()
     timestamp = models.DateTimeField(default=timezone.now)
+    file = models.ForeignKey(File, on_delete=models.SET_NULL, null=True, blank=True)
 
     def display_timestamp(self):
         return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")

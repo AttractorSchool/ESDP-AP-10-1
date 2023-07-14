@@ -37,8 +37,17 @@ const sub = centrifuge.subscribe(channelName, function (ctx) {
 
     const chatMessageContent = document.createElement('div');
     chatMessageContent.classList.add('message-content');
-    const chatNewMessage = document.createTextNode(ctx.data.message);
-    chatMessageContent.appendChild(chatNewMessage);
+
+    if (ctx.data.fileUrl) {
+        const chatFileLink = document.createElement('a');
+        chatFileLink.href = ctx.data.fileUrl;
+        chatFileLink.target = '_blank';
+        chatFileLink.textContent = ctx.data.message;
+        chatMessageContent.appendChild(chatFileLink);
+    } else {
+        const chatNewMessage = document.createTextNode(ctx.data.message);
+        chatMessageContent.appendChild(chatNewMessage);
+    }
 
     chatMessageBody.appendChild(chatUserName);
     chatMessageBody.appendChild(chatMessageContent);

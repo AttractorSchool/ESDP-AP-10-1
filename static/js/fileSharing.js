@@ -23,7 +23,8 @@ function handleFileUpload(fileInput, centrifuge, roomId, userEmail, userFirstNam
         const data = await response.json();
 
         const message = {
-            'message': data.file_url,
+            'message': 'File uploaded: ' + file.name,
+            'fileUrl': data.file_url,
             'user': userEmail,
             'timestamp': new Date().toISOString(),
             'userFirstName': userFirstName,
