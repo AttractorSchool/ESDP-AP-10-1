@@ -38,7 +38,7 @@ const sub = centrifuge.subscribe(channelName, function (ctx) {
     const chatMessageContent = document.createElement('div');
     chatMessageContent.classList.add('message-content');
 
-    if (ctx.data.fileUrl) {
+    if (ctx.data.fileMessage) {
         const chatFileLink = document.createElement('a');
         chatFileLink.href = ctx.data.fileUrl;
         chatFileLink.target = '_blank';

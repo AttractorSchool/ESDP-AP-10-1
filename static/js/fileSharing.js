@@ -14,7 +14,6 @@ function handleFileUpload(fileInput, centrifuge, roomId, userEmail, userFirstNam
             body: formData
         });
 
-
         if (!response.ok) {
             alert('File upload failed');
             return;
@@ -25,6 +24,7 @@ function handleFileUpload(fileInput, centrifuge, roomId, userEmail, userFirstNam
         const message = {
             'message': 'File uploaded: ' + file.name,
             'fileUrl': data.file_url,
+            'fileMessage': true,
             'user': userEmail,
             'timestamp': new Date().toISOString(),
             'userFirstName': userFirstName,

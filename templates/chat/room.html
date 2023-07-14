@@ -60,14 +60,26 @@
     <li class="current-user">
         <div class="user-avatar" style="background-image: url({{ message.user.avatar.image.url }});"></div>
         <div class="user-name">{{ message.user.first_name }} {{ message.user.last_name }}</div>
-        <div class="message-content">{{ message.message }}</div>
+        <div class="message-content">
+            {% if message.file_url %}
+            <a href="{{ message.file_url }}" target="_blank">{{ message.message }}</a>
+            {% else %}
+            {{ message.message }}
+            {% endif %}
+        </div>
         <div class="timestamp">{{ message.timestamp|date:"F d, Y, H:i" }}</div>
     </li>
     {% else %}
     <li class="other-user">
         <div class="user-avatar" style="background-image: url({{ message.user.avatar.image.url }});"></div>
         <div class="user-name">{{ message.user.first_name }} {{ message.user.last_name }}</div>
-        <div class="message-content">{{ message.message }}</div>
+        <div class="message-content">
+            {% if message.file_url %}
+            <a href="{{ message.file_url }}" target="_blank">{{ message.message }}</a>
+            {% else %}
+            {{ message.message }}
+            {% endif %}
+        </div>
         <div class="timestamp">{{ message.timestamp|date:"F d, Y, H:i" }}</div>
     </li>
     {% endif %}
@@ -90,6 +102,8 @@ window.onload = function() {
     var chatThread = document.getElementById('chat-thread');
     chatThread.scrollTop = chatThread.scrollHeight;
 };
+
+
 
 </script>
 </body>

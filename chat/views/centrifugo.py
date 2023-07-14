@@ -57,6 +57,8 @@ def publish(request):
 
         if message:
             chat_message = ChatMessage(room=room, message=message, user=request.user, file=file_instance)
+            if file_instance:
+                chat_message.file_url = file_instance.file.url
             chat_message.save()
 
         response = {
@@ -90,6 +92,11 @@ def upload_file(request, room_uuid):
     uploaded_file = request.FILES['file']
     file_instance = File(file=uploaded_file, user=request.user, room=room)
     file_instance.save()
+
+    chat_message = ChatMessage(room=room, message='File uploaded: ' + uploaded_file.name, user=request.user,
+                               file=file_instance)
+    chat_message.file_url = file_instance.file.url
+    chat_message.save()
 
     return JsonResponse({'file_url': file_instance.file.url})
 

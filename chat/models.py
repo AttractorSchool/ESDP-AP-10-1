@@ -60,6 +60,7 @@ class ChatMessage(models.Model):
     message = models.TextField()
     timestamp = models.DateTimeField(default=timezone.now)
     file = models.ForeignKey(File, on_delete=models.SET_NULL, null=True, blank=True)
+    file_url = models.URLField(null=True, blank=True)
 
     def display_timestamp(self):
         return self.timestamp.strftime("%Y-%m-%d %H:%M:%S")
