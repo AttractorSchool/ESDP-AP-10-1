@@ -1,3 +1,5 @@
+import { handleFileUpload } from './fileSharing.js';
+
 const roomId = JSON.parse(document.getElementById('room-id').textContent);
 const chatThread = document.querySelector('#chat-thread');
 const messageInput = document.querySelector('#chat-message-input');
@@ -77,3 +79,7 @@ messageInput.onkeyup = function (e) {
         messageInput.value = '';
     }
 };
+
+const fileInput = document.querySelector('#chat-file-input');
+
+handleFileUpload(fileInput, centrifuge, roomId, userEmail, userFirstName, userLastName, userAvatarUrl);

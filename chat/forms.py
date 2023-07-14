@@ -1,5 +1,6 @@
 from django import forms
-from .models import ChatRoom, Account
+from accounts.models import Account
+from chat.models import ChatRoom
 
 
 class GroupChatForm(forms.ModelForm):

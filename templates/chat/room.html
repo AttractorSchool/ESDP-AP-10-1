@@ -76,11 +76,14 @@
 
 <div class="chat-message">
     <input id="chat-message-input" class="chat-message-input" type="text" autocomplete="off" autofocus/>
+    <input id="chat-file-input" class="chat-file-input" type="file"/>
 </div>
+
 {{ room_uuid|json_script:"room-id" }}
 
 {% block extrajs %}
-<script src="{% static 'js/room.js' %}"></script>
+<script type="module" src="{% static 'js/fileSharing.js' %}"></script>
+<script type="module" src="{% static 'js/room.js' %}"></script>
 {% endblock %}
 <script>
 window.onload = function() {
